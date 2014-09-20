@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   get 'sign_in' => 'home#index', as: :new_session
 
+  get '/search/:q' => 'search#search', :as => 'search', :defaults => { :format => :json }
+
   root 'home#index'
 end
