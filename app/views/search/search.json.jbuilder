@@ -1,5 +1,7 @@
 json.query @response.query
 json.source @response.source
+json.results_start @response.results_start
+json.results_end @response.results_end
 json.total_results @response.total_results
 json.books @response.results.work do |work|
   json.id work.best_book.id
