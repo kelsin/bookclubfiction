@@ -3,7 +3,18 @@ json.source @response.source
 json.results_start @response.results_start
 json.results_end @response.results_end
 json.total_results @response.total_results
-json.books @response.results.work do |work|
+
+if @response.total_results.to_i > 0
+  if @response.results.work.is_a? Array
+    works = Array(@response.results.work)
+  else
+    works = [@response.results.work]
+  end
+else
+  works = []
+end
+
+json.books works do |work|
   json.id work.best_book.id
   json.title work.best_book.title
   json.rating work.average_rating
