@@ -1,43 +1,64 @@
 <!DOCTYPE html>
-<html ng-app="bookclubfiction">
+<html>
   <head>
-    <title>Bookclubfiction</title>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <title>Book Club Fiction</title>
+    <%= stylesheet_link_tag \
+       "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css",
+       "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css",
+       "//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Open+Sans+Condensed:700",
+       "application", media: "all" %>
     <%= javascript_include_tag \
-    '//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js',
-    '//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js',
-    'application' %>
+      "//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js",
+      "//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js",
+      "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js",
+      "//d3js.org/d3.v3.min.js",
+      "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-      <p><%= link_to 'Logout', logout_path, :method => :delete %></p>
-      <dl>
-        <dt>Name</dt>
-        <dd><%= current_user.name %></dd>
-        <dt>UserName</dt>
-        <dd><%= current_user.username %></dd>
-        <dt>Website</dt>
-        <dd><%= current_user.website %></dd>
-        <dt>Location</dt>
-        <dd><%= current_user.location %></dd>
-        <dt>Image</dt>
-        <dd><%= user_image(current_user) %></dd>
-        <dt>About</dt>
-        <dd><%= current_user.about %></dd>
-        <dt>Member</dt>
-        <dd><%= current_user.member %></dd>
-        <dt>Admin</dt>
-        <dd><%= current_user.admin %></dd>
-      </dl>
-    <% else %>
-      <p><%= link_to 'Login', user_omniauth_authorize_url(:provider => :goodreads) %></p>
+  <body ng-app="BookClubFiction">
+    <div class="container-fluid">
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+          <div class="alert alert-<%= name == :notice ? "danger" : "success" %>">
+            <a class="close" data-dismiss="alert">&#215;</a>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          </div>
+      <% end %>
     <% end %>
+
+    <h1>Book Club Fiction</h1>
+
+    <div id="user" ng-controller="ProfileController">
+      <nav>
+        <ul>
+          <% if user_signed_in? %>
+          <li><%= user_image(current_user) %></li>
+          <li>Hello, {{ profile.name }}</li>
+          <li>Extra Votes: {{ profile.extraVotes }}</li>
+          <li><%= link_to 'Back to GoodReads', 'https://www.goodreads.com/group/show/88207-bookclubfiction' %></li>
+          <li><%= link_to 'Logout', logout_path, :method => :delete %></li>
+          <% else %>
+          <li><%= link_to 'Login', user_omniauth_authorize_url(:provider => :goodreads) %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
 
     <div ng-view>
       <%= yield %>
     </div>
+
+
+    <footer id="footer" class="group">
+        <nav>
+            <ul>
+                <li><a href="#">Nominations</a></li>
+                <li><a href="#">Book Club Fiction on Goodreads</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li class="bug"><a href="#"><span class="fa fa-bug"></span>Found a bug? Let us know</a></li>
+            </ul>
+        </nav>
+    </footer>
+  </div>
   </body>
 </html>

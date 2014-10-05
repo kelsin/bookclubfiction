@@ -1,1 +1,105 @@
-Hello World
+<% if user_signed_in? %>
+
+<div id="header" class="page-header">
+        <h1>Nominations <small>Genre: Horror</small></h1>
+    </div>
+    
+    <div id="nominate" ng-controller="NominationsController">
+        <div id="searchContainer" class="group">
+            <label class="search-label" for="search">Search for a book</label>
+            <div id="searchAndResults">
+                <div id="searchWrapper" class="group" >
+                    <form autocomplete="off">
+                        <input name="search" id="search" ng-model="query" ng-change="onChange()" placeholder="Type in a book name...">
+                        <%= image_tag 'ajax-loader.gif', :class => 'loader', 'ng-show' => 'search.loading' %>
+                    </form>
+                    <p class="no-results" ng-show="search.loaded && search.results.books.length === 0">No results. Try searching again!</p>
+                </div>
+                <div class="search-results" id="searchResults" ng-show="search.results.books.length > 0">
+                    <ul ng-hide="search.loading">
+                        <li ng-click="nominate(book)" ng-repeat="book in search.results.books"><img src="{{book.image_url}}" alt="{{book.title}}" />
+                            <span class="book-title">{{book.title}}</span>
+                            <span class="book-author">by {{book.author}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            
+        <div id="myNominations" class="my-nominations">
+            <div class="alert alert-info"><p>You've chosen <strong>0/3</strong> of your available nominations. Search for books to add some!</p></div>
+            <div class="alert alert-info"><p>You've used <strong>3/3</strong> of your available nominations. Come back on Thursday to start seconding books!</p></div>
+            <div class="alert alert-danger"><p>You've chosen <strong>5/3</strong> of your available nominations. Remove some nominations to be able to lock them in.</p></div>
+            <div class="nominations-wrap valid">
+                <h3>My Nominations</h3>
+                <ul class="nominations valid group">
+                    <li ng-repeat="book in nominations.books.slice(0,3)">
+                        <a class="remove-nomination fa fa-close" ng-click="remove($index)" title="Delete from Nominations"></a>
+                        <div class="book">
+                            <a href="https://www.goodreads.com/book/show/{{ book.id }}">
+                                <img src="{{ book.image_url }}" alt="{{ book.title }}" title="{{ book.title }}" />
+                            </a>
+                            {{ book.title }}
+                        </div>
+                    </li>
+                </ul>
+                <div class="nominations-actions group">
+                    <a class="btn btn-primary" href="#">Save Nominations</a>
+                    <p>Your nominations have been saved.</p>
+                    <p>Save your nominations to lock them in!</p>
+                </div>
+            </div>
+            <div class="nominations-wrap invalid">
+                <p>You've entered in these books, but because you are over the cap of 3, they won't be nominated. Delete books from the "My Nominations" list or Promote one of these books in order to add them to your list. Promoting a book will kick the 3rd book in the nominations book into this pool.</p>
+                <ul class="nominations group">
+                    <li ng-repeat="book in nominations.books.slice(3)">
+                        <a class="promote-nomination fa fa-arrow-up" ng-click="promote($index+3)" title="Promote Nomination"></a>
+                        <a href="#" class="remove-nomination fa fa-close" ng-click="remove($index + 3)" title="Delete from Nominations"></a>
+                        <div class="book">
+                            <a href="https://www.goodreads.com/book/show/{{ book.id }}">
+                                <img src="{{ book.image_url }}" alt="{{ book.title }}" title="{{ book.title }}" />
+                            </a>
+                            {{ book.title }}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div style="clear:both;"></div>
+    
+    <div id="results">
+    <p>Nominations will close Thursday, and then you will be able to second the books that anyone else has nominated.</p>
+    </div>
+    
+    <h3>The Nominations</h3>
+    <p>These are the books that have already been nominated by other members.</p>
+
+    <ul class="nominations">
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/98x146" alt="Book Title" />
+            </a>
+            Book Title 1
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/98x146" alt="Book Title" />
+            </a>
+            Book Title 2
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/98x146" alt="Book Title" />
+            </a>Book Title 3
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/98x146" alt="Book Title" />
+            </a>Book Title 4
+        </li>
+    </ul>
+
+<% end %>
