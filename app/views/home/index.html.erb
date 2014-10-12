@@ -27,9 +27,9 @@
         </div>
             
         <div id="myNominations" class="my-nominations">
-            <div class="alert alert-info"><p>You've chosen <strong>0/3</strong> of your available nominations. Search for books to add some!</p></div>
-            <div class="alert alert-info"><p>You've used <strong>3/3</strong> of your available nominations. Come back on Thursday to start seconding books!</p></div>
-            <div class="alert alert-danger"><p>You've chosen <strong>5/3</strong> of your available nominations. Remove some nominations to be able to lock them in.</p></div>
+            <div class="alert alert-info" ng-show="nominations.isEmpty() && nominations.size() <= 3"><p>You've chosen <strong>{{ nominations.size() }}/3</strong> of your available nominations. Search for books to add some!</p></div>
+            <div class="alert alert-info" ng-hide="nominations.isEmpty()"><p>You've used <strong>{{ nominations.size() }}/3</strong> of your available nominations. Come back on Thursday to start seconding books!</p></div>
+            <div class="alert alert-danger" ng-show="nominations.size() > 3"><p>You've chosen <strong>{{ nominations.size() }}/3</strong> of your available nominations. Remove some nominations to be able to lock them in.</p></div>
             <div class="nominations-wrap valid">
                 <h3>My Nominations</h3>
                 <ul class="nominations valid group">

@@ -108,9 +108,16 @@ app.factory('search', ['$http', function($http){
 }]);
 
 app.factory('nominations', function(){
-    return nominations = {
-        books: []
+    var nominations = {
+        books: [],
+        size: function(){
+            return nominations.books.length;
+        },
+        isEmpty: function(){
+            return (nominations.size === 0);
+        }
     };
+    return nominations;
 });
 
 app.factory('voting', function(){
