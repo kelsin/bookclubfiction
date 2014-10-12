@@ -8,4 +8,4 @@ after_success:
   - "[[ $TRAVIS_BRANCH = 'master' ]] && bundle exec cap production deploy"
 env:
   global:
-    secure: RrkoI7jrKncD7MYBCOG5XXboFfUeKZ53t8E1q/5zYza5Q/0hIVozPxT7bD19YjXD0RVxjC8AknuO44i+z/Uz3ZQ9CiA29Ul81bQWEvuoIQPcLPP3wA1bIt1ueuNOfN18TRhye0ylDX/lHonfysxWV2vbiWBZBQJPUApDoLcS8rU=
+    secure: SAzupk2wxtdpDjSwIVftZS06qq7ssq1rupZOvPa0yHTylI+NiMXO5uwKGbHUDIrH3MzvriwJKW7LrahDJIRMTzQvv7cIYSlSdW8s4K66AXTrx1wy6w1APk72QTsgMJEsMfuIjWmdQSpCJdESFK5ONzf5E62yz2+q6z+cvAJ1THY=
