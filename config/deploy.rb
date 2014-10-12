@@ -34,7 +34,7 @@ set :deploy_to, '/home/travis/bookclubfiction'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :ssh_options, keys: ["config/deploy_id_rsa"] if File.exist?("config/deploy_id_rsa")
+set :ssh_options, keys: ["config/deploy_id_rsa"], forward_agent: true if File.exist?("config/deploy_id_rsa")
 
 set :rbenv_ruby, '2.1.3'
 
