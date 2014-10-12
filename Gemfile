@@ -55,3 +55,5 @@ gem 'capistrano-rbenv', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'simplecov', require: false, group: :test
