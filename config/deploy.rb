@@ -37,3 +37,7 @@ set :deploy_to, '/home/travis/bookclubfiction'
 set :ssh_options, keys: ["config/deploy_id_rsa"] if File.exist?("config/deploy_id_rsa")
 
 set :rbenv_ruby, '2.1.3'
+
+set :default_env, {
+  'DEVISE_SECRET' => 'devise_secret'
+}
