@@ -4,8 +4,8 @@ rvm:
 services:
   - mongodb
 after_success:
-  - "openssl aes-256-cbc -k '$DEPLOY_KEY' -in config/deploy_id_rsa_enc -d -a -out config/deploy_id_rsa"
-  - "[[ $TRAVIS_BRANCH = 'master' ]] && bundle exec cap deploy"
+  - "openssl aes-256-cbc -k \"$DEPLOY_KEY\" -in config/deploy_id_rsa_enc -d -a -out config/deploy_id_rsa"
+  - "[[ $TRAVIS_BRANCH = 'master' ]] && bundle exec cap production deploy"
 env:
   global:
     secure: RrkoI7jrKncD7MYBCOG5XXboFfUeKZ53t8E1q/5zYza5Q/0hIVozPxT7bD19YjXD0RVxjC8AknuO44i+z/Uz3ZQ9CiA29Ul81bQWEvuoIQPcLPP3wA1bIt1ueuNOfN18TRhye0ylDX/lHonfysxWV2vbiWBZBQJPUApDoLcS8rU=
