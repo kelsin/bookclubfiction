@@ -5,7 +5,7 @@
     <%= stylesheet_link_tag \
        "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css",
        "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css",
-       "//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Open+Sans+Condensed:700",
+       "//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Open+Sans+Condensed:700|Cutive+Mono",
        "application", media: "all" %>
     <%= javascript_include_tag \
       "//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js",
@@ -16,33 +16,36 @@
     <%= csrf_meta_tags %>
   </head>
   <body ng-app="BookClubFiction">
+    <div class="bcf-head group">
+      <div class="container-fluid">
+        <h1>Book Club Fiction</h1>
+
+        <div id="user" ng-controller="ProfileController">
+          <nav>
+            <ul>
+              <% if user_signed_in? %>
+              <li class="user"><%= user_image(current_user) %> Hello, {{ profile.name }}!</li>
+              <li class="votes">Extra Votes: {{ profile.extraVotes }}</li>
+              <li class="club-link"><%= link_to 'BCF on GoodReads', 'https://www.goodreads.com/group/show/88207-bookclubfiction' %></li>
+              <li class="logout"><%= link_to 'Logout', logout_path, :method => :delete, :class => 'btn btn-default' %></li>
+              <% else %>
+              <li class="login"><%= link_to 'Login', user_omniauth_authorize_url(:provider => :goodreads), :class => 'btn btn-primary' %></li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
     <div class="container-fluid">
     <% flash.each do |name, msg| %>
       <% if msg.is_a?(String) %>
           <div class="alert alert-<%= name == :notice ? "danger" : "success" %>">
             <a class="close" data-dismiss="alert">&#215;</a>
             <%= content_tag :div, msg, :id => "flash_#{name}" %>
-          </div>
+          
       <% end %>
     <% end %>
-
-    <h1>Book Club Fiction</h1>
-
-    <div id="user" ng-controller="ProfileController">
-      <nav>
-        <ul>
-          <% if user_signed_in? %>
-          <li><%= user_image(current_user) %></li>
-          <li>Hello, {{ profile.name }}</li>
-          <li>Extra Votes: {{ profile.extraVotes }}</li>
-          <li><%= link_to 'Back to GoodReads', 'https://www.goodreads.com/group/show/88207-bookclubfiction' %></li>
-          <li><%= link_to 'Logout', logout_path, :method => :delete %></li>
-          <% else %>
-          <li><%= link_to 'Login', user_omniauth_authorize_url(:provider => :goodreads) %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </div>
+    
 
     <div ng-view>
       <%= yield %>
@@ -59,6 +62,7 @@
             </ul>
         </nav>
     </footer>
+  </div>
   </div>
   </body>
 </html>

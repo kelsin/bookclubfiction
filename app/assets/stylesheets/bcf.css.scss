@@ -5,6 +5,8 @@ $lightgreen: #e1faeb;
 $red: #b61313;
 $lightred: #f8cfcf;
 
+.container-fluid { max-width: 1200px; }
+
 .btn-primary { background: $green; border-color: darken($green, 5%); 
   &.disabled { background-color: lighten($green, 10% ); border-color: $green; }
 }
@@ -13,9 +15,21 @@ $lightred: #f8cfcf;
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-top: 0; }
+ 
+.bcf-head { padding: 1em 0; background: #f1f1f1;
+  h1 { font-size: 50px; font-family: 'Cutive Mono'; margin: 0;  float: left; }
+  #user { float: right; font-size: 12px; 
+    ul { margin: 0; padding: 0; list-style: none outside; }
+    li { display: inline-block; margin-right: 2em; }
+    li:last-child { margin: 0; }
+  }
+  .profile-img { max-width: 75px; }
+  .btn { font-size: 12px; }
+
+}
 
 #header { 
-  h1 { margin: 0; }
+  h1 { margin: 0;}
   h2 { text-transform: uppercase; }
 }
 

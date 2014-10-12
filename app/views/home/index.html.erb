@@ -28,7 +28,7 @@
             
         <div id="myNominations" class="my-nominations">
             <div class="alert alert-info" ng-show="nominations.isEmpty() && nominations.size() <= 3"><p>You've chosen <strong>{{ nominations.size() }}/3</strong> of your available nominations. Search for books to add some!</p></div>
-            <div class="alert alert-info" ng-hide="nominations.isEmpty()"><p>You've used <strong>{{ nominations.size() }}/3</strong> of your available nominations. Come back on Thursday to start seconding books!</p></div>
+            <div class="alert alert-info" ng-hide="nominations.isEmpty() || nominations.size() > 3"><p>You've used <strong>{{ nominations.size() }}/3</strong> of your available nominations. Come back on Thursday to start seconding books!</p></div>
             <div class="alert alert-danger" ng-show="nominations.size() > 3"><p>You've chosen <strong>{{ nominations.size() }}/3</strong> of your available nominations. Remove some nominations to be able to lock them in.</p></div>
             <div class="nominations-wrap valid">
                 <h3>My Nominations</h3>
@@ -44,12 +44,12 @@
                     </li>
                 </ul>
                 <div class="nominations-actions group">
-                    <a class="btn btn-primary" href="#">Save Nominations</a>
+                    <a class="btn btn-primary" ng-class="{ disabled: nominations.books.length === 0 }" href="#">Save Nominations</a>
                     <p>Your nominations have been saved.</p>
                     <p>Save your nominations to lock them in!</p>
                 </div>
             </div>
-            <div class="nominations-wrap invalid">
+            <div class="nominations-wrap invalid" ng-show="nominations.size() > 3">
                 <p>You've entered in these books, but because you are over the cap of 3, they won't be nominated. Delete books from the "My Nominations" list or Promote one of these books in order to add them to your list. Promoting a book will kick the 3rd book in the nominations book into this pool.</p>
                 <ul class="nominations group">
                     <li ng-repeat="book in nominations.books.slice(3)">
