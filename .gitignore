@@ -21,3 +21,6 @@
 # Sublime
 *.sublime*
 sftp-config.json
+
+# SSH Deploy Key
+/config/deploy_id_rsa

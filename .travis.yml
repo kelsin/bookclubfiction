@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - "2.1.3"
+services:
+  - mongodb
+after_success:
+  - "openssl aes-256-cbc -k $DEPLOY_KEY -in config/deploy_id_rsa_enc -d -a -out config/deploy_id_rsa"
+  - "[[ $TRAVIS_BRANCH = 'master' ]] && bundle exec cap production deploy"
+env:
+  secure: "RAYbRUNQIr9sITzGz6lVuDd8/6xd9EICsuzprWY20tdyhtxhfJ8CQ/3UbT/ml7Fcgqds65cgefUb6+RfKWRZr5Pefv/9cTqt4vGqUlrpPEx6IxHjltn5suqLHT0KIVcQmTvozTGNErwZxsrQeMtJflRy4Bg4UOShuuoza41jBcE="

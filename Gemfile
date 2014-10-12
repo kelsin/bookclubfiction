@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -45,14 +45,13 @@ gem 'goodreads', '~> 0.3.0'
 gem 'rest_client'
 gem 'xml-simple'
 
-# Use thin as the app server
-gem 'thin'
-
 # Use rspec for testing
 gem 'rspec-rails', group: [:development, :test]
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
+gem 'capistrano-passenger', group: :development
+gem 'capistrano-rbenv', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
