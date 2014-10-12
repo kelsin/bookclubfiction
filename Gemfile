@@ -57,3 +57,6 @@ gem 'capistrano-rbenv', group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'simplecov', require: false, group: :test
+gem 'capybara', group: :test
+gem 'cucumber-rails', require: false, group: :test
+gem 'database_cleaner', group: :test
