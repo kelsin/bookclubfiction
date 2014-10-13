@@ -65,7 +65,7 @@ app.controller('NominationsController', ['$scope', 'search', '$interval', 'nomin
     });
 }]);
 
-app.factory('profile', function($http){
+app.factory('profile', ['$http', function($http){
   var profile = { user: {} };
 
   $http.get('/profile').
@@ -77,7 +77,7 @@ app.factory('profile', function($http){
     });
 
   return profile;
-});
+}]);
 
 app.factory('search', ['$http', function($http){
 
