@@ -51,6 +51,7 @@ RSpec.configure do |config|
   config.backtrace_exclusion_patterns = []
 
   config.include Devise::TestHelpers, :type => :controller
+  config.include JsonSpec::Helpers
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation

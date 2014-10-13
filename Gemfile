@@ -51,6 +51,9 @@ gem 'xml-simple'
 # Use rspec for testing
 gem 'rspec-rails', group: [:development, :test]
 
+# Easily test json responses
+gem 'json_spec'
+
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 gem 'capistrano-passenger', group: :development

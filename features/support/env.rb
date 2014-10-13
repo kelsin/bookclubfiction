@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require "json_spec/cucumber"
 
 require 'simplecov'
 SimpleCov.coverage_dir 'coverage/features'
@@ -50,3 +51,29 @@ ActionController::Base.allow_rescue = false
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+def last_json
+  page.source
+end
+
+OmniAuth.config.test_mode = true
+
+# the symbol passed to mock_auth is the same as the name of the provider set up in the initializer
+goodreads = Hashie::Mash.new
+goodreads.provider = 'goodreads'
+goodreads.uid = '12345'
+
+info = Hashie::Mash.new
+info.email = 'test@test.com'
+info.first_name = 'Test'
+info.last_name = 'User'
+info.name = 'Test User'
+info.image = 'image'
+goodreads.info = info
+
+cred = Hashie::Mash.new
+cred.token = 'token'
+cred.secret = 'secret'
+goodreads.credentials = cred
+
+OmniAuth.config.mock_auth[:goodreads] = goodreads
