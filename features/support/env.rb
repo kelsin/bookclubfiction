@@ -5,8 +5,6 @@
 # files.
 
 require 'cucumber/rails'
-
-require 'coveralls'
 require 'simplecov'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
