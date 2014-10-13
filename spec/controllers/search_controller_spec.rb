@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe SearchController, :type => :controller do
-  before(:each) do
+  before :each do
     @user = User.create(:uid => 5)
   end
 
-  describe('while logged in') do
-    before(:each) do
+  describe 'while logged in' do
+    before :each do
       sign_in @user
     end
 
-    describe('#seach') do
+    describe '#seach' do
       it 'responds with success' do
         client = double("client")
         expect(client).to receive(:search_books).and_return('results')

@@ -24,8 +24,8 @@
           <nav>
             <ul>
               <% if user_signed_in? %>
-              <li class="user"><%= user_image(current_user) %> Hello, {{ profile.name }}!</li>
-              <li class="votes">Extra Votes: {{ profile.extraVotes }}</li>
+              <li class="user"><img ng-src="{{ profile.user.image }}" class="profile-img"> Hello, {{ profile.user.name }}!</li>
+              <li class="votes">Extra Votes: {{ profile.user.extra_votes }}</li>
               <li class="club-link"><%= link_to 'BCF on GoodReads', 'https://www.goodreads.com/group/show/88207-bookclubfiction' %></li>
               <li class="logout"><%= link_to 'Logout', logout_path, :method => :delete, :class => 'btn btn-default' %></li>
               <% else %>

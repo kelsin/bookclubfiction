@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   get '/search/:q', to: 'search#search', as: :search, defaults: { :format => :json }
 
+  resource :profile, defaults: { :format => :json }
+
   root 'home#index'
 end
