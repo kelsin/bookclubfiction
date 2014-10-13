@@ -80,10 +80,12 @@ class User
       end
     end
 
-    group = client.group("88207-bookclubfiction")
-    group.moderators.group_user.each do |u|
-      if u.user.id == uid
-        self.admin = true
+    if self.member
+      group = client.group("88207-bookclubfiction")
+      group.moderators.group_user.each do |u|
+        if u.user.id == uid
+          self.admin = true
+        end
       end
     end
   end

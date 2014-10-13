@@ -1,5 +1,6 @@
 require 'capybara/rspec'
 
+require 'devise'
 require 'simplecov'
 require 'coveralls'
 
@@ -46,6 +47,8 @@ RSpec.configure do |config|
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
+
+  config.include Devise::TestHelpers, :type => :controller
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
@@ -102,3 +105,6 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+require 'omniauth'
+OmniAuth.config.test_mode = true
