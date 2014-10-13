@@ -18,6 +18,9 @@ gem 'therubyracer',  platforms: :ruby
 gem 'mongo_mapper'
 gem 'bson_ext'
 
+# Use ng-annotate
+gem 'ngannotate-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
