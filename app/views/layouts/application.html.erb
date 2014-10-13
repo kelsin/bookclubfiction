@@ -37,32 +37,29 @@
       </div>
     </div>
     <div class="container-fluid">
-    <% flash.each do |name, msg| %>
-      <% if msg.is_a?(String) %>
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
           <div class="alert alert-<%= name == :notice ? "danger" : "success" %>">
             <a class="close" data-dismiss="alert">&#215;</a>
             <%= content_tag :div, msg, :id => "flash_#{name}" %>
-          
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-    
 
-    <div ng-view>
-      <%= yield %>
-    </div>
+      <div ng-view>
+        <%= yield %>
+      </div>
 
-
-    <footer id="footer" class="group">
+      <footer id="footer" class="group">
         <nav>
-            <ul>
-                <li><a href="#">Nominations</a></li>
-                <li><a href="#">Book Club Fiction on Goodreads</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li class="bug"><a href="#"><span class="fa fa-bug"></span>Found a bug? Let us know</a></li>
-            </ul>
+          <ul>
+            <li><a href="#">Nominations</a></li>
+            <li><a href="#">Book Club Fiction on Goodreads</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li class="bug"><a href="#"><span class="fa fa-bug"></span>Found a bug? Let us know</a></li>
+          </ul>
         </nav>
-    </footer>
-  </div>
-  </div>
+      </footer>
+    </div>
   </body>
 </html>
