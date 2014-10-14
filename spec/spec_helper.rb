@@ -54,9 +54,11 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers
   config.include JsonSpec::Helpers
   config.include Rack::Test::Methods
+  config.include FactoryGirl::Syntax::Methods
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
+    FactoryGirl.lint
   end
 
   config.around(:each) do |example|

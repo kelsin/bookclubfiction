@@ -70,6 +70,11 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.2.1)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     ffi (1.9.6)
     formatador (0.2.5)
     goodreads (0.3.0)
@@ -258,6 +263,7 @@ DEPENDENCIES
   coveralls
   database_cleaner
   devise
+  factory_girl_rails
   goodreads (~> 0.3.0)
   guard-rspec
   jbuilder (~> 2.0)

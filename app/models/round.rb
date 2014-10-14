@@ -39,6 +39,30 @@ class Round
     self.created_at
   end
 
+  def nominated?
+    !!self.seconding_at
+  end
+
+  def seconding?
+    self.state == 'seconding'
+  end
+
+  def seconded?
+    !!self.reading_at
+  end
+
+  def reading?
+    self.state == 'reading'
+  end
+
+  def read?
+    !!self.closed_at
+  end
+
+  def closed?
+    self.state == 'closed'
+  end
+
   # Query helpers
   def self.current
     Round.first(:order => :created_at.desc)

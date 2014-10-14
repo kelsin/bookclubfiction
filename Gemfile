@@ -59,13 +59,20 @@ gem 'capistrano-rbenv', group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Code Coverage
 gem 'simplecov', require: false, group: :test
-gem 'database_cleaner', group: :test
 gem 'coveralls', require: false, group: :test
-gem 'rack-test', group: :test, require: "rack/test"
 
+# Database Cleaning
+gem 'database_cleaner', group: :test
+
+# API Testing
+gem 'rack-test', group: :test, require: "rack/test"
+gem 'json_spec', group: [:development, :test]
+
+# Guard
 gem 'guard-rspec', require: false, group: [:development, :test]
 gem 'rb-readline', group: [:development, :test]
 
-# Easily test json responses
-gem 'json_spec'
+# Factories
+gem 'factory_girl_rails', group: [:development, :test]
