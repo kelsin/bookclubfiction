@@ -19,3 +19,21 @@ Feature: Status API
     Given a logged in user
     When I request "/status"
     Then the JSON should not have "current"
+
+  Scenario: With a nominating round
+    Given a logged in user
+    And a round in the "nominating" state
+    When I request "/status"
+    Then the JSON at "current/state" should be "nominating"
+
+  Scenario: With a seconding round
+    Given a logged in user
+    And a round in the "seconding" state
+    When I request "/status"
+    Then the JSON at "current/state" should be "seconding"
+
+  Scenario: With a reading round
+    Given a logged in user
+    And a round in the "reading" state
+    When I request "/status"
+    Then the JSON at "current/state" should be "reading"

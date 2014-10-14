@@ -3,6 +3,7 @@ require 'capybara/rspec'
 require 'devise'
 require 'simplecov'
 require 'coveralls'
+require 'json_spec'
 
 SimpleCov.coverage_dir 'coverage/spec'
 SimpleCov.formatter SimpleCov::Formatter::MultiFormatter[SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]

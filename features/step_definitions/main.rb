@@ -6,3 +6,7 @@ end
 When(/^I request "(.*?)"$/) do |path|
   visit(path)
 end
+
+Given(/^a round in the "(.*?)" state$/) do |state|
+  @round = Round.create(:state => state)
+end
