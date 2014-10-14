@@ -34,6 +34,10 @@ class User
 
   key :extra_votes, Integer, :default => 0
 
+  Nomination.ensure_index [[:uid, 1], [:provider, 1]], :unique => true
+  Nomination.ensure_index [[:admin, 1], [:name, 1]]
+  Nomination.ensure_index [[:member, 1], [:name, 1]]
+
   def self.find_for_goodreads(auth)
     user = User.find_or_create_by_provider_and_uid(auth.provider, auth.uid.to_i)
 
