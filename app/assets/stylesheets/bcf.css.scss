@@ -13,18 +13,18 @@ $lightred: #f8cfcf;
 
 .container-fluid { max-width: 1200px; }
 
-.btn-primary { background: $green; border-color: darken($green, 5%); 
+.btn-primary { background: $green; border-color: darken($green, 5%);
   &.disabled { background-color: lighten($green, 10% ); border-color: $green; }
 }
-.btn-primary:hover { background: darken($green, 10%); border-color: darken($green, 15%); 
+.btn-primary:hover { background: darken($green, 10%); border-color: darken($green, 15%);
   &.disabled { background-color: lighten($green, 10% ); border-color: $green; }
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-top: 0; }
- 
+
 .bcf-head { padding: 1em 0; background: #f1f1f1;
   h1 { font-size: 50px; font-family: 'Cutive Mono'; margin: 0;  float: left; }
-  #user { float: right; font-size: 12px; 
+  #user { float: right; font-size: 12px;
     ul { margin: 0; padding: 0; list-style: none outside; }
     li { display: inline-block; margin-right: 2em; }
     li:last-child { margin: 0; }
@@ -34,16 +34,16 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-
 
 }
 
-#header { 
+#header {
   h1 { margin: 0;}
   h2 { text-transform: uppercase; }
 }
 
-.chart { margin: 0; padding: 0; list-style: none outside; 
+.chart { margin: 0; padding: 0; list-style: none outside;
   li { background: $green; margin: 0 0 5px 0; height: 30px; }
 }
 
-#searchWrapper { 
+#searchWrapper {
   form { float: left; }
   .no-results { float: left; margin-left: 2em; }
 }
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-
   span { display: block; margin-left: 65px; }
   .book-author { font-style: italic; font-size: 12px; }
   ul { list-style: none outside; margin: 0; padding: 0; }
-  li { padding: 0.5em; cursor: pointer; 
+  li { padding: 0.5em; cursor: pointer;
     &:after { content: ""; display: table; clear: both; }
     &:hover { background: #fff; }
     &:last-child { margin: 0; }
@@ -71,17 +71,17 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-
   }
 }
 
-.nominations { list-style: none outside; padding: 0; margin: 0; font-size: 13px; 
+.nominations { list-style: none outside; padding: 0; margin: 0; font-size: 13px;
   &.valid { background: transparent; }
   .remove-nomination { cursor: pointer; font-size: 20px; color: #333; background: #fff; position: absolute; right: -4px; top: -4px; border-radius: 30px; z-index: 5; text-decoration: none; padding: 3px 5px 5px; height: 30px; width: 30px; text-align: center; border: 2px solid #d2d2d2; line-height: 1; }
   .promote-nomination { cursor: pointer; font-size: 20px; color: #333; background: #fff; position: absolute; left: -4px; top: -4px; border-radius: 30px; z-index: 5; text-decoration: none; padding: 3px 5px 5px; height: 30px; width: 30px; text-align: center; border: 2px solid #d2d2d2; line-height: 1; }
-  .book a { color: #121212; text-decoration: none; display: block; margin: 0 0 7px; border: 2px solid #dadada; -webkit-transition: all ease-out 0.1s; -moz-transition: all ease-out 0.1s; -o-transition: all ease-out 0.1s; transition: all ease-out 0.1s; cursor: pointer; 
+  .book a { color: #121212; text-decoration: none; display: block; margin: 0 0 7px; border: 2px solid #dadada; -webkit-transition: all ease-out 0.1s; -moz-transition: all ease-out 0.1s; -o-transition: all ease-out 0.1s; transition: all ease-out 0.1s; cursor: pointer;
     &:before { opacity: 0; content: 'Seconded'; font-size: 10px; background: $green; color: #fff; position: absolute; width: 98px; text-align: center; text-transform: uppercase; padding: 5px; line-height: 1;}
   }
   li { float: left; padding: 10px; width: 118px; position: relative; }
   img { display: block; max-width: 100%; }
   .seconded {
-    a { border: 2px solid $green; position: relative; 
+    a { border: 2px solid $green; position: relative;
       &:before { opacity: 1;   }
     }
     .plus { display: block; }
@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-
 }
 
 .nominations-actions {
-  clear: both; 
+  clear: both;
   .btn { float: left; }
   > p { font-size: 0.8em; float: left; line-height: 34px; margin: 0 0 0 2em; }
 }
@@ -99,19 +99,19 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-
   .plus:hover, .nominations .plus-one .plus { background: $green; }
 }
 
-.help { font-size: 10px; background: #ccc; vertical-align: super; display: inline-block; padding: 0 7px; cursor: pointer; 
-  &:hover { position: relative; 
+.help { font-size: 10px; background: #ccc; vertical-align: super; display: inline-block; padding: 0 7px; cursor: pointer;
+  &:hover { position: relative;
     .hint { display: block; background: #dadada; }
   }
 }
 
 .hint { font-size: 12px;  display: none; position: absolute; left: 20px; width: 200px; padding: 1em; }
 
-#footer { clear: both; font-size: 12px; text-transform: uppercase; background: #f1f1f1; padding: 10px; 
+#footer { clear: both; font-size: 12px; text-transform: uppercase; background: #f1f1f1; padding: 10px;
   ul { list-style: none outside; margin: 0; padding: 0; }
-  li { float: left;padding: 0 10px; border-left: 1px solid #ccc; 
+  li { float: left;padding: 0 10px; border-left: 1px solid #ccc;
     &:first-child { border: none; }
-    &.bug { float: right; margin: 0; border: none; 
+    &.bug { float: right; margin: 0; border: none;
       span { margin-right: 6px; }
     }
   }

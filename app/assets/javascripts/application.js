@@ -11,5 +11,3 @@
 // about supported directives.
 //
 //= require_tree .
-
-var app = angular.module('bookclubfiction', []);
