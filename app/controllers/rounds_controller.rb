@@ -5,4 +5,7 @@ class RoundsController < ApplicationController
   def create
     @round = Round.create
   end
+
+  def show
+  end
 end

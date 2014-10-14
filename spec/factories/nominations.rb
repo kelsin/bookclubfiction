@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :nomination do
     association :user, :factory => :member
-    round
+    association :round, :factory => :seconding_round
     book
 
     factory :nomination_with_votes do
