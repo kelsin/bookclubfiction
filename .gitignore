@@ -23,4 +23,8 @@
 sftp-config.json
 
 # SSH Deploy Key
+/deploy_id_rsa
 /config/deploy_id_rsa
+
+# Coverage
+coverage

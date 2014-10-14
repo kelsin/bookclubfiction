@@ -1,14 +1,14 @@
 var app = angular.module('BookClubFiction', []);
 
 app.controller('ProfileController', ['$scope', 'profile', function($scope, profile){
-	$scope.profile = profile;
+  $scope.profile = profile;
 }]);
 
 app.controller('SecondingController', ['$scope', 'profile', 'seconding', 'voting', function($scope, profile, seconding, voting){
     $scope.profile = profile;
     $scope.seconding = seconding;
     $scope.voting = voting;
-    
+
     $scope.classes = function(bookId){
         var c = [];
         if(voting.votedOn(bookId)){
@@ -19,7 +19,7 @@ app.controller('SecondingController', ['$scope', 'profile', 'seconding', 'voting
         }
         return c;
     };
-    
+
     $scope.votingSort = function(book){
         return voting.votes(book.id) * -1;
     };
@@ -65,13 +65,19 @@ app.controller('NominationsController', ['$scope', 'search', '$interval', 'nomin
     });
 }]);
 
-app.factory('profile', function(){
-    return {
-        name: 'Caitlin',
-        extraVotes: 5,
-        uid: 2508813
-    };
-});
+app.factory('profile', ['$http', function($http){
+  var profile = { user: {} };
+
+  $http.get('/profile').
+    success(function(data) {
+      profile.user = data;
+    }).
+    error(function() {
+      console.log("Error loading profile");
+    });
+
+  return profile;
+}]);
 
 app.factory('search', ['$http', function($http){
 

@@ -18,6 +18,9 @@ gem 'therubyracer',  platforms: :ruby
 gem 'mongo_mapper'
 gem 'bson_ext'
 
+# Use ng-annotate
+gem 'ngannotate-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -48,6 +51,9 @@ gem 'xml-simple'
 # Use rspec for testing
 gem 'rspec-rails', group: [:development, :test]
 
+# Easily test json responses
+gem 'json_spec'
+
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 gem 'capistrano-passenger', group: :development
@@ -55,3 +61,11 @@ gem 'capistrano-rbenv', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'simplecov', require: false, group: :test
+gem 'capybara', group: :test
+gem 'cucumber-rails', require: false, group: :test
+gem 'database_cleaner', group: :test
+gem 'coveralls', require: false, group: :test
+gem 'guard-rspec', require: false, group: [:development, :test]
+gem 'rb-readline', group: [:development, :test]

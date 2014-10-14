@@ -26,7 +26,7 @@ set :deploy_to, '/home/travis/bookclubfiction'
 # set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -34,7 +34,7 @@ set :deploy_to, '/home/travis/bookclubfiction'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :ssh_options, keys: ["config/deploy_id_rsa"] if File.exist?("config/deploy_id_rsa")
+set :ssh_options, keys: ["config/deploy_id_rsa"], forward_agent: true if File.exist?("config/deploy_id_rsa")
 
 set :rbenv_ruby, '2.1.3'
 

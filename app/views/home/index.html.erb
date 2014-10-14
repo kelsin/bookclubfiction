@@ -3,7 +3,7 @@
 <div id="header" class="page-header">
         <h1>Nominations <small>Genre: Horror</small></h1>
     </div>
-    
+
     <div id="nominate" ng-controller="NominationsController">
         <div id="searchContainer" class="group">
             <label class="search-label" for="search">Search for a book</label>
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-            
+
         <div id="myNominations" class="my-nominations">
             <div class="alert alert-info" ng-show="nominations.isEmpty() && nominations.size() <= 3"><p>You've chosen <strong>{{ nominations.size() }}/3</strong> of your available nominations. Search for books to add some!</p></div>
             <div class="alert alert-info" ng-hide="nominations.isEmpty() || nominations.size() > 3"><p>You've used <strong>{{ nominations.size() }}/3</strong> of your available nominations. Come back on Thursday to start seconding books!</p></div>
@@ -64,16 +64,16 @@
                     </li>
                 </ul>
             </div>
-            
+
         </div>
     </div>
-    
+
     <div style="clear:both;"></div>
-    
+
     <div id="results">
     <p>Nominations will close Thursday, and then you will be able to second the books that anyone else has nominated.</p>
     </div>
-    
+
     <h3>The Nominations</h3>
     <p>These are the books that have already been nominated by other members.</p>
 

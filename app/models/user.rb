@@ -32,6 +32,8 @@ class User
   key :member, Boolean, :default => false
   key :admin, Boolean, :default => false
 
+  key :extra_votes, Integer, :default => 0
+
   def self.find_for_goodreads(auth)
     user = User.find_or_create_by_provider_and_uid(auth.provider, auth.uid.to_i)
 
@@ -80,10 +82,12 @@ class User
       end
     end
 
-    group = client.group("88207-bookclubfiction")
-    group.moderators.group_user.each do |u|
-      if u.user.id == uid
-        self.admin = true
+    if self.member
+      group = client.group("88207-bookclubfiction")
+      group.moderators.group_user.each do |u|
+        if u.user.id == uid
+          self.admin = true
+        end
       end
     end
   end
