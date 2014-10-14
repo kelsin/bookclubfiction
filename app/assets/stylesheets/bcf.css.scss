@@ -5,6 +5,12 @@ $lightgreen: #e1faeb;
 $red: #b61313;
 $lightred: #f8cfcf;
 
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .container-fluid { max-width: 1200px; }
 
 .btn-primary { background: $green; border-color: darken($green, 5%); 
