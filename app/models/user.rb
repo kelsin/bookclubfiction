@@ -34,6 +34,11 @@ class User
 
   key :extra_votes, Integer, :default => 0
 
+  # Scopes
+  scope :members, where(:member => true)
+  scope :admins, where(:admin => true)
+
+  # Nominations
   Nomination.ensure_index [[:uid, 1], [:provider, 1]], :unique => true
   Nomination.ensure_index [[:admin, 1], [:name, 1]]
   Nomination.ensure_index [[:member, 1], [:name, 1]]

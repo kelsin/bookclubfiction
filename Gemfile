@@ -51,9 +51,6 @@ gem 'xml-simple'
 # Use rspec for testing
 gem 'rspec-rails', group: [:development, :test]
 
-# Easily test json responses
-gem 'json_spec'
-
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 gem 'capistrano-passenger', group: :development
@@ -63,9 +60,12 @@ gem 'capistrano-rbenv', group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'simplecov', require: false, group: :test
-gem 'capybara', group: :test
-gem 'cucumber-rails', require: false, group: :test
 gem 'database_cleaner', group: :test
 gem 'coveralls', require: false, group: :test
+gem 'rack-test', group: :test, require: "rack/test"
+
 gem 'guard-rspec', require: false, group: [:development, :test]
 gem 'rb-readline', group: [:development, :test]
+
+# Easily test json responses
+gem 'json_spec'

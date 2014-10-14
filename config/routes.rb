@@ -7,10 +7,15 @@ Rails.application.routes.draw do
 
   get 'sign_in', to: 'home#index', as: :new_session
 
-  get '/search/:q', to: 'search#search', as: :search, defaults: { :format => :json }
-
-  resource :profile, defaults: { :format => :json }
   resource :status, defaults: { :format => :json }
+
+  authenticate :user do
+    get '/search/:q', to: 'search#search', as: :search, defaults: { :format => :json }
+    resources :rounds, defaults: { :format => :json } do
+      resources :nominations, defaults: { :format => :json }
+      resources :votes, defaults: { :format => :json }
+    end
+  end
 
   root 'home#index'
 end

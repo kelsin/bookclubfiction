@@ -1,9 +1,9 @@
-require 'capybara/rspec'
-
 require 'devise'
 require 'simplecov'
 require 'coveralls'
 require 'json_spec'
+require "cancan/matchers"
+require 'omniauth'
 
 SimpleCov.coverage_dir 'coverage/spec'
 SimpleCov.formatter SimpleCov::Formatter::MultiFormatter[SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
@@ -51,8 +51,9 @@ RSpec.configure do |config|
 
   config.backtrace_exclusion_patterns = []
 
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers
   config.include JsonSpec::Helpers
+  config.include Rack::Test::Methods
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
@@ -110,5 +111,4 @@ RSpec.configure do |config|
 =end
 end
 
-require 'omniauth'
 OmniAuth.config.test_mode = true
