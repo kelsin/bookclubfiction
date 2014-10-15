@@ -23,17 +23,19 @@ OmniAuth.config.test_mode = true
 
 module Helpers
   def sign_in(factory)
-    @user = FactoryGirl.create(factory)
-    OmniAuth.config.add_mock(:goodreads,
-                             {
-                               :uid => @user.uid,
-                               :credentials => {
-                                 :token => 'token',
-                                 :secret => 'secret'
-                               }
-                             })
-    get '/users/auth/goodreads'
-    follow_redirect!
+    VCR.use_cassette("user_#{factory}", :record => :new_episodes) do
+      @user = FactoryGirl.create(factory)
+      OmniAuth.config.add_mock(:goodreads,
+                               {
+                                 :uid => @user.uid,
+                                 :credentials => {
+                                   :token => 'token',
+                                   :secret => 'secret'
+                                 }
+                               })
+      get '/users/auth/goodreads'
+      follow_redirect!
+    end
   end
 end
 

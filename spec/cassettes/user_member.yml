@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Oct 2014 02:51:41 GMT
+      - Wed, 15 Oct 2014 03:53:48 GMT
       Server:
       - Server
       Content-Type:
@@ -27,20 +27,20 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 1RW225PREF6784F9C34E
+      - 0472GT7Y59CYE651D2GE
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.180523'
+      - '0.114912'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=c1a930c70c2b09f4a9a9c81c0ceca0bd; path=/; expires=Wed, 15-Oct-2014
-        08:51:41 GMT; HttpOnly
-      - csid=BAhJIhg3MzQtNzM2NDk0NS02MDE2NTgyBjoGRVQ%3D--5b32752583d796ca84fb8f48545b7b7618ee4a15;
-        path=/; expires=Sun, 15-Oct-2034 02:51:40 GMT
+      - _session_id2=07d9ce2a9e9144a5e6bb334fcc0a911e; path=/; expires=Wed, 15-Oct-2014
+        09:53:48 GMT; HttpOnly
+      - csid=BAhJIhg2MzktMzM2MjQ5NS00NDk4MTI4BjoGRVQ%3D--34767292c30fd9eb0f7ee591768517919b142060;
+        path=/; expires=Sun, 15-Oct-2034 03:53:48 GMT
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -64,7 +64,7 @@ http_interactions:
         /8g4TONJkCfI2El8JuOLviXzTlvGQTad5NMw+W+MnY7Rcj+ogz2ytNG5J5jt
         nv0f7dHjd4/h03/XT4OlJ232BAAA
     http_version: 
-  recorded_at: Wed, 15 Oct 2014 02:51:41 GMT
+  recorded_at: Wed, 15 Oct 2014 03:53:48 GMT
 - request:
     method: get
     uri: http://www.goodreads.com/group/show?format=xml&id=88207-bookclubfiction&key=k9vUJiUZNuWLZrttVh9KeA
@@ -84,7 +84,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Oct 2014 02:51:41 GMT
+      - Wed, 15 Oct 2014 03:53:49 GMT
       Server:
       - Server
       Content-Type:
@@ -92,20 +92,20 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 1ZPHBKXHVN9QVPAA3AWJ
+      - 1PBHEN8QKP01KDFCNZEH
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.330745'
+      - '0.292049'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=b6643298eb6f2092aeaa57a44b19c5aa; path=/; expires=Wed, 15-Oct-2014
-        08:51:41 GMT; HttpOnly
-      - csid=BAhJIhgyNzEtNTk5NTA2My0zODA2NjYyBjoGRVQ%3D--bfb2c21fa2b3ab225c31d2a7c9007743bbe81f48;
-        path=/; expires=Sun, 15-Oct-2034 02:51:41 GMT
+      - _session_id2=7b47e5ce8b49c15b34046f72e1dfce22; path=/; expires=Wed, 15-Oct-2014
+        09:53:49 GMT; HttpOnly
+      - csid=BAhJIhg4MTUtMDY5MTYwOC00NzMyMDIzBjoGRVQ%3D--ec8dda7be60d2a6af293c2b670ad2416bc17b25a;
+        path=/; expires=Sun, 15-Oct-2034 03:53:48 GMT
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -180,5 +180,5 @@ http_interactions:
         41OxcoKPJooFO5NljA9bcFT/7dMbZ0ZR4LQDIzJq/+4FN33Vaj7IvDqAHuzh
         hcDNb3H/B9EsbMrGKwAA
     http_version: 
-  recorded_at: Wed, 15 Oct 2014 02:51:41 GMT
+  recorded_at: Wed, 15 Oct 2014 03:53:49 GMT
 recorded_with: VCR 2.9.3

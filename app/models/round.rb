@@ -21,7 +21,7 @@ class Round
   validates :state, :inclusion => { :in => %w(nominating seconding reading closed) }
 
   # State Transitions
-  def pump
+  def progress
     case self.state
     when 'nominating'
       self.state = 'seconding'

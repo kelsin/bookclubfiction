@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Oct 2014 02:51:42 GMT
+      - Wed, 15 Oct 2014 03:53:49 GMT
       Server:
       - Server
       Content-Type:
@@ -27,20 +27,20 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 1BP9D8JBK4V22N73VGAE
+      - 0THAPX2WNTSQYXXSFR0Z
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.204225'
+      - '0.198848'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=63005516c40a1751a3ed652209f8dc68; path=/; expires=Wed, 15-Oct-2014
-        08:51:42 GMT; HttpOnly
-      - csid=BAhJIhg3NDYtOTg3Nzg2MC0xNzEwNzM4BjoGRVQ%3D--c61cea1d373a15ca89c8efe0051e3d517ae65803;
-        path=/; expires=Sun, 15-Oct-2034 02:51:42 GMT
+      - _session_id2=5f0fe6870cbc6b0bd5b343b309653906; path=/; expires=Wed, 15-Oct-2014
+        09:53:49 GMT; HttpOnly
+      - csid=BAhJIhg4NzItNzgyNDIwOS04NjU2ODE1BjoGRVQ%3D--cb50498f569406f9969102acbbbaae09c00a8455;
+        path=/; expires=Sun, 15-Oct-2034 03:53:49 GMT
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -49,37 +49,37 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA62YXXPiNhSG7/kVKhf9uBCW5G/X8Q6bNu2k2baTks3M7uxk
-        FFuAN8amlgzLv++RbAjNktYMXMWALJ/zvMfnvEr85suiQCtRy7wqL4Z0RIZI
-        lGmV5eXsYng3ucLB8E0yiH+pqqwWPJO3Qi6rUopkgFB8K/5uhFT6Gj7xRs1F
-        qfKUK9gsUXUjYuvFl2YlrH0SmyT+5uPlT+PJ+ONTuLq7zu8+/N7c33yolXo/
-        D38T40+fktjS69rdF0LNq+z5plldNcuHIpfKLOx+1lFZe2HFZpk00TZS1OZi
-        mtdSPZR8IZJLnqsiL9H34w2X8/yH2Nr7Ua/NM6Q2S3ExzEslZqIeJswlQUDt
-        2Mozs1vBt5vF1vP19oHtY7jZPbZ0CO03+vcle8gXfCYemrpI5kotI8vKRrMa
-        cymFkqO0Wpg7pEWZ6zDb9RldMqsLYPR5OYutf+0xaJ+QDPTuadWUKqEkttor
-        EyvgQlLxWoHWWukM/oLkqlK8MJctbVhqwIHykGUQMOK3+cY8TYWUybJ5LPIU
-        5G0/Dgxc+dA+KYTF+58HsQLKInlbVU+XRfN4lae6QmKr/RqesaMw2BXFKzxa
-        PS2qYbi+FzIAYuLTOKASAMH+bkYQDo9b5WrzwFXyrirRH6lC1EbUiewwsj2E
-        iU8IYoQ6nYL7NwwAWvm0lWe9Xo9m23fBCGQCsuS8Wrdx4EfIMoUsp9sszf0Q
-        V0cUdDCvwB5gm9rsCL6eD4EeAryDd1s9ilqh66rOePmdjCZzge7nQhSomqJJ
-        vhDmnemBX74ox7YyrbJazitVdcm75IvnYc6oE7hMTF1iT/2p41KPZczNQuKm
-        Pp+mPQWaNKIVyAGNIuZHtn82gTRnXBs2+LNhgyWGpoXXmg2uplgBGyiC/1fM
-        DpzwCMl897BiN6OfR+hdlQmZK9CrHvVS5WWT2L4UzHccYhMvgJfC1hEewfy6
-        KRALESURCSJyRuY6DlxggRddmvhz3Qexx0I7OAIxZT6D9Yfei/d8lpe8QFe8
-        VFxukG5ESHeik2g7hFLH80NN2wR7BG3TgqDCw8hhEbPPVuEmDrxq88XTNl/T
-        krDuSX24Qw0x6C96uvXq9g60rkPQ3/L0SQquzkTbdqlvuyR0gLYJsSftv5oS
-        jZe1bvhQ2G4YAfZzNXwTB37sEj0Os0tcArO5N2b2ylC9+ZYvK/njeC1ktRDn
-        gk1CsBthQAC2CbQn7Mm8QdcAnFFE/Yh5kRM+w4Y6+WocHzFdTRzQSHib6XG0
-        6RGkqUcCsHeHanpng9GVEJkW/qQOQgPmuG5g65qmfRHvzUdADA1kD/GJBobi
-        nbfB012CPaah6x5lYCiB2XmI732dKzh5oF/5SpzmD5kPXoQwJ9SjUIfXE++9
-        yNA1L5FNtP0gfkQ13qD1h1AVp1SwiQOv2xzxvM2xB10nZMd4DfpKQ965wz9r
-        sG8i3WgzCO4HXRVwFNLD0czEvtbwdRPihQH0RVeT16H3JK+Nn+kdTDtzPRn3
-        nDl0ypPI6zjwssvbGD1wfVOdtx6SvWcjJcz2X1r1Ol9xpY+6h85CVEt3qNR3
-        atzkStS83qDxmtcZus/LEo5SqDskPTf0U3WxPZ8Sm7q6p7d59BRGT1DjV0AY
-        09TJGTuOAYqLjgE0d2CA1y0D3B2h/rvVa0+j/wfRHbDgrA+XX/+/4h/1zhyi
-        6hAAAA==
+        H4sIAAAAAAAAA62YXXPiNhSG7/kVKhf9uBCW5G/X8Q6bNu2k2baTks3M7uww
+        ii3AG2NTS4bl3/dIBkKz0JqBqxiQ5XOe9/g9R4nffJkXaClqmVflVZ8OSB+J
+        Mq2yvJxe9R9GNzjov0l68S9VldWCZ/JeyEVVSpH0EIrvxd+NkEpfwyfeqJko
+        VZ5yBZslqm5EbL360qyEtc9incTffLz+aTgafnwOlw+3+cOH35vHuw+1Uu9n
+        4W9i+OlTElt6Xbv7XKhZlb3cNK2rZjEucqnMws3POiprL6zYLJMm2kaK2lxM
+        8lqqccnnIrnmuSryEn0/XHM5y3+Irb0f9do8Q2q9EFf9vFRiKup+wlwSBNSO
+        rTwzuxV8u1lsvVxvH9g+hpvdY0uH0H6jf1+wcT7nUzFu6iKZKbWILCsbTGvM
+        pRRKDtJqbu6QFmWuw2zXZ3TBrE0Ag8+LaWz9a49e+4Skp3dPq6ZUCSWx1V6Z
+        WAEXkorXCrTWSmfwFyRXleKFuWxpw1IDDpSHLIOAEb/NN+ZpKqRMFs1Tkacg
+        b/uxZ+DKcfukEBbvf+7FCiiL5G1VPV8XzdNNnuoKia32a3jGjkJvVxRHeLR6
+        WlTDcH0vZADExKdxQCUAgv3djCAcHrfM1XrMVfKuKtEfqULURtSJ7DCyPYSJ
+        TwhihDobBfdv6AG08nkrz2q1Gky374IRyARkyVm1auPAT5BlCllOtlma+yGu
+        DVHQwbwCe4BtarMT+Ho+BHoI8A7effUkaoVuqzrj5XcyGs0EepwJUaBqgkb5
+        XJh3pgN++aoc28q0ymoxq1S1Sd4lXzwPc0adwGVi4hJ74k8cl3osY24WEjf1
+        +STtKNCoEa1ADmgUMT+y/YsJpDnj2rDBnw0bLDGYFl5pNriaYAVsoAj+XzE7
+        cMITJPPdw4rdDX4eoHdVJmSuQK960EmV1yaxfSmY7zjEJl4AL4WtIzyB+W1T
+        IBYiSiISROSCzHUcuMACzzdp4s91F8QeC+3gBMSU+QwkOfRevOfTvOQFuuGl
+        4nKNtBEh7URn0XYIpY7nh5q2CfYE2saCHPCcyLYjh1yswk0ceNnmiydtvsaS
+        sPakLtyhhhj4i+5undzeAes6BP0tT5+l4OpCtG2X+rZLQgdomxA70v6rKdFw
+        UWvDh8J2wwiwX8rwTRz4aZPoaZhd4hLozZ0xsyNN9e5bvqjkj8OVkNVcXAo2
+        CWHcCAMCsE2gHWGPZg26BeCMIupHzIuc8AU21MlX7fiE7mriACPhbaan0aYn
+        kKYeCWC8O1TTuzEY3QiRaeHPchAaMMd1A1vXNO2K+KU/gns4JGLuxeqZ4t1s
+        gye7BDt0Q9c9aYCh5IhRP9a5gpMH+pUvxXnzIfNhFiHMCXUr1OF1xPsoMnTL
+        S2QTPX4QP6K6goN2PoSqOKeCTRx41eaIZ22OHeg6oW5snZ2CHjHk3XT4Zw3j
+        m0jXehiE6QfdFHAU0s3R9MSuo+HxIcQLA/BFV5PXoXckrwc/4x1MT+Y0jJy9
+        yRyc8izyOg682ORtBj2Y+iY6b90kO/dGSpjtvx7V63zJlT7qHjoL0WMzyU6N
+        u1yJmtdrNFzxOkOPeVnCUQptDkkvhn6uLrbnU2JTV3t6m0dHYXQHNfMKCGNM
+        neyZ+plHpjYQXGwYgLkDA7xqGeDNEeq/rV7PNPp/EJsDFpz14fLr/1f8Ax+m
+        FEXqEAAA
     http_version: 
-  recorded_at: Wed, 15 Oct 2014 02:51:42 GMT
+  recorded_at: Wed, 15 Oct 2014 03:53:49 GMT
 - request:
     method: get
     uri: http://www.goodreads.com/group/show?format=xml&id=88207-bookclubfiction&key=k9vUJiUZNuWLZrttVh9KeA
@@ -99,7 +99,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Oct 2014 02:51:42 GMT
+      - Wed, 15 Oct 2014 03:53:50 GMT
       Server:
       - Server
       Content-Type:
@@ -107,20 +107,20 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 1KTCGDX9RJYT90A3G113
+      - 1VBQPXBAAWDER0C706J1
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.206200'
+      - '0.285715'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=aaeb915a0b6f689622871cf7b88d3fa0; path=/; expires=Wed, 15-Oct-2014
-        08:51:42 GMT; HttpOnly
-      - csid=BAhJIhgwMzUtNzY0MTczNi00MTA4ODg0BjoGRVQ%3D--c2650fbf2433f9601be879b18697d7ce573ed71f;
-        path=/; expires=Sun, 15-Oct-2034 02:51:42 GMT
+      - _session_id2=c81537fb30f53b6ec3706ed971e4fb44; path=/; expires=Wed, 15-Oct-2014
+        09:53:50 GMT; HttpOnly
+      - csid=BAhJIhg4MTItNzEzMTEyMy02ODE2NjkwBjoGRVQ%3D--cecf6a6c2dad1c442da8d6741b3672b2d0a4dc50;
+        path=/; expires=Sun, 15-Oct-2034 03:53:50 GMT
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -195,5 +195,5 @@ http_interactions:
         41OxcoKPJooFO5NljA9bcFT/7dMbZ0ZR4LQDIzJq/+4FN33Vaj7IvDqAHuzh
         hcDNb3H/B9EsbMrGKwAA
     http_version: 
-  recorded_at: Wed, 15 Oct 2014 02:51:42 GMT
+  recorded_at: Wed, 15 Oct 2014 03:53:50 GMT
 recorded_with: VCR 2.9.3
