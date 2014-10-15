@@ -12,6 +12,7 @@ FactoryGirl.define do
   factory :user do
     uid 2811779
     provider 'goodreads'
+    extra_votes 5
     sequence(:name) { |n| "User #{n}" }
     access_token { generate(:access_token) }
     access_token_secret { generate(:access_token_secret) }

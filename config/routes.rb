@@ -11,6 +11,12 @@ Rails.application.routes.draw do
 
   authenticate :user do
     get '/search/:q', to: 'search#search', as: :search, defaults: { :format => :json }
+
+    resources :users, defaults: { :format => :json } do
+      post 'vote', :on => :member
+      delete 'vote', :on => :member, :action => :unvote
+    end
+
     resources :rounds, defaults: { :format => :json } do
       post 'progress', :on => :member
 
