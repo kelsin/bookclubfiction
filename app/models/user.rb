@@ -78,15 +78,16 @@ class User
     Goodreads.new :oauth_token => token
   end
 
-  def groups
-    client.group_list(uid)
-  end
-
   def update_membership
+    group_id = "88207"
+
+    groups = client.group_list(uid)
+
     if groups.group
       groups.group.each do |g|
         if g.id == "88207"
           self.member = true
+          break
         end
       end
     end

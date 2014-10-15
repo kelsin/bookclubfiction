@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :goodreads_client
 
-  check_authorization
+  skip_before_action :verify_authenticity_token
+  check_authorization :unless => :devise_controller?
 
   def after_sign_in_path_for(resource)
     request.env['omniauth.origin'] || stored_location_for(resource) || root_path

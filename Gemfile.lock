@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     bson (1.11.1)
@@ -59,6 +60,8 @@ GEM
       simplecov (>= 0.7)
       term-ansicolor
       thor
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     database_cleaner (1.3.0)
     devise (3.3.0)
       bcrypt (~> 3.0)
@@ -203,6 +206,7 @@ GEM
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.1)
+    safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -247,8 +251,12 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    vcr (2.9.3)
     warden (1.2.3)
       rack (>= 1.0)
+    webmock (1.19.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
     xml-simple (1.1.4)
 
 PLATFORMS
@@ -285,4 +293,6 @@ DEPENDENCIES
   simplecov
   therubyracer
   uglifier (>= 1.3.0)
+  vcr
+  webmock
   xml-simple

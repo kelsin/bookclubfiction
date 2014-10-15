@@ -11,16 +11,6 @@ RSpec.describe User, :type => :model do
     @user = User.new(:uid => 5)
   end
 
-  describe '#groups' do
-    it('should grab the group list from the client') do
-      @client = double('client')
-      allow(@user).to receive(:client).and_return(@client)
-      expect(@client).to receive(:group_list).with(5).and_return('group_list')
-
-      expect(@user.groups).to eq('group_list')
-    end
-  end
-
   describe '#client' do
     it('should contain our goodreads setup') do
       client = @user.client
@@ -99,9 +89,9 @@ RSpec.describe User, :type => :model do
       @bcf_group = double('bcf_group')
       allow(@bcf_group).to receive_message_chain(:moderators, :group_user => [])
       allow(@client).to receive(:group).and_return(@bcf_group)
+      allow(@client).to receive(:group_list).and_return(@groups)
 
       allow(@user).to receive(:client).and_return(@client)
-      allow(@user).to receive(:groups).and_return(@groups)
     end
 
     describe 'when user is a member' do
@@ -143,8 +133,9 @@ RSpec.describe User, :type => :model do
       end
 
       it 'should not check for admin status' do
-        expect(@user).to_not receive(:client)
+        expect(@client).to_not receive(:group)
         @user.update_membership
+        expect(@user.admin).to be(false)
       end
     end
   end

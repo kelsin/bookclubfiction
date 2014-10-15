@@ -76,3 +76,7 @@ gem 'rb-readline', group: [:development, :test]
 
 # Factories
 gem 'factory_girl_rails', group: [:development, :test]
+
+# Mocking Net Requests
+gem 'webmock', group: :test
+gem 'vcr', group: :test
