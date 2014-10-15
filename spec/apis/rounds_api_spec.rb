@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Rounds Api", :type => :api do
-  before :each do
-    clear_cookies
-  end
-
   describe('not logged in') do
     it('should not allow me to create a round') do
       post '/rounds'
