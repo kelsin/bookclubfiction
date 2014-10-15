@@ -12,4 +12,19 @@ class NominationsController < ApplicationController
       raise Exceptions::DuplicateNomination, 'This book is already nominated'
     end
   end
+
+  def vote
+    @nomination.pull(:votes => { :user_id => current_user.id }, :safe => true)
+    @nomination.reload
+
+    @vote = Vote.new(:user_id => current_user.id)
+    @vote.extra = params[:extra]
+    @nomination.votes.push(@vote)
+    @nomination.save! :safe => true
+  end
+
+  def unvote
+    @nomination.pull(:votes => { :user_id => current_user.id }, :safe => true)
+    @nomination.reload
+  end
 end

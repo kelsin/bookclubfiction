@@ -13,7 +13,8 @@ class Ability
 
       can :create, Nomination, :user_id => user.id, :admin => false
       can :create, Selection, :user_id => user.id
-      can :manage, Vote, :user_id => user.id
+      can :vote, Nomination
+      can :unvote, Nomination
     end
   end
 end

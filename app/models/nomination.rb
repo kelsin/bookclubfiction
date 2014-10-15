@@ -19,6 +19,7 @@ class Nomination
   validates :book, :presence => true
   validate :round_must_be_nominating, :on => :create
   validate :user_must_have_three_or_less_nominations
+  validates_associated :votes
 
   # Indexes
   Nomination.ensure_index [[:round_id, 1], ['book.goodreads_id', 1]], :unique => true
