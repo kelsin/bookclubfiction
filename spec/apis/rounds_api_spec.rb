@@ -139,6 +139,21 @@ RSpec.describe "Rounds Api", :type => :api do
           expect(@round).to be_closed
         end
       end
+
+      describe('with a valid closed round') do
+        before(:each) do
+          @round = FactoryGirl.create(:closed_round)
+        end
+
+        it('should do nothing to the round') do
+          post "/rounds/#{@round.id}/progress"
+
+          expect(last_response).to be_ok
+
+          @round.reload
+          expect(@round).to be_closed
+        end
+      end
     end
   end
 end
