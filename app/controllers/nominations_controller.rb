@@ -8,6 +8,13 @@ class NominationsController < ApplicationController
 
     begin
       @nomination.save! :safe => true
+
+      # Now remove any selections for the same book
+      Selection
+        .by_round(@nomination.round_id)
+        .by_user(@nomination.user_id)
+        .destroy_all('book.goodreads_id' => @nomination.book.goodreads_id)
+
     rescue Mongo::OperationFailure => e
       raise Exceptions::DuplicateNomination, 'This book is already nominated'
     end

@@ -58,6 +58,26 @@ RSpec.describe "Nominations Api", :type => :api do
           expect(Nomination.first.round_id).to eq(@round.id)
         end
 
+        it('should remove a selection for the same book') do
+          post("/rounds/#{@round.id}/selections",
+               { :book => @book }.to_json,
+               "CONTENT_TYPE" => "application/json")
+
+          expect(Selection.count).to eq(1)
+
+          post("/rounds/#{@round.id}/nominations",
+               { :book => @book }.to_json,
+               "CONTENT_TYPE" => "application/json")
+
+          expect(Selection.count).to eq(0)
+
+          expect(last_response).to be_ok
+          expect(last_response.body).to be_json_eql(false.to_json).at_path("round/nominations/0/admin")
+          expect(last_response.body).to be_json_eql(@book.title.to_json).at_path("round/nominations/0/book/title")
+          expect(last_response.body).to be_json_eql(0.to_json).at_path("round/nominations/0/value")
+          expect(Nomination.first.round_id).to eq(@round.id)
+        end
+
         it('should not allow an admin nomination to be created') do
           post("/rounds/#{@round.id}/nominations",
                { :book => @book,

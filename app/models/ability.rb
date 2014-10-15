@@ -12,9 +12,11 @@ class Ability
       can :read, :all
 
       can :create, Nomination, :user_id => user.id, :admin => false
-      can :create, Selection, :user_id => user.id
       can :vote, Nomination
       can :unvote, Nomination
+
+      can :create, Selection, :user_id => user.id
+      can :destroy, Selection, :user_id => user.id
     end
   end
 end
