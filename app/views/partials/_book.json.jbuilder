@@ -1,4 +1,4 @@
-json.id book.id
+json.goodreads_id book.goodreads_id
 json.title book.title
 json.rating book.rating
 json.author book.author
