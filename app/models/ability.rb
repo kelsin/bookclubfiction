@@ -11,7 +11,7 @@ class Ability
       can :search, :all
       can :read, :all
 
-      can :create, Nomination, :user_id => user.id
+      can :create, Nomination, :user_id => user.id, :admin => false
       can :create, Selection, :user_id => user.id
       can :manage, Vote, :user_id => user.id
     end

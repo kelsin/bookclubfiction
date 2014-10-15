@@ -5,5 +5,9 @@ FactoryGirl.define do
     association :user, :factory => :random_member
     round
     book
+
+    factory :admin_nomination do
+      admin true
+    end
   end
 end

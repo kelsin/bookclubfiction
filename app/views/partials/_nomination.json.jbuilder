@@ -1,5 +1,6 @@
 json.id nomination.id
 json.value nomination.value
+json.admin nomination.admin
 
 json.user do
   json.partial! 'partials/user', :user => nomination.user

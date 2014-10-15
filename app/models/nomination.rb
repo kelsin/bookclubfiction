@@ -5,6 +5,7 @@ class Nomination
   belongs_to :round
   one :book
   many :votes
+  key :admin, Boolean, :default => false
 
   timestamps!
 
@@ -35,7 +36,11 @@ class Nomination
   end
 
   def user_must_have_three_or_less_nominations
-    if Nomination.by_round(self.round_id).by_user(self.user_id).count >= 3
+    if !admin? && Nomination
+        .by_round(self.round_id)
+        .by_user(self.user_id)
+        .where(:admin => false)
+        .count >= 3
       errors.add(:user, 'already has 3 nominations')
     end
   end

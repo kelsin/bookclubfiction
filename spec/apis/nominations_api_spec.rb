@@ -52,9 +52,20 @@ RSpec.describe "Nominations Api", :type => :api do
                "CONTENT_TYPE" => "application/json")
 
           expect(last_response).to be_ok
+          expect(last_response.body).to be_json_eql(false.to_json).at_path("round/nominations/0/admin")
           expect(last_response.body).to be_json_eql(@book.title.to_json).at_path("round/nominations/0/book/title")
           expect(last_response.body).to be_json_eql(0.to_json).at_path("round/nominations/0/value")
           expect(Nomination.first.round_id).to eq(@round.id)
+        end
+
+        it('should not allow an admin nomination to be created') do
+          post("/rounds/#{@round.id}/nominations",
+               { :book => @book,
+                 :admin => true }.to_json,
+               "CONTENT_TYPE" => "application/json")
+
+          expect(last_response).to_not be_ok
+          expect(last_response.body).to have_json_path('error')
         end
 
         it('should not allow two nominations for the same book') do
@@ -81,7 +92,7 @@ RSpec.describe "Nominations Api", :type => :api do
                              :user => @user,
                              :round => @round)
 
-          expect(Nomination.by_round(@round.id).by_user(@user.id).count).to eql(3)
+          expect(Nomination.by_round(@round.id).by_user(@user.id).where(:admin => false).count).to eql(3)
 
           post("/rounds/#{@round.id}/nominations",
                { :book => @book }.to_json,
@@ -90,6 +101,50 @@ RSpec.describe "Nominations Api", :type => :api do
           expect(last_response).to_not be_ok
           expect(last_response.body).to have_json_path("error")
           expect(Nomination.by_round(@round.id).by_user(@user.id).count).to eql(3)
+        end
+      end
+
+      describe('with a logged in admin') do
+        before(:each) do
+          sign_in :admin
+        end
+
+        it('should allow the creation of an admin nomination') do
+          post("/rounds/#{@round.id}/nominations",
+               { :book => @book,
+                 :admin => true }.to_json,
+               "CONTENT_TYPE" => "application/json")
+
+          expect(last_response).to be_ok
+          expect(last_response.body).to be_json_eql(true.to_json).at_path("round/nominations/0/admin")
+          expect(last_response.body).to be_json_eql(@book.title.to_json).at_path("round/nominations/0/book/title")
+          expect(last_response.body).to be_json_eql(0.to_json).at_path("round/nominations/0/value")
+          expect(Nomination.first.round_id).to eq(@round.id)
+        end
+
+        it('should allow over 3 admin nominations for the same user') do
+          FactoryGirl.create(:nomination,
+                             :user => @user,
+                             :round => @round)
+          FactoryGirl.create(:nomination,
+                             :user => @user,
+                             :round => @round)
+          FactoryGirl.create(:nomination,
+                             :user => @user,
+                             :round => @round)
+
+          expect(Nomination.by_round(@round.id).by_user(@user.id).where(:admin => false).count).to eql(3)
+
+          post("/rounds/#{@round.id}/nominations",
+               { :book => @book,
+                 :admin => true }.to_json,
+               "CONTENT_TYPE" => "application/json")
+
+          expect(last_response).to be_ok
+          expect(last_response.body).to be_json_eql(true.to_json).at_path("round/nominations/3/admin")
+          expect(last_response.body).to be_json_eql(@book.title.to_json).at_path("round/nominations/3/book/title")
+          expect(last_response.body).to be_json_eql(0.to_json).at_path("round/nominations/3/value")
+          expect(Nomination.by_round(@round.id).by_user(@user.id).count).to eql(4)
         end
       end
     end
