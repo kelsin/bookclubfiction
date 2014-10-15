@@ -110,6 +110,46 @@ RSpec.describe "Rounds Api", :type => :api do
           @round.reload
           expect(@round).to be_seconding
         end
+
+        it('should not deduct users normal votes') do
+          @voting_user = FactoryGirl.create(:member)
+          expect(@voting_user.extra_votes).to eql(5)
+
+          @nomination = FactoryGirl.create(:nomination, :round => @round)
+
+          post "/rounds/#{@round.id}/progress"
+
+          @nomination.reload
+          @vote = Vote.new(:user => @voting_user, :extra => false)
+          @nomination.votes.push(@vote)
+          @nomination.save! :safe => true
+
+          post "/rounds/#{@round.id}/progress"
+
+          @voting_user.reload
+          expect(@voting_user.extra_votes).to eql(5)
+        end
+
+        it('should deduct users extra votes') do
+          @voting_user = FactoryGirl.create(:member)
+          expect(@voting_user.extra_votes).to eql(5)
+
+          @nomination = FactoryGirl.create(:nomination, :round => @round)
+
+          post "/rounds/#{@round.id}/progress"
+
+          @nomination.reload
+          @vote = Vote.new(:user => @voting_user, :extra => true)
+          @nomination.votes.push(@vote)
+          @nomination.save! :safe => true
+
+          @nomination.reload
+
+          post "/rounds/#{@round.id}/progress"
+
+          @voting_user.reload
+          expect(@voting_user.extra_votes).to eql(4)
+        end
       end
 
       describe('with a valid seconding round') do
