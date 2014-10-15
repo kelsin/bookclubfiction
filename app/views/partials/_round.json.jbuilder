@@ -1,5 +1,6 @@
 json.id round.id
 json.state round.state
+json.genre round.genre
 
 json.nominations round.nominations, :partial => 'partials/nomination', :as => :nomination
 

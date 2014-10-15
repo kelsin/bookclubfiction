@@ -40,7 +40,9 @@ RSpec.describe "Rounds Api", :type => :api do
       end
 
       it('should allow me to create a round') do
-        post '/rounds'
+        post('/rounds',
+             { :genre => 'Random Genre' }.to_json,
+             'CONTENT_TYPE' => 'application/json')
 
         expect(last_response).to be_ok
         expect(Round.all).to_not be_empty

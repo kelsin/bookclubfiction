@@ -3,6 +3,7 @@ class Round
 
   # Keys
   key :state, String, :default => 'nominating'
+  key :genre, String
   key :seconding_at, Time
   key :reading_at, Time
   key :closed_at, Time
@@ -18,6 +19,7 @@ class Round
   scope :in_state, lambda { |state| where(:state => state) }
 
   # Validations
+  validates :genre, :presence => true
   validates :state, :inclusion => { :in => %w(nominating seconding reading closed) }
 
   def selections(user)

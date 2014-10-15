@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :round do
+    genre 'Horror'
     state 'nominating'
     created_at { 20.minutes.ago }
 
