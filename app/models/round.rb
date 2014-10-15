@@ -20,6 +20,11 @@ class Round
   # Validations
   validates :state, :inclusion => { :in => %w(nominating seconding reading closed) }
 
+  def selections(user)
+    return [] unless user
+    Selection.by_round(self.id).by_user(user.id)
+  end
+
   # State Transitions
   def progress
     case self.state
@@ -37,6 +42,10 @@ class Round
 
   def nominating_at
     self.created_at
+  end
+
+  def nominating?
+    self.state == 'nominating'
   end
 
   def nominated?

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :rounds, defaults: { :format => :json } do
       post 'progress', :on => :member
 
+      resources :selections, defaults: { :format => :json }
+
       resources :nominations, defaults: { :format => :json } do
         resources :votes, defaults: { :format => :json }
       end

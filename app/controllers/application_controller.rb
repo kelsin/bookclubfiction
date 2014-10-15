@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied, :with => :unauthorized
   rescue_from MongoMapper::DocumentNotFound, :with => :not_found
+  rescue_from MongoMapper::DocumentNotValid, :with => :error
+  rescue_from Exceptions::BookClubFictionError, :with => :error
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -21,11 +23,15 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def unauthorized(error)
-    render :json => {:error => error.message}, :status => :unauthorized
+  def unauthorized(e)
+    render :json => {:error => e.message}, :status => :unauthorized
   end
 
   def not_found
     render :json => {:error => 'Not Found'}, :status => :not_found
+  end
+
+  def error(e)
+    render :json => {:error => e.message}, :status => :internal_server_error
   end
 end

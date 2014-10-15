@@ -2,12 +2,8 @@
 
 FactoryGirl.define do
   factory :nomination do
-    association :user, :factory => :member
-    association :round, :factory => :seconding_round
+    association :user, :factory => :random_member
+    round
     book
-
-    factory :nomination_with_votes do
-      votes { [FactoryGirl.build(:vote), FactoryGirl.build(:extra_vote)] }
-    end
   end
 end

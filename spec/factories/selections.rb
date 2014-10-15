@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :selection do
-    association :user, :factory => :member
+    association :user, :factory => :random_member
     round
     book
   end

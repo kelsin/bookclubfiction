@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :vote do
-    association :user, :factory => :member
+    association :user, :factory => :random_member
 
     factory :extra_vote do
       extra true

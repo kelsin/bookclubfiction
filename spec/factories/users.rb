@@ -21,6 +21,10 @@ FactoryGirl.define do
       sequence(:name) { |n| "Member #{n}" }
       member true
 
+      factory :random_member do
+        sequence(:uid, 1000)
+      end
+
       factory :admin do
         uid 2508813
         sequence(:name) { |n| "Admin #{n}" }

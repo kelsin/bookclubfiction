@@ -53,6 +53,30 @@ RSpec.describe "Rounds Api", :type => :api do
       before(:each) do
         sign_in :user
       end
+
+      it('should not allow me to view a round') do
+        @round = FactoryGirl.create(:round)
+
+        get "/rounds/#{@round.id}"
+
+        expect(last_response).to_not be_ok
+      end
+    end
+
+    describe('as a member') do
+      before(:each) do
+        sign_in :member
+      end
+
+      it('should allow me to view a round') do
+        @round = FactoryGirl.create(:round)
+
+        get "/rounds/#{@round.id}"
+
+        expect(last_response).to be_ok
+        expect(last_response.body).to be_json_eql(@round.id.to_json).at_path("round/id")
+        expect(last_response.body).to be_json_eql("nominating".to_json).at_path("round/state")
+      end
     end
   end
 

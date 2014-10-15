@@ -7,7 +7,7 @@ class Vote
   timestamps!
 
   # Validations
-  validates :user, :presence => true
+  validates :user_id, :presence => true
 
   def value
     self.extra ? 2 : 1
