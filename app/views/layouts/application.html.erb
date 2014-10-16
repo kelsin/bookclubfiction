@@ -29,7 +29,7 @@
               <li class="club-link"><%= link_to 'BCF on GoodReads', 'https://www.goodreads.com/group/show/88207-bookclubfiction' %></li>
               <li class="logout"><%= link_to 'Logout', logout_path, :method => :delete, :class => 'btn btn-default' %></li>
               <% else %>
-              <li class="login"><%= link_to 'Login', user_omniauth_authorize_url(:provider => :goodreads), :class => 'btn btn-primary' %></li>
+              <li class="login"><%= link_to 'Login with GoodReads', user_omniauth_authorize_url(:provider => :goodreads), :class => 'btn btn-primary' %></li>
               <% end %>
             </ul>
           </nav>
@@ -53,9 +53,8 @@
       <footer id="footer" class="group">
         <nav>
           <ul>
-            <li><a href="#">Nominations</a></li>
-            <li><a href="#">Book Club Fiction on Goodreads</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="https://www.goodreads.com/group/show/88207-bookclubfiction#">Book Club Fiction on Goodreads</a></li>
+            <li><a href="https://www.goodreads.com/group/moderators/88207-bookclubfiction">Contact Us</a></li>
             <li class="bug"><a href="https://github.com/kelsin/bookclubfiction/issues"><span class="fa fa-bug"></span>Found a bug? Let us know</a></li>
           </ul>
         </nav>

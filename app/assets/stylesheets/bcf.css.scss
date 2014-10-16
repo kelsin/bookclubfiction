@@ -39,6 +39,8 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-
   h2 { text-transform: uppercase; }
 }
 
+.intro { padding: 5em 0; }
+
 .chart { margin: 0; padding: 0; list-style: none outside;
   li { background: $green; margin: 0 0 5px 0; height: 30px; }
 }
