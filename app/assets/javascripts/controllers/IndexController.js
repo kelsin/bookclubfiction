@@ -2,8 +2,7 @@
   function IndexController($scope, $location, RoundService) {
   	$scope.round = RoundService;
   	$scope.$watch('round.current', function(newRound){
-  		console.log('adsf');
-  		if(newRound.state === 'nominating'){
+  		if(newRound && newRound.state === 'nominating'){
   			$location.url('/nominations');
   		}
   	});
