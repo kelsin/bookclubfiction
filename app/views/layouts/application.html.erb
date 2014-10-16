@@ -9,7 +9,8 @@
        "application", media: "all" %>
     <%= javascript_include_tag \
       "//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js",
-      "//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js",
+      "//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js",
+      "//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js",
       "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js",
       "//d3js.org/d3.v3.min.js",
       "application" %>
@@ -49,6 +50,23 @@
       <div ng-view>
         <%= yield %>
       </div>
+      <script type="text/ng-template" id="index.html">
+        <div class="intro">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                  <h2>Welcome to Book Club Fiction!</h2>
+                  <p>We're an online bookclub devoted to fiction of all kinds! Open to anyone who'd like to join, we are a no-pressure club all about reading fiction together.</p>
+
+                  <p>We cycle between different genres of fiction based on members' votes, which ends up helping us break out of our comfort zone genres while still staying in the comfort zone of fiction. We then vote for books within that genre and have weekly discussions.</p>
+
+                  <p><a href="https://www.goodreads.com/group/show/88207-bookclubfiction">We hold our discussions over on GoodReads</a> so if you're interested, check us out! This site helps us manage our book club voting scheme since we wanted to have a more robust option for book nominations and voting than GoodReads provides.</p>
+              </div>
+          </div>
+        </div>
+      </script>
+      <script type="text/ng-template" id="admin-votes.html">
+        <p>admin vote stuff</p>
+      </script>
 
       <footer id="footer" class="group">
         <nav>

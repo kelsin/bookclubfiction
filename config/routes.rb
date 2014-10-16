@@ -29,5 +29,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get '*path', to:'home#index'
+
   root 'home#index'
 end
