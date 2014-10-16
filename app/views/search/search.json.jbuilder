@@ -15,11 +15,11 @@ else
 end
 
 json.books works do |work|
-  json.id work.best_book.id
+  json.goodreads_id work.best_book.id
   json.title work.best_book.title
   json.rating work.average_rating
   json.author work.best_book.author.name
-  json.image_url work.best_book.image_url
-  json.small_image_url work.best_book.small_image_url
+  json.image work.best_book.image_url
+  json.small_image work.best_book.small_image_url
   json.url "https://www.goodreads.com/book/show/#{work.best_book.id}"
 end

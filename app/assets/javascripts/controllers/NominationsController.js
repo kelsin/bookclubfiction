@@ -1,8 +1,9 @@
 (function () {
-  function NominationsController($scope, SearchService, $interval, NominationsService, $document) {
+  function NominationsController($scope, $interval, $document, SearchService, NominationsService, RoundService) {
     $scope.search = SearchService;
     $scope.query = '';
     $scope.nominations = NominationsService;
+    $scope.round = RoundService;
     var timer = null;
     $scope.onChange = function (){
         $interval.cancel(timer);
@@ -10,8 +11,8 @@
             $scope.search.search($scope.query);
         }, 500, 1);
     };
-    $scope.nominate = function(book){
-        $scope.nominations.books.push(book);
+    $scope.select = function(book){
+        NominationsService.select(book, RoundService.current.id);
         $scope.clear();
     };
     $scope.remove = function(index){

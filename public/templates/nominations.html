@@ -1,0 +1,88 @@
+<div id="nominations">
+    <div id="header" class="page-header">
+        <h1>Nominations <small>Genre: {{ round.current.genre }}</small></h1>
+    </div>
+
+    <div id="nominate" >
+        <div id="searchContainer" class="group">
+            <label class="search-label" for="search">Search for a book</label>
+            <div id="searchAndResults">
+                <div id="searchWrapper" class="group" >
+                    <form autocomplete="off">
+                        <input name="search" id="search" ng-model="query" ng-change="onChange()" placeholder="Type in a book name...">
+                        <img src="/images/ajax-loader.gif" class="loader" ng-show="search.loading" />
+                    </form>
+                    <p class="no-results" ng-show="search.loaded && search.results.books.length === 0">No results. Try searching again!</p>
+                </div>
+                <div class="search-results" id="searchResults" ng-show="search.results.books.length > 0">
+                    <ul ng-hide="search.loading">
+                        <li ng-click="select(book)" ng-repeat="book in search.results.books"><img src="{{book.image}}" alt="{{book.title}}" />
+                            <span class="book-title">{{book.title}}</span>
+                            <span class="book-author">by {{book.author}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="myNominations" class="my-nominations">
+            <div class="alert alert-info" ng-show="nominations.isEmpty() && nominations.size() <= 3"><p>You've chosen <strong>{{ nominations.size() }}/3</strong> of your available nominations. Search for books to add some!</p></div>
+            <div class="alert alert-info" ng-hide="nominations.isEmpty() || nominations.size() > 3"><p>You've used <strong>{{ nominations.size() }}/3</strong> of your available nominations. Come back on Thursday to start seconding books!</p></div>
+            <div class="alert alert-danger" ng-show="nominations.size() > 3"><p>You've chosen <strong>{{ nominations.size() }}/3</strong> of your available nominations. Remove some nominations to be able to lock them in.</p></div>
+            <div class="nominations-wrap valid">
+                <h3>My Nominations</h3>
+                <ul class="nominations valid group">
+                    <li ng-repeat="selection in round.current.selections | orderBy: 'created_at'">
+                        <a class="remove-nomination fa fa-close" ng-click="remove($index)" title="Delete from Nominations"></a>
+                        <div class="book">
+                            <a href="{{ selection.book.url }}">
+                                <img src="{{ selection.book.image }}" alt="{{ selection.book.title }}" title="{{ selection.book.title }}" />
+                            </a>
+                            {{ selection.book.title }}
+                        </div>
+                    </li>
+                </ul>
+                <div class="nominations-actions group">
+                    <a class="btn btn-primary" ng-class="{ disabled: nominations.books.length === 0 }" href="#">Save Nominations</a>
+                    <p>Your nominations have been saved.</p>
+                    <p>Save your nominations to lock them in!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="clear:both;"></div>
+
+    <div id="results">
+    <p>Nominations will close Thursday, and then you will be able to second the books that anyone else has nominated.</p>
+    </div>
+
+    <h3>The Nominations</h3>
+    <p>These are the books that have already been nominated by other members.</p>
+
+    <ul class="nominations">
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/98x146" alt="Book Title" />
+            </a>
+            Book Title 1
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/98x146" alt="Book Title" />
+            </a>
+            Book Title 2
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/98x146" alt="Book Title" />
+            </a>Book Title 3
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/98x146" alt="Book Title" />
+            </a>Book Title 4
+        </li>
+    </ul>
+</div>

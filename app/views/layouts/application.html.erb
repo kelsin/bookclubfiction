@@ -21,17 +21,17 @@
       <div class="container-fluid">
         <h1>Book Club Fiction</h1>
 
-        <div id="user" ng-controller="ProfileController">
+        <div id="user" ng-controller="UserController">
           <nav>
-            <ul>
-              <% if user_signed_in? %>
-              <li class="user"><img ng-src="{{ profile.user.image }}" class="profile-img"> Hello, {{ profile.user.name }}!</li>
-              <li class="votes">Extra Votes: {{ profile.user.extra_votes }}</li>
-              <li class="club-link"><%= link_to 'BCF on GoodReads', 'https://www.goodreads.com/group/show/88207-bookclubfiction' %></li>
-              <li class="logout"><%= link_to 'Logout', logout_path, :method => :delete, :class => 'btn btn-default' %></li>
-              <% else %>
-              <li class="login"><%= link_to 'Login with GoodReads', user_omniauth_authorize_url(:provider => :goodreads), :class => 'btn btn-primary' %></li>
-              <% end %>
+            <ul ng-show="status.logged_in">
+              <li class="user"><img ng-src="{{ status.user.image }}" class="profile-img"> Hello, {{ status.user.name }}!</li>
+              <li class="votes">Extra Votes: {{ status.user.extra_votes }}</li>
+              <li class="club-link"><a href="https://www.goodreads.com/group/show/88207-bookclubfiction">BCF on GoodReads</a></li>
+              <li ng-show="status.user.admin"><a href="/admin">Admin</a>
+              <li class="logout"><a href="/logout" target="_self" class="btn btn-default">Logout</a></li>
+            </ul>
+            <ul ng-hide="status.logged_in">
+              <li class="login"><a href="/users/auth/goodreads" class="btn btn-primary" target="_self">Login with GoodReads</a></li>
             </ul>
           </nav>
         </div>
