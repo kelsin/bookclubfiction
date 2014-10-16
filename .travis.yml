@@ -1,16 +1,16 @@
 language: ruby
 rvm:
-  - "2.1.3"
+  - 2.1.3
 services:
   - mongodb
 after_success:
-  - "openssl aes-256-cbc -k $DEPLOY_KEY -in config/deploy_id_rsa_enc -d -a -out config/deploy_id_rsa"
-  - "chmod 0600 config/deploy_id_rsa"
+  - openssl aes-256-cbc -k $DEPLOY_KEY -in config/deploy_id_rsa_enc -d -a -out config/deploy_id_rsa
+  - chmod 0600 config/deploy_id_rsa
   - eval "$(ssh-agent)"
   - ssh-add config/deploy_id_rsa
   - "[[ $TRAVIS_BRANCH = 'master' ]] && bundle exec cap production deploy"
 env:
   global:
-    - secure: "RAYbRUNQIr9sITzGz6lVuDd8/6xd9EICsuzprWY20tdyhtxhfJ8CQ/3UbT/ml7Fcgqds65cgefUb6+RfKWRZr5Pefv/9cTqt4vGqUlrpPEx6IxHjltn5suqLHT0KIVcQmTvozTGNErwZxsrQeMtJflRy4Bg4UOShuuoza41jBcE="
-    - GOODREADS_KEY="goodreads_key"
-    - GOODREADS_SECRET="goodreads_secret"
+    - secure: RAYbRUNQIr9sITzGz6lVuDd8/6xd9EICsuzprWY20tdyhtxhfJ8CQ/3UbT/ml7Fcgqds65cgefUb6+RfKWRZr5Pefv/9cTqt4vGqUlrpPEx6IxHjltn5suqLHT0KIVcQmTvozTGNErwZxsrQeMtJflRy4Bg4UOShuuoza41jBcE=
+    - secure: MlJICR9C6PpU0pV/oZ4cZo1IdbgpTkGxQrhLSuO6R039rpUlU+mWUIS3tKL30RVhW/6pvtXcCGahlFGA2TFGM8jtnFrSFs5R6P+FEOMbVHNHoC3o2j7xBlSya7j6ZYHau61af0F9dcn5VS0k0GYNjJZ/I1kge2t6rtN7MhLb52M=
+    - secure: TBPNULOfNOJiF9hZXCRQtMLVZCnvaANXde251c9/TleIR11LAzLhj6wwwtYcRI/9uWzCMIwNc0z4w5pTk0EOWpggUd+wz6UPyosJ/V7g012X3vul2hzeC/IXKticUH+USDwHeq3+scQKeBaMTSrS1GAhnsXnQtZqAMnD/OFAOz4=
