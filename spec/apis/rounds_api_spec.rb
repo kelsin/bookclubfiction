@@ -50,6 +50,59 @@ RSpec.describe "Rounds Api", :type => :api do
     end
   end
 
+  describe('#destroy') do
+    before(:each) do
+      @round = FactoryGirl.create(:round)
+    end
+
+    describe('not logged in') do
+      it('should not allow me to create a round') do
+        delete "/rounds/#{@round.id}"
+
+        expect(last_response).to_not be_ok
+      end
+    end
+
+    describe('while logged in') do
+      before(:each) do
+        sign_in :user
+      end
+
+      it('should not allow me to create a round') do
+        delete "/rounds/#{@round.id}"
+
+        expect(last_response).to_not be_ok
+      end
+    end
+
+    describe('as a member') do
+      before(:each) do
+        sign_in :member
+      end
+
+      it('should not allow me to create a round') do
+        delete "/rounds/#{@round.id}"
+
+        expect(last_response).to_not be_ok
+      end
+    end
+
+    describe('as an admin') do
+      before(:each) do
+        sign_in :admin
+      end
+
+      it('should allow me to create a round') do
+        expect(Round.all).to_not be_empty
+
+        delete "/rounds/#{@round.id}"
+
+        expect(last_response).to be_ok
+        expect(Round.all).to be_empty
+      end
+    end
+  end
+
   describe('#show') do
     describe('as a user') do
       before(:each) do

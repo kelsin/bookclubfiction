@@ -42,6 +42,20 @@ class Round
     end
   end
 
+  def backup
+    case self.state
+    when 'seconding'
+      self.state = 'nominating'
+      self.seconding_at = nil
+    when 'reading'
+      self.state = 'seconding'
+      self.reading_at = nil
+    when 'closed'
+      self.state = 'reading'
+      self.closed_at = nil
+    end
+  end
+
   def nominating_at
     self.created_at
   end

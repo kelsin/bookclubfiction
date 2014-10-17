@@ -8,6 +8,10 @@ class RoundsController < ApplicationController
   def show
   end
 
+  def destroy
+    @round.destroy
+  end
+
   def progress
     raise MongoMapper::DocumentNotFound unless @round
 

@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def index
+    authorize! :read, User
+    @users = User.all
+  end
+
   def vote
     authorize! :vote, User
     User.increment({ :id => params[:id] },
