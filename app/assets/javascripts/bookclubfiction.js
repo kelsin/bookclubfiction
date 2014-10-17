@@ -1,3 +1,3 @@
 (function () {
-  angular.module('BookClubFiction', ['ngRoute']);
+  angular.module('BookClubFiction', ['ngRoute', 'ui.bootstrap']);
 })();

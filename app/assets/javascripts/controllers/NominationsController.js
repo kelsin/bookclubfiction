@@ -40,6 +40,7 @@
     });
   }
 
+
   angular
     .module('BookClubFiction')
     .controller('NominationsController', NominationsController);

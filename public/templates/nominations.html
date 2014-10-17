@@ -30,23 +30,20 @@
             <div class="alert alert-info" ng-hide="nominations.isEmpty() || nominations.size() > 3"><p>You've used <strong>{{ nominations.size() }}/3</strong> of your available nominations. Come back on Thursday to start seconding books!</p></div>
             <div class="alert alert-danger" ng-show="nominations.size() > 3"><p>You've chosen <strong>{{ nominations.size() }}/3</strong> of your available nominations. Remove some nominations to be able to lock them in.</p></div>
             <div class="nominations-wrap valid">
-                <h3>My Nominations</h3>
-                <ul class="nominations valid group">
+                <h3>My Selections</h3>
+                <p>Choose up to three of your selections to nominate for the club to read. Nominations will close on Friday, and then everyone will be able to vote for books out of the pool of nominations!</p>
+                <ul class="nominations my-selections valid group">
                     <li ng-repeat="selection in round.current.selections | orderBy: 'created_at'">
                         <a class="remove-nomination fa fa-close" ng-click="remove($index)" title="Delete from Nominations"></a>
                         <div class="book">
-                            <a href="{{ selection.book.url }}">
+                            <a href="{{ selection.book.url }}" tooltip="{{ selection.book.title }}">
                                 <img src="{{ selection.book.image }}" alt="{{ selection.book.title }}" title="{{ selection.book.title }}" />
                             </a>
-                            {{ selection.book.title }}
+                            <span class="book-title">{{ selection.book.title }}</span>
+                            <button class="btn btn-default">Nominate</button>
                         </div>
                     </li>
                 </ul>
-                <div class="nominations-actions group">
-                    <a class="btn btn-primary" ng-class="{ disabled: nominations.books.length === 0 }" href="#">Save Nominations</a>
-                    <p>Your nominations have been saved.</p>
-                    <p>Save your nominations to lock them in!</p>
-                </div>
             </div>
 
         </div>
@@ -54,12 +51,8 @@
 
     <div style="clear:both;"></div>
 
-    <div id="results">
-    <p>Nominations will close Thursday, and then you will be able to second the books that anyone else has nominated.</p>
-    </div>
-
     <h3>The Nominations</h3>
-    <p>These are the books that have already been nominated by other members.</p>
+    <p>These are the books that have already been nominated! Come back on Friday to vote for the books you want to read!</p>
 
     <ul class="nominations">
         <li>
