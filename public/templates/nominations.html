@@ -64,7 +64,7 @@
     <p>These are the books that have already been nominated! Come back on Friday to vote for the books you want to read!</p>
 
     <ul class="nominations">
-        <li ng-repeat="nomination in round.current.other_nominations | orderBy: 'created_at'">
+        <li ng-repeat="nomination in round.current.nominations | orderBy: 'created_at'">
             <div class="book">
                 <a href="{{ nomination.book.url }}" tooltip="{{ nomination.book.title }}">
                     <img src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
