@@ -15,15 +15,14 @@
         NominationsService.select(book, RoundService.current.id);
         $scope.clear();
     };
-    $scope.remove = function(index){
-        $scope.nominations.books.splice(index, 1);
+    $scope.nominate = function(book){
+        console.log(book);
+        NominationsService.nominate(book, RoundService.current.id);
     };
-    $scope.promote = function(index){
-        var book = $scope.nominations.books.splice(index,1)[0];
-        if(book){
-            $scope.nominations.books.unshift(book);
-        }
+    $scope.remove = function(id){
+        NominationsService.remove(id, RoundService.current.id);
     };
+    
     $scope.clear = function(){
         $scope.search.clear();
         $scope.query = '';

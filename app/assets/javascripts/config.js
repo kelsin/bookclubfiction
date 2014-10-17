@@ -7,17 +7,18 @@
 				templateUrl: 'templates/nominations.html'
 			})
 			.when('/seconding', {
-				templateUrl: 'seconding.html'
+				controller: 'SecondingController',
+				templateUrl: 'templates/seconding.html'
 			})
 			.when('/reading', {
-				templateUrl: 'reading.html'
+				templateUrl: 'templates/reading.html'
 			})
 			.when('/admin', {
 				controller: 'AdminController',
 				templateUrl: 'templates/admin.html'
 			})
 			.when('/admin/votes', {
-				templateUrl: 'admin-votes.html'
+				templateUrl: 'templates/admin-votes.html'
 			})
 			.otherwise({
 				controller: 'IndexController',

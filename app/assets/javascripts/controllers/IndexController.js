@@ -5,6 +5,9 @@
   		if(newRound && newRound.state === 'nominating'){
   			$location.url('/nominations');
   		}
+      if(newRound && newRound.state === 'seconding'){
+        $location.url('/seconding');
+      }
   	});
   }
 

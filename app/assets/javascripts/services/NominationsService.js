@@ -24,6 +24,32 @@
         });
       return deferred.promise;
     }
+    self.nominate = function(book, roundId){
+      var deferred = $q.defer();
+      $http.post('/rounds/' + roundId + '/nominations', { book: book })
+        .success(function(data){
+          RoundService.current = data.round;
+          deferred.resolve(data.round);
+        })
+        .error(function(error){
+          console.log(error);
+          deferred.reject(error);
+        });
+      return deferred.promise;
+    }
+    self.remove = function(id, roundId){
+      var deferred = $q.defer();
+      $http.delete('/rounds/' + roundId + '/selections/' + id)
+        .success(function(data){
+          RoundService.current = data.round;
+          deferred.resolve(data.round);
+        })
+        .error(function(error){
+          console.log(error);
+          deferred.reject(error);
+        });
+      return deferred.promise;
+    }
   }
 
   angular

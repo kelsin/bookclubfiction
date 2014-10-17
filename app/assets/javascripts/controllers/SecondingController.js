@@ -1,23 +1,25 @@
 (function () {
-  function SecondingController($scope, ProfileService, SecondingService, VotingService) {
-    $scope.profile = ProfileService;
+  function SecondingController($scope, StatusService, SecondingService, RoundService) {
     $scope.seconding = SecondingService;
-    $scope.voting = VotingService;
-
-    $scope.classes = function(bookId){
-        var c = [];
-        if(VotingService.votedOn(bookId)){
-            c.push('seconded');
-            if(VotingService.extraVotedOn(bookId)){
-                c.push('plus-one');
-            }
+    $scope.round = RoundService;
+    $scope.status = StatusService;
+    $scope.vote = function(nomination){
+        console.log(nomination);
+        if(nomination.vote){
+            SecondingService.unvote(nomination.id, RoundService.current.id);
+        } else {
+            SecondingService.vote(nomination.id, RoundService.current.id);
         }
-        return c;
     };
-
-    $scope.votingSort = function(book){
-        return VotingService.votes(book.id) * -1;
+    $scope.extra = function(nomination){
+        console.log(nomination + 'dasdfadsf');
+        if(nomination.extra){
+            SecondingService.unextra(nomination.id, RoundService.current.id);
+        } else {
+            SecondingService.extra(nomination.id, RoundService.current.id);
+        }
     };
+    
   }
 
   angular
