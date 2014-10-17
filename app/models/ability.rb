@@ -3,11 +3,12 @@ class Ability
 
   def initialize(user)
     if user && user.member?
-      can [:search, :read], :all
-      cannot [:search, :read], User
+      can :search, SearchController
+
+      can :read, [user, Round]
 
       can :create, Nomination, :user_id => user.id, :admin => false
-      can [:vote, :unvote], Nomination
+      can [:vote, :unvote, :extra, :unextra], Nomination
 
       can [:create, :destroy], Selection, :user_id => user.id
     end

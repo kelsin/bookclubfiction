@@ -2,6 +2,8 @@ class NominationsController < ApplicationController
   load_and_authorize_resource :round
   load_and_authorize_resource :through => :round
 
+  before_action :is_round_seconding?, :only => [:vote, :unvote, :extra, :unextra]
+
   def create
     @nomination.user = current_user
     @nomination.round = @round
@@ -21,17 +23,45 @@ class NominationsController < ApplicationController
   end
 
   def vote
-    @nomination.pull(:votes => { :user_id => current_user.id }, :safe => true)
-    @nomination.reload
-
-    @vote = Vote.new(:user_id => current_user.id)
-    @vote.extra = params[:extra]
-    @nomination.votes.push(@vote)
-    @nomination.save! :safe => true
+    @nomination.add_to_set(:vote_user_ids => current_user.id, :safe => true)
+    @round.reload
   end
 
   def unvote
-    @nomination.pull(:votes => { :user_id => current_user.id }, :safe => true)
-    @nomination.reload
+    @nomination.pull(:vote_user_ids => current_user.id, :safe => true)
+    @round.reload
+
+    # Removing a vote should remove the extra as well
+    unextra
+  end
+
+  def extra
+    vote
+
+    result = @nomination.add_to_set(:extra_user_ids => current_user.id, :safe => true)
+
+    if result['nModified'] > 0
+      current_user.decrement(:extra_votes => result['nModified'])
+      current_user.reload
+    end
+
+    @round.reload
+  end
+
+  def unextra
+    result = @nomination.pull(:extra_user_ids => current_user.id, :safe => true)
+
+    if result['nModified'] > 0
+      current_user.increment(:extra_votes => result['nModified'])
+      current_user.reload
+    end
+
+    @round.reload
+  end
+
+  private
+
+  def is_round_seconding?
+    raise Exceptions::RoundStateError, "Round is not currently seconding" unless @round.seconding?
   end
 end

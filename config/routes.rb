@@ -26,6 +26,8 @@ Rails.application.routes.draw do
       resources :nominations, defaults: { :format => :json } do
         post 'vote', :on => :member
         delete 'vote', :on => :member, :action => :unvote
+        post 'extra', :on => :member
+        delete 'extra', :on => :member, :action => :unextra
       end
     end
   end

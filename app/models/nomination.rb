@@ -4,8 +4,13 @@ class Nomination
   belongs_to :user
   belongs_to :round
   one :book
-  many :votes
   key :admin, Boolean, :default => false
+
+  key :vote_user_ids, Array
+  key :extra_user_ids, Array
+
+  many :votes, :in => :vote_user_ids, :class => User
+  many :extras, :in => :extra_user_ids, :class => User
 
   timestamps!
 
@@ -20,6 +25,7 @@ class Nomination
   validate :round_must_be_nominating, :on => :create
   validate :user_must_have_three_or_less_nominations
   validates_associated :votes
+  validates_associated :extras
 
   # Indexes
   Nomination.ensure_index [[:round_id, 1], ['book.goodreads_id', 1]], :unique => true
@@ -27,7 +33,15 @@ class Nomination
   Nomination.ensure_index [[:round_id, 1], [:user_id, 1], [:created_at, 1]]
 
   def value
-    votes.sum &:value
+    self.vote_user_ids.size + self.extra_user_ids.size
+  end
+
+  def voted?(user)
+    self.vote_user_ids.include? user.id
+  end
+
+  def extra?(user)
+    self.extra_user_ids.include? user.id
   end
 
   def round_must_be_nominating

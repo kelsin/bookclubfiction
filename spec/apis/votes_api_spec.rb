@@ -18,6 +18,17 @@ RSpec.describe "Votes Api", :type => :api do
         @nomination.reload
         expect(last_response).to_not be_ok
         expect(@nomination.votes).to be_empty
+        expect(@nomination.extras).to be_empty
+        expect(@nomination.value).to eql(0)
+      end
+
+      it('should not allow me to create an extra') do
+        post "/rounds/#{@round.id}/nominations/#{@nomination.id}/extra"
+
+        @nomination.reload
+        expect(last_response).to_not be_ok
+        expect(@nomination.votes).to be_empty
+        expect(@nomination.extras).to be_empty
         expect(@nomination.value).to eql(0)
       end
     end
@@ -36,6 +47,17 @@ RSpec.describe "Votes Api", :type => :api do
         @nomination.reload
         expect(last_response).to_not be_ok
         expect(@nomination.votes).to be_empty
+        expect(@nomination.extras).to be_empty
+        expect(@nomination.value).to eql(0)
+      end
+
+      it('should not allow me to create an extra') do
+        post "/rounds/#{@round.id}/nominations/#{@nomination.id}/extra"
+
+        @nomination.reload
+        expect(last_response).to_not be_ok
+        expect(@nomination.votes).to be_empty
+        expect(@nomination.extras).to be_empty
         expect(@nomination.value).to eql(0)
       end
     end
@@ -55,6 +77,17 @@ RSpec.describe "Votes Api", :type => :api do
         @nomination.reload
         expect(last_response).to_not be_ok
         expect(@nomination.votes).to be_empty
+        expect(@nomination.extras).to be_empty
+        expect(@nomination.value).to eql(0)
+      end
+
+      it('should not allow me to create an extra') do
+        post "/rounds/#{@round.id}/nominations/#{@nomination.id}/extra"
+
+        @nomination.reload
+        expect(last_response).to_not be_ok
+        expect(@nomination.votes).to be_empty
+        expect(@nomination.extras).to be_empty
         expect(@nomination.value).to eql(0)
       end
     end
@@ -72,6 +105,17 @@ RSpec.describe "Votes Api", :type => :api do
           @nomination.reload
           expect(last_response).to_not be_ok
           expect(@nomination.votes).to be_empty
+          expect(@nomination.extras).to be_empty
+          expect(@nomination.value).to eql(0)
+        end
+
+        it('should not allow me to create an extra') do
+          post "/rounds/#{@round.id}/nominations/#{@nomination.id}/extra"
+
+          @nomination.reload
+          expect(last_response).to_not be_ok
+          expect(@nomination.votes).to be_empty
+          expect(@nomination.extras).to be_empty
           expect(@nomination.value).to eql(0)
         end
       end
@@ -87,6 +131,17 @@ RSpec.describe "Votes Api", :type => :api do
           @nomination.reload
           expect(last_response).to_not be_ok
           expect(@nomination.votes).to be_empty
+          expect(@nomination.extras).to be_empty
+          expect(@nomination.value).to eql(0)
+        end
+
+        it('should not allow me to create an extra') do
+          post "/rounds/#{@round.id}/nominations/#{@nomination.id}/extra"
+
+          @nomination.reload
+          expect(last_response).to_not be_ok
+          expect(@nomination.votes).to be_empty
+          expect(@nomination.extras).to be_empty
           expect(@nomination.value).to eql(0)
         end
       end
@@ -97,37 +152,22 @@ RSpec.describe "Votes Api", :type => :api do
         end
 
         it('should allow me to create a vote') do
-          post "/rounds/#{@round.id}/nominations/#{@nomination.id}/vote"
+          post("/rounds/#{@round.id}/nominations/#{@nomination.id}/vote")
 
           @nomination.reload
           expect(last_response).to be_ok
           expect(@nomination.votes).to_not be_empty
+          expect(@nomination.extras).to be_empty
           expect(@nomination.value).to eql(1)
-        end
-
-        it('should allow me to edit my vote') do
-          post "/rounds/#{@round.id}/nominations/#{@nomination.id}/vote"
-
-          @nomination.reload
-          expect(last_response).to be_ok
-          expect(@nomination.votes).to_not be_empty
-          expect(@nomination.value).to eql(1)
-
-          post("/rounds/#{@round.id}/nominations/#{@nomination.id}/vote",
-               { :extra => true }.to_json,
-               "CONTENT_TYPE" => "application/json")
-
-          @nomination.reload
-          expect(last_response).to be_ok
-          expect(@nomination.votes).to_not be_empty
-          expect(@nomination.value).to eql(2)
         end
 
         it('should allow me to delete my vote') do
-          post "/rounds/#{@round.id}/nominations/#{@nomination.id}/vote"
+          post("/rounds/#{@round.id}/nominations/#{@nomination.id}/vote")
+
           @nomination.reload
           expect(last_response).to be_ok
           expect(@nomination.votes).to_not be_empty
+          expect(@nomination.extras).to be_empty
           expect(@nomination.value).to eql(1)
 
           delete("/rounds/#{@round.id}/nominations/#{@nomination.id}/vote")
@@ -135,6 +175,7 @@ RSpec.describe "Votes Api", :type => :api do
           @nomination.reload
           expect(last_response).to be_ok
           expect(@nomination.votes).to be_empty
+          expect(@nomination.extras).to be_empty
           expect(@nomination.value).to eql(0)
         end
 
@@ -144,18 +185,80 @@ RSpec.describe "Votes Api", :type => :api do
           @nomination.reload
           expect(last_response).to be_ok
           expect(@nomination.votes).to be_empty
+          expect(@nomination.extras).to be_empty
           expect(@nomination.value).to eql(0)
         end
 
         it('should allow me to create an extra vote') do
-          post("/rounds/#{@round.id}/nominations/#{@nomination.id}/vote",
-               { :extra => true }.to_json,
-               "CONTENT_TYPE" => "application/json")
+          post("/rounds/#{@round.id}/nominations/#{@nomination.id}/extra")
 
           @nomination.reload
           expect(last_response).to be_ok
           expect(@nomination.votes).to_not be_empty
+          expect(@nomination.extras).to_not be_empty
           expect(@nomination.value).to eql(2)
+        end
+
+        it('should allow me to delete an extra vote') do
+          post("/rounds/#{@round.id}/nominations/#{@nomination.id}/extra")
+
+          @nomination.reload
+          expect(last_response).to be_ok
+          expect(@nomination.votes).to_not be_empty
+          expect(@nomination.extras).to_not be_empty
+          expect(@nomination.value).to eql(2)
+
+          delete("/rounds/#{@round.id}/nominations/#{@nomination.id}/extra")
+
+          @nomination.reload
+          expect(last_response).to be_ok
+          expect(@nomination.votes).to_not be_empty
+          expect(@nomination.extras).to be_empty
+          expect(@nomination.value).to eql(1)
+        end
+
+        it('should create a normal vote with an extra vote') do
+          expect(@nomination.votes).to be_empty
+          expect(@nomination.extras).to be_empty
+          expect(@nomination.value).to eql(0)
+
+          post("/rounds/#{@round.id}/nominations/#{@nomination.id}/extra")
+
+          @nomination.reload
+          expect(last_response).to be_ok
+          expect(@nomination.votes).to_not be_empty
+          expect(@nomination.extras).to_not be_empty
+          expect(@nomination.value).to eql(2)
+
+          delete("/rounds/#{@round.id}/nominations/#{@nomination.id}/extra")
+
+          @nomination.reload
+          expect(last_response).to be_ok
+          expect(@nomination.votes).to_not be_empty
+          expect(@nomination.extras).to be_empty
+          expect(@nomination.value).to eql(1)
+        end
+
+        it('should delete an extra vote with a normal vote') do
+          expect(@nomination.votes).to be_empty
+          expect(@nomination.extras).to be_empty
+          expect(@nomination.value).to eql(0)
+
+          post("/rounds/#{@round.id}/nominations/#{@nomination.id}/extra")
+
+          @nomination.reload
+          expect(last_response).to be_ok
+          expect(@nomination.votes).to_not be_empty
+          expect(@nomination.extras).to_not be_empty
+          expect(@nomination.value).to eql(2)
+
+          delete("/rounds/#{@round.id}/nominations/#{@nomination.id}/vote")
+
+          @nomination.reload
+          expect(last_response).to be_ok
+          expect(@nomination.votes).to be_empty
+          expect(@nomination.extras).to be_empty
+          expect(@nomination.value).to eql(0)
         end
       end
     end
