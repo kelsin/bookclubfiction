@@ -36,6 +36,9 @@ class NominationsController < ApplicationController
   end
 
   def extra
+    # We should only allow this if you have a vote
+    raise Exceptions::ExtraVotesError, "You do not have enough extra votes" unless current_user.extra_votes > 0
+
     vote
 
     result = @nomination.add_to_set(:extra_user_ids => current_user.id, :safe => true)
