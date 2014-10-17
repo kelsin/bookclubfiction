@@ -6,7 +6,6 @@ json.nominations round.nominations, :partial => 'partials/nomination', :as => :n
 
 if current_user
   json.my_nominations round.nominations.by_user(current_user.id), :partial => 'partials/nomination', :as => :nomination
-  json.other_nominations round.nominations.not_by_user(current_user.id), :partial => 'partials/nomination', :as => :nomination
   json.selections(round.selections(current_user),
                   :partial => 'partials/selection',
                   :as => :selection)
