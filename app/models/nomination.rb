@@ -17,6 +17,7 @@ class Nomination
   # Scopes
   scope :by_round, lambda { |id| where(:round_id => id) }
   scope :by_user, lambda { |id| where(:user_id => id) }
+  scope :not_by_user, lambda { |id| where(:user_id.ne => id) }
 
   # Validations
   validates :user_id, :presence => true
