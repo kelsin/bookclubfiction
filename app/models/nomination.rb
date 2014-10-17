@@ -38,11 +38,11 @@ class Nomination
   end
 
   def voted?(user)
-    self.vote_user_ids.include? user.id
+    user ? self.vote_user_ids.include?(user.id) : false
   end
 
   def extra?(user)
-    self.extra_user_ids.include? user.id
+    user ? self.extra_user_ids.include?(user.id) : false
   end
 
   def round_must_be_nominating
