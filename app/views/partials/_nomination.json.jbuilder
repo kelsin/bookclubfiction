@@ -8,10 +8,6 @@ json.extra nomination.extra?(current_user)
 json.votes nomination.vote_user_ids.size
 json.extras nomination.extra_user_ids.size
 
-json.user do
-  json.partial! 'partials/user', :user => nomination.user
-end
-
 json.book do
   json.partial! 'partials/book', :book => nomination.book
 end
