@@ -85,9 +85,16 @@ class User
 
     if groups.group
       groups.group.each do |g|
-        if g.id == "88207"
-          self.member = true
-          break
+        if g.is_a? Array
+          if g[1] == "88207"
+            self.member = true
+            break
+          end
+        else
+          if g.id == "88207"
+            self.member = true
+            break
+          end
         end
       end
     end
