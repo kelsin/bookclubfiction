@@ -13,3 +13,7 @@ end
 
 json.created_at round.created_at
 json.updated_at round.updated_at
+json.nominating_at round.nominating_at
+json.seconding_at round.seconding_at
+json.reading_at round.reading_at
+json.closed_at round.closed_at
