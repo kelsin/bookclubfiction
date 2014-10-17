@@ -163,46 +163,6 @@ RSpec.describe "Rounds Api", :type => :api do
           @round.reload
           expect(@round).to be_seconding
         end
-
-        it('should not deduct users normal votes') do
-          @voting_user = FactoryGirl.create(:member)
-          expect(@voting_user.extra_votes).to eql(5)
-
-          @nomination = FactoryGirl.create(:nomination, :round => @round)
-
-          post "/rounds/#{@round.id}/progress"
-
-          @nomination.reload
-          @vote = Vote.new(:user => @voting_user, :extra => false)
-          @nomination.votes.push(@vote)
-          @nomination.save! :safe => true
-
-          post "/rounds/#{@round.id}/progress"
-
-          @voting_user.reload
-          expect(@voting_user.extra_votes).to eql(5)
-        end
-
-        it('should deduct users extra votes') do
-          @voting_user = FactoryGirl.create(:member)
-          expect(@voting_user.extra_votes).to eql(5)
-
-          @nomination = FactoryGirl.create(:nomination, :round => @round)
-
-          post "/rounds/#{@round.id}/progress"
-
-          @nomination.reload
-          @vote = Vote.new(:user => @voting_user, :extra => true)
-          @nomination.votes.push(@vote)
-          @nomination.save! :safe => true
-
-          @nomination.reload
-
-          post "/rounds/#{@round.id}/progress"
-
-          @voting_user.reload
-          expect(@voting_user.extra_votes).to eql(4)
-        end
       end
 
       describe('with a valid seconding round') do
@@ -247,6 +207,83 @@ RSpec.describe "Rounds Api", :type => :api do
 
           @round.reload
           expect(@round).to be_closed
+        end
+      end
+    end
+  end
+
+  describe('#backup') do
+    describe('as an admin') do
+      before(:each) do
+        sign_in :admin
+      end
+
+      describe('without a valid round') do
+        it('should 404') do
+          post '/rounds/234/backup'
+
+          expect(last_response).to be_not_found
+          expect(Round.all).to be_empty
+        end
+      end
+
+      describe('with a valid nominating round') do
+        before(:each) do
+          @round = FactoryGirl.create(:round)
+        end
+
+        it('should do nothing to the round') do
+          post "/rounds/#{@round.id}/backup"
+
+          expect(last_response).to be_ok
+
+          @round.reload
+          expect(@round).to be_nominating
+        end
+      end
+
+      describe('with a valid seconding round') do
+        before(:each) do
+          @round = FactoryGirl.create(:seconding_round)
+        end
+
+        it('should backup the round to nominating') do
+          post "/rounds/#{@round.id}/backup"
+
+          expect(last_response).to be_ok
+
+          @round.reload
+          expect(@round).to be_nominating
+        end
+      end
+
+      describe('with a valid reading round') do
+        before(:each) do
+          @round = FactoryGirl.create(:reading_round)
+        end
+
+        it('should backup the round to seconding') do
+          post "/rounds/#{@round.id}/backup"
+
+          expect(last_response).to be_ok
+
+          @round.reload
+          expect(@round).to be_seconding
+        end
+      end
+
+      describe('with a valid closed round') do
+        before(:each) do
+          @round = FactoryGirl.create(:closed_round)
+        end
+
+        it('should backup the round to reading') do
+          post "/rounds/#{@round.id}/backup"
+
+          expect(last_response).to be_ok
+
+          @round.reload
+          expect(@round).to be_reading
         end
       end
     end

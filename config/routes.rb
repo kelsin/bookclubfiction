@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
     resources :rounds, defaults: { :format => :json } do
       post 'progress', :on => :member
+      post 'backup', :on => :member
 
       resources :selections, defaults: { :format => :json }
 
