@@ -68,12 +68,14 @@ class NominationsController < ApplicationController
   def update_faye
     @nomination.reload
 
-    client = Faye::Client.new(Rails.env.production? ? 'http://www.bookclubfiction.net/faye' : 'http://localhost:3000/faye')
-    client.publish('/nominations',
-                   { :id => @nomination.id,
-                     :value => @nomination.value,
-                     :votes => @nomination.vote_user_ids.size,
-                     :extras => @nomination.extra_user_ids.size })
+    EM.run {
+      client = Faye::Client.new(Rails.env.production? ? 'http://www.bookclubfiction.net:9292/faye' : 'http://localhost:3000/faye')
+      client.publish('/nominations',
+                     { :id => @nomination.id,
+                       :value => @nomination.value,
+                       :votes => @nomination.vote_user_ids.size,
+                       :extras => @nomination.extra_user_ids.size })
+    }
   end
 
   def is_round_seconding?
