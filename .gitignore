@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/faye/.bundle
 
 # Ignore environment config
 .env
