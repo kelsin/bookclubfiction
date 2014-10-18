@@ -31,6 +31,8 @@ module Bookclubfiction
 
     # Setup Faye
     Faye::WebSocket.load_adapter('thin') unless Rails.env.production?
+
+    Thread.new { EM.run }
     config.middleware.use(Faye::RackAdapter,
                           :mount => '/faye',
                           :timeout    => 25,
