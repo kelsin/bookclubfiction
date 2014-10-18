@@ -32,7 +32,7 @@
     };
 
     // Setup faye
-    self.faye = new Faye.Client('/faye');
+    self.faye = new Faye.Client('//' + window.location.hostname + ':9292/faye');
     self.faye.subscribe('/nominations', function(message) {
       var nomination = _.find(self.current.nominations, { id: message.id });
       nomination.value = message.value;
