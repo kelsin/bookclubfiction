@@ -1,5 +1,3 @@
-json.logged_in current_user.present?
-
 json.user do
   json.partial! 'partials/user', :user => current_user
 end if current_user
