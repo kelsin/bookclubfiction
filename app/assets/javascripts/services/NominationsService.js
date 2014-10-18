@@ -23,7 +23,8 @@
           deferred.reject(error);
         });
       return deferred.promise;
-    }
+    };
+
     self.nominate = function(book, roundId){
       var deferred = $q.defer();
       $http.post('/rounds/' + roundId + '/nominations', { book: book })
@@ -36,7 +37,8 @@
           deferred.reject(error);
         });
       return deferred.promise;
-    }
+    };
+
     self.remove = function(id, roundId){
       var deferred = $q.defer();
       $http.delete('/rounds/' + roundId + '/selections/' + id)
@@ -49,7 +51,7 @@
           deferred.reject(error);
         });
       return deferred.promise;
-    }
+    };
   }
 
   angular
