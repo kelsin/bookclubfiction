@@ -23,7 +23,9 @@ $lightred: #f8cfcf;
 h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-top: 0; }
 
 .bcf-head { padding: 1em 0; background: #f1f1f1;
-  h1 { font-size: 50px; font-family: 'Cutive Mono'; margin: 0;  float: left; }
+  h1 { font-size: 50px; font-family: 'Cutive Mono'; margin: 0;  float: left; 
+    a { text-decoration: none; color: #333; }
+  }
   #user { float: right; font-size: 12px;
     ul { margin: 0; padding: 0; list-style: none outside; }
     li { display: inline-block; margin-right: 2em; }
