@@ -1,30 +1,29 @@
 <div id="header" class="page-header">
         <h1>Seconding <small>Genre: {{ round.current.genre }}</small></h1>
     </div>
-    
     <div id="results">
     <ul class="chart">
         <li data-votes="{{ nomination.value }}" ng-repeat="nomination in round.current.nominations | orderBy : ['-value', '-book.rating']">{{ nomination.book.title }}, {{ nomination.book.rating }} <span class="label label-default">{{ nomination.value }} votes</span></li>
     </ul>
-    
-    
+
+
     <script type="text/javascript">
         $(function(){
         var votePercent = 100;
-        
+
         var i = -1;
         var highest = 0;
-        
+
         var dataset = [];
         //console.log(dataset);
         $('.chart li').each(function(){
             dataset.push($(this).data('votes'));
         });
-        
+
         //console.log(dataset);
-        
-        
-        
+
+
+
         d3.selectAll('.chart li')
             .data(dataset)
             .attr('style', function(d){
@@ -35,17 +34,17 @@
             });
         });
     </script>
-    
+
     <p>Voting will close Sunday.</p>
     </div>
-    
+
     <h3>The Nominations</h3>
     <p>Click on any book to second the current genre's selections. If you have extra votes, you can use them after you've voted on a book.</p>
-    
+
     <div class="alert alert-info"><p><span ng-show="status.user.extra_votes > 0">You have <strong>{{ status.user.extra_votes }}</strong> left.</span>
     <span ng-show="status.user.extra_votes == 0">You have no extra votes.</span>
     Get more by participating in discussions! <span class="help">?<span class="hint">You must participate in over 50% of discussions for a given book to earn an extra vote. Extra votes can allow you to give a book you want to read an additional +1.</span></span></p></div>
-    
+
     <ul class="nominations">
         <li class="book" ng-repeat="nomination in round.current.nominations" ng-class="{seconded: nomination.vote, 'plus-one': nomination.extra }">
             <a>
@@ -55,4 +54,3 @@
             <a class="book-url" target="_blank" href="{{ nomination.book.url }}">{{ nomination.book.title }}</a>
         </li>
     </ul>
-    

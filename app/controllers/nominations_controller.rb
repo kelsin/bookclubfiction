@@ -3,6 +3,7 @@ class NominationsController < ApplicationController
   load_and_authorize_resource :through => :round
 
   before_action :is_round_seconding?, :only => [:vote, :unvote, :extra, :unextra]
+  after_action :update_faye, :only => [:vote, :unvote, :extra, :unextra]
 
   def create
     @nomination.user = current_user
@@ -63,6 +64,18 @@ class NominationsController < ApplicationController
   end
 
   private
+
+  def update_faye
+    @nomination.reload
+    EM.run {
+      client = Faye::Client.new(Rails.env.production? ? 'http://www.bookclubfiction.net/faye' : 'http://localhost:3000/faye')
+      client.publish('/nominations',
+                     { :id => @nomination.id,
+                       :value => @nomination.value,
+                       :votes => @nomination.vote_user_ids.size,
+                       :extras => @nomination.extra_user_ids.size })
+    }
+  end
 
   def is_round_seconding?
     raise Exceptions::RoundStateError, "Round is not currently seconding" unless @round.seconding?

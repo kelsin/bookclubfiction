@@ -4,7 +4,6 @@
     $scope.round = RoundService;
     $scope.status = StatusService;
     $scope.vote = function(nomination){
-        console.log(nomination);
         if(nomination.vote){
             SecondingService.unvote(nomination.id, RoundService.current.id);
         } else {
@@ -12,14 +11,12 @@
         }
     };
     $scope.extra = function(nomination){
-        console.log(nomination + 'dasdfadsf');
         if(nomination.extra){
             SecondingService.unextra(nomination.id, RoundService.current.id);
         } else {
             SecondingService.extra(nomination.id, RoundService.current.id);
         }
     };
-    
   }
 
   angular

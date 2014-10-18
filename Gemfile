@@ -18,6 +18,11 @@ gem 'therubyracer',  platforms: :ruby
 gem 'mongo_mapper'
 gem 'bson_ext'
 
+# Faye
+gem 'faye'
+gem 'faye-redis'
+gem 'eventmachine'
+
 # Use ng-annotate
 gem 'ngannotate-rails'
 
@@ -80,3 +85,6 @@ gem 'factory_girl_rails', group: [:development, :test]
 # Mocking Net Requests
 gem 'webmock', group: :test
 gem 'vcr', group: :test
+
+# Thin for development
+gem 'thin', group: [:development, :test]

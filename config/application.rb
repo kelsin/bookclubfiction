@@ -28,5 +28,16 @@ module Bookclubfiction
     config.generators do |g|
       g.orm :mongo_mapper
     end
+
+    # Setup Faye
+    Faye::WebSocket.load_adapter('thin') unless Rails.env.production?
+    config.middleware.use(Faye::RackAdapter,
+                          :mount => '/faye',
+                          :timeout    => 25,
+                          :engine  => {
+                            :type  => Faye::Redis,
+                            :host  => 'localhost',
+                            :port  => 6379 })
+    config.middleware.delete "Rack::Lock"
   end
 end

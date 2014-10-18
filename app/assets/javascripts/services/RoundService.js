@@ -1,5 +1,5 @@
 (function() {
-  function RoundService($http, $q) {
+  function RoundService($http, $q, $rootScope) {
     var self = this;
     self.current = {};
 
@@ -15,7 +15,7 @@
           deferred.reject(error);
         });
       return deferred.promise;
-    }
+    };
 
     self.progressRound = function(roundId){
       var deferred = $q.defer();
@@ -29,10 +29,18 @@
           deferred.reject(error);
         });
       return deferred.promise;
-    }
+    };
+
+    // Setup faye
+    self.faye = new Faye.Client('/faye');
+    self.faye.subscribe('/nominations', function(message) {
+      var nomination = _.find(self.current.nominations, { id: message.id });
+      nomination.value = message.value;
+      nomination.votes = message.votes;
+      nomination.extras = message.extras;
+      $rootScope.$apply();
+    });
   }
-
-
 
   angular
     .module('BookClubFiction')
