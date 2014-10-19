@@ -1,3 +1,3 @@
 (function () {
-  angular.module('BookClubFiction', ['ngRoute', 'ui.bootstrap']);
+  angular.module('BookClubFiction', ['ngAnimate', 'angular-loading-bar', 'ngRoute', 'ui.bootstrap']);
 })();
