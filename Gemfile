@@ -23,6 +23,9 @@ gem 'faye'
 gem 'faye-redis'
 gem 'eventmachine'
 
+# Newrelic monitoring
+gem 'newrelic_rpm'
+
 # Use ng-annotate
 gem 'ngannotate-rails'
 
