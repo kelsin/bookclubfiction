@@ -33,11 +33,8 @@
 
     // Setup faye
     self.faye = new Faye.Client('/faye');
-    self.faye.subscribe('/nominations', function(message) {
-      var nomination = _.find(self.current.nominations, { id: message.id });
-      nomination.value = message.value;
-      nomination.votes = message.votes;
-      nomination.extras = message.extras;
+    self.faye.subscribe('/votes', function(message) {
+      self.current.votes = message.votes;
       $rootScope.$apply();
     });
   }

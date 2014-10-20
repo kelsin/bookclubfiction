@@ -3,7 +3,7 @@
     </div>
     <div id="results">
     <ul class="chart">
-        <li data-votes="{{ nomination.value }}" ng-repeat="nomination in round.current.nominations | orderBy : ['-value', '-book.rating']">{{ nomination.book.title }}, {{ nomination.book.rating }} <span class="label label-default">{{ nomination.value }} votes</span></li>
+        <li ng-repeat="vote in round.current.votes | orderBy : ['-value', '-book.rating']" data-votes="{{ vote.value }}">{{ vote.book.title }}, {{ vote.book.rating }} <span class="label label-default">{{ vote.value }} votes</span></li>
     </ul>
 
 

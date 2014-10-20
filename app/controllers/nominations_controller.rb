@@ -70,11 +70,8 @@ class NominationsController < ApplicationController
 
     EM.run {
       client = Faye::Client.new(Rails.env.production? ? 'https://www.bookclubfiction.net/faye' : 'http://localhost:3000/faye')
-      client.publish('/nominations',
-                     { :id => @nomination.id,
-                       :value => @nomination.value,
-                       :votes => @nomination.vote_user_ids.size,
-                       :extras => @nomination.extra_user_ids.size })
+      client.publish('/votes',
+                     JSON.parse(render_to_string(:template => 'nominations/votes.json.jbuilder')))
     }
   end
 

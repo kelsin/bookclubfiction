@@ -16,13 +16,11 @@
         $scope.clear();
     };
     $scope.nominate = function(book){
-        console.log(book);
         NominationsService.nominate(book, RoundService.current.id);
     };
     $scope.remove = function(id){
         NominationsService.remove(id, RoundService.current.id);
     };
-    
     $scope.clear = function(){
         $scope.search.clear();
         $scope.query = '';
@@ -38,7 +36,6 @@
         }
     });
   }
-
 
   angular
     .module('BookClubFiction')
