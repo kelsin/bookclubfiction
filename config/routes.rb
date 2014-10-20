@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       post 'progress', :on => :member
       post 'backup', :on => :member
 
+      resources :votes, defaults: { :format => :json }
+
       resources :selections, defaults: { :format => :json }
 
       resources :nominations, defaults: { :format => :json } do
