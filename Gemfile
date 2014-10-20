@@ -29,6 +29,9 @@ gem 'newrelic_rpm'
 # Use ng-annotate
 gem 'ngannotate-rails'
 
+# Angular Rails Templates
+gem 'angular-rails-templates'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

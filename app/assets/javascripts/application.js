@@ -10,4 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
+//= require loading-bar
+//= require ui-bootstrap-tpls
+//= require bookclubfiction
+//= require config
+//= require_tree ./services
+//= require_tree ./controllers
+//= require angular-rails-templates
+//= require_tree ./templates

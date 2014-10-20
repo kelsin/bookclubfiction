@@ -4,21 +4,21 @@
 		$routeProvider
 			.when('/nominations', {
 				controller: 'NominationsController',
-				templateUrl: 'templates/nominations.html'
+				templateUrl: 'nominations.html'
 			})
 			.when('/seconding', {
 				controller: 'SecondingController',
-				templateUrl: 'templates/seconding.html'
+				templateUrl: 'seconding.html'
 			})
 			.when('/reading', {
-				templateUrl: 'templates/reading.html'
+				templateUrl: 'reading.html'
 			})
 			.when('/admin', {
 				controller: 'AdminController',
-				templateUrl: 'templates/admin.html'
+				templateUrl: 'admin.html'
 			})
 			.when('/admin/votes', {
-				templateUrl: 'templates/admin-votes.html'
+				templateUrl: 'admin-votes.html'
 			})
 			.otherwise({
 				controller: 'IndexController',
