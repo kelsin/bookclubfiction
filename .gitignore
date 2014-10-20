@@ -8,6 +8,9 @@
 /.bundle
 /faye/.bundle
 
+# Ignore certs
+certs
+
 # Ignore environment config
 .env
 
