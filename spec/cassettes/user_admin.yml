@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2508813&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
+    uri: https://www.goodreads.com/group/list?format=xml&id=2508813&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Oct 2014 03:53:49 GMT
+      - Mon, 20 Oct 2014 03:58:15 GMT
       Server:
       - Server
       Content-Type:
@@ -27,20 +27,20 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 0THAPX2WNTSQYXXSFR0Z
+      - 0WAPXK7RXT8WE1HWRZ74
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.198848'
+      - '0.088479'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=5f0fe6870cbc6b0bd5b343b309653906; path=/; expires=Wed, 15-Oct-2014
-        09:53:49 GMT; HttpOnly
-      - csid=BAhJIhg4NzItNzgyNDIwOS04NjU2ODE1BjoGRVQ%3D--cb50498f569406f9969102acbbbaae09c00a8455;
-        path=/; expires=Sun, 15-Oct-2034 03:53:49 GMT
+      - _session_id2=6ea98029021b14207436da3a035f6b8d; path=/; expires=Mon, 20-Oct-2014
+        09:58:15 GMT; HttpOnly
+      - csid=BAhJIhgyMTMtMTc1ODY4My02Njc1OTE3BjoGRVQ%3D--5225369b2eaeb6a0e3b2f9b2f0d96727c2fc558f;
+        path=/; expires=Fri, 20-Oct-2034 03:58:15 GMT
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -49,40 +49,40 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA62YXXPiNhSG7/kVKhf9uBCW5G/X8Q6bNu2k2baTks3M7uww
-        ii3AG2NTS4bl3/dIBkKz0JqBqxiQ5XOe9/g9R4nffJkXaClqmVflVZ8OSB+J
-        Mq2yvJxe9R9GNzjov0l68S9VldWCZ/JeyEVVSpH0EIrvxd+NkEpfwyfeqJko
-        VZ5yBZslqm5EbL360qyEtc9incTffLz+aTgafnwOlw+3+cOH35vHuw+1Uu9n
-        4W9i+OlTElt6Xbv7XKhZlb3cNK2rZjEucqnMws3POiprL6zYLJMm2kaK2lxM
-        8lqqccnnIrnmuSryEn0/XHM5y3+Irb0f9do8Q2q9EFf9vFRiKup+wlwSBNSO
-        rTwzuxV8u1lsvVxvH9g+hpvdY0uH0H6jf1+wcT7nUzFu6iKZKbWILCsbTGvM
-        pRRKDtJqbu6QFmWuw2zXZ3TBrE0Ag8+LaWz9a49e+4Skp3dPq6ZUCSWx1V6Z
-        WAEXkorXCrTWSmfwFyRXleKFuWxpw1IDDpSHLIOAEb/NN+ZpKqRMFs1Tkacg
-        b/uxZ+DKcfukEBbvf+7FCiiL5G1VPV8XzdNNnuoKia32a3jGjkJvVxRHeLR6
-        WlTDcH0vZADExKdxQCUAgv3djCAcHrfM1XrMVfKuKtEfqULURtSJ7DCyPYSJ
-        TwhihDobBfdv6AG08nkrz2q1Gky374IRyARkyVm1auPAT5BlCllOtlma+yGu
-        DVHQwbwCe4BtarMT+Ho+BHoI8A7effUkaoVuqzrj5XcyGs0EepwJUaBqgkb5
-        XJh3pgN++aoc28q0ymoxq1S1Sd4lXzwPc0adwGVi4hJ74k8cl3osY24WEjf1
-        +STtKNCoEa1ADmgUMT+y/YsJpDnj2rDBnw0bLDGYFl5pNriaYAVsoAj+XzE7
-        cMITJPPdw4rdDX4eoHdVJmSuQK960EmV1yaxfSmY7zjEJl4AL4WtIzyB+W1T
-        IBYiSiISROSCzHUcuMACzzdp4s91F8QeC+3gBMSU+QwkOfRevOfTvOQFuuGl
-        4nKNtBEh7URn0XYIpY7nh5q2CfYE2saCHPCcyLYjh1yswk0ceNnmiydtvsaS
-        sPakLtyhhhj4i+5undzeAes6BP0tT5+l4OpCtG2X+rZLQgdomxA70v6rKdFw
-        UWvDh8J2wwiwX8rwTRz4aZPoaZhd4hLozZ0xsyNN9e5bvqjkj8OVkNVcXAo2
-        CWHcCAMCsE2gHWGPZg26BeCMIupHzIuc8AU21MlX7fiE7mriACPhbaan0aYn
-        kKYeCWC8O1TTuzEY3QiRaeHPchAaMMd1A1vXNO2K+KU/gns4JGLuxeqZ4t1s
-        gye7BDt0Q9c9aYCh5IhRP9a5gpMH+pUvxXnzIfNhFiHMCXUr1OF1xPsoMnTL
-        S2QTPX4QP6K6goN2PoSqOKeCTRx41eaIZ22OHeg6oW5snZ2CHjHk3XT4Zw3j
-        m0jXehiE6QfdFHAU0s3R9MSuo+HxIcQLA/BFV5PXoXckrwc/4x1MT+Y0jJy9
-        yRyc8izyOg682ORtBj2Y+iY6b90kO/dGSpjtvx7V63zJlT7qHjoL0WMzyU6N
-        u1yJmtdrNFzxOkOPeVnCUQptDkkvhn6uLrbnU2JTV3t6m0dHYXQHNfMKCGNM
-        neyZ+plHpjYQXGwYgLkDA7xqGeDNEeq/rV7PNPp/EJsDFpz14fLr/1f8Ax+m
-        FEXqEAAA
+        H4sIAAAAAAAAA62YW3PiNhTH3/kUKg+9PAhL8t11vMOmpZ00vUyWbGZ2Z4cR
+        tgBvjE0tGZZv3yMZCM2S1kx4wtiydM7vHP3PkeM3X5YFWota5lV51acD0kei
+        TKssL+dX/fvxCAf9N0kv/qWqslrwTN4JuapKKZIeQvGd+LsRUulr+McbtRCl
+        ylOuYLJE1Y2IrWc3zUgY+yi2SfzNx+ufhuPhx8dwfX+T33/4o3m4/VAr9X4R
+        /iaGnz4lsaXHtbMvhVpU2dNL87pqVpMil8oM3D3WVllHZsVmmDTWNlLU5mKW
+        11JNSr4UyTXPVZGX6PvhlstF/kNsHT3UY/MMqe1KXPXzUom5qPsJc0kQUDu2
+        8szMVvD9ZLH1dL1fsF2Gm9ljS5vQ3tHPV2ySL/lcTJq6SBZKrWRkWdlgXmMu
+        pVBykFZL84q0KHMdZrs+oytm7SwYfF7NY+tfk/TaJZKenj6tmlIllMRWe2WM
+        BV5IKl4rCLYOdQa/EHNVKV6YyxY3DDXkIPTgZhAw4rcOxzxNhZTJqpkWeQrx
+        bf/2DF052a8JeI5v9GIFnEXytqoer4tmOspTnSOx1d6GRQ4ceoe0eIlIG1KL
+        ahyu74UMkBgLNRBIBoBwPJ2JCYf11rnaTrhK3jUl+jNViIaIBpFDI9tHmPiE
+        IEaoswvi8Qs9wFY+HiK02WwG8/1+MDEyFllyUW1aQ/AU/EzBz9neTzMBGLaD
+        CqEw2+CIsU1tdgZiz4eAnEJ8wHdXTUWt0E1VZ7z8TkbjhUAPCyEKVM3QOF8K
+        s2+6BEA+S8k2O62yWi0qVe28d8kXz8PZLEwJs4Op7U6nniu81HOEx1136k9J
+        KuyOIRrVeRsiH1EW2SwiweVCpEnj2tDBnw0dLDFIF95oOriaYQV0IA/+P2Z2
+        4IRnBM13T8fsdvDzAP1eZULmCiJWD7rF5blU7DcG8x2H2MQLYGPY2sSO1MeN
+        QDdNgRhsDALII3LBjWEMwQUWeLlzFH+uu0D2WGgHZ0Cm4L53mvN7Ps9LXqAR
+        LxWXW6TlCGk9eh1vh1DqeH6oeRtrO/I+EiJGIuZEdni5LDeG4HXrMZ61Hhth
+        wlqZupCHNGKgh7rOdZJ9BwTslCS95emjFFxdirftUt92SegAb2PjGbyHqxpR
+        G0Fyu2FEncvxNobg6c7V80C7xCVQpjuDZi9o/+23fFXJH4cbIauluBhuEkLr
+        EQYEcBtLO+IeLxqQkxIxiqgfMS9yjtIbUuWrwnxOnTWGgJzw1tfzeNMzWFOP
+        6t7nVF4fmmI0EiLToX+djtCAOa4b2DqvaUfIzzQkhH7mcjlN8aHPwbODix3q
+        ouue1cxQAlX0FOGHOldwEkG/8rV4ZbfI/MBlhDmhLoravo6AH0SGbniJbAK6
+        ARUxgrYRk6DtFqHNfVUWG0PwpvUSL1ovO/B1QnZO30FfEOZDr/hXDb2cSLe6
+        NYROCI0KOBzpMmmqY+dG8eWGxAsDkEdXs9e2d2TfNiSgIAxRB8BHjveU3CCY
+        r2OvDcGrneem7YMecKY91+Wyc5Wk0O/6z1v3Ol9zpY+/J49HNgjQqXQ/xOM2
+        V6Lm9RYNN7zO0ENelnC6Qrtj05OwvzoytudTYlNXa3vrSMfQvINybg5Rge7Q
+        XegVL1hLW0twsaMAIg8U8KalgHeHqv+WfN3f6C8TuyMXfAGAy6+/YvwD1dmT
+        qQARAAA=
     http_version: 
-  recorded_at: Wed, 15 Oct 2014 03:53:49 GMT
+  recorded_at: Mon, 20 Oct 2014 03:58:16 GMT
 - request:
     method: get
-    uri: http://www.goodreads.com/group/show?format=xml&id=88207-bookclubfiction&key=k9vUJiUZNuWLZrttVh9KeA
+    uri: https://www.goodreads.com/group/show?format=xml&id=88207-bookclubfiction&key=k9vUJiUZNuWLZrttVh9KeA
     body:
       encoding: US-ASCII
       string: ''
@@ -99,7 +99,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Oct 2014 03:53:50 GMT
+      - Mon, 20 Oct 2014 03:58:16 GMT
       Server:
       - Server
       Content-Type:
@@ -107,20 +107,20 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 1VBQPXBAAWDER0C706J1
+      - 191Q98FD61DR3YDYZ9RP
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.285715'
+      - '0.167396'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=c81537fb30f53b6ec3706ed971e4fb44; path=/; expires=Wed, 15-Oct-2014
-        09:53:50 GMT; HttpOnly
-      - csid=BAhJIhg4MTItNzEzMTEyMy02ODE2NjkwBjoGRVQ%3D--cecf6a6c2dad1c442da8d6741b3672b2d0a4dc50;
-        path=/; expires=Sun, 15-Oct-2034 03:53:50 GMT
+      - _session_id2=907cc246c5594bb6949c514ca6ad257b; path=/; expires=Mon, 20-Oct-2014
+        09:58:16 GMT; HttpOnly
+      - csid=BAhJIhgzNzMtNTkzMTM4NC0wMDE3NzgyBjoGRVQ%3D--d4b021c5d1ad3c65a9392d8ace17427a22909122;
+        path=/; expires=Fri, 20-Oct-2034 03:58:16 GMT
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -129,371 +129,71 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        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
-        hcDNb3H/B9EsbMrGKwAA
+        H4sIAAAAAAAAA9Va/XPbNhL9Of4rYM/cpZmLLX6L8slKHbdpkuZr7KSZa6ej
+        gUhIRE0RPIK0qs798fcAUBIlyzo6Sju+mdgxyQW4+7B4+7BS/9nv05TcsEJy
+        kZ0d2SfWEWFZJGKeTc6OPn18cRwePRsc9H8QIi4YjeUlk7nIJBscENK/ZP+u
+        mCzV37iiVZmwrOQRLTHZoCwq1u9s3NSWsL1m80H/8JeL784/nv9y3bv59Jp/
+        +vld9fnNz0VZ/pT0fmTnv/466HeUnZl9yspExKtBk0JU+VAmYqYN68fKq07D
+        rb42QwA8HoShY3X7Hfx10C95mbLVZM+FuL5Iq9ELHinf9YzG5KAfMxkVPNcx
+        LV0+z4jIUp4xMsLQCENJzG5EyWJSClJPQ8SY0DQl1zyL5SF5n7NMPaXZXGDg
+        LBGPY5Lya6Zu/iZ49pTMGKEFfkgmjvOCSVnhSs+u5qEjUZVELQNWh4yNrxg8
+        ATSsOOmPCtIZmN+fMWwepXCPlTOG98Z8PGYFlodMWIaZlW+LGUZUwm+RkSmb
+        jpAKj4mKRMKdhEcJ8iGWpMpJwtJcvbiSZAQnronyBtOIqiCRmI5FUZI/VGT1
+        GzAaDsiSw3VZ0rkay4FAAt+a5itPTgiB4yqLtAcEU2p8JZnxMtFjaR0AUIxJ
+        Qm+AI2PX6RwByqiSKo3lCWlC8QMryfOLF4ggpojqEIlKkoKNz46Ssszlaacz
+        m81OxjRi6lUncK2zWNMaoCNgnp4dZWIs0lTMjgYvamOk94D85/aEJdwtsSJt
+        5vpobO+aSvk2EWKSMj1bRFMsBy06aqXiZ7KIziwvFL28qgrR/a0Mr7OE9dxR
+        ScNE/s2zdPqfLEY1Zvo7neb/jMo/zs6nrMCW7bwRcnieTVjK5K14L+q3KicN
+        tN9PKU+RCYdkuQFqsL6dqEfKWb2LmrvnoE+jCEk9yKtRyiPMZi4P+qmoSWO5
+        wfTg5W1YUFkOKXbnDS/nQ1oOrqqMvI9KYveIHZ569qnbJcdW17KIY9kexm4O
+        wE7mMk/pfIhljFkxjESVlQMfPm67vzIvRc4jOcwxxIxsjrn98KCvUxa75YZh
+        lA51OE7pZDCmqQQl3vUY8MTxUD9ds9+4a8zYDfbybbvm7YN+jnxdt2nc0QHW
+        W2abm3c8Pehj76fDmSjSeM3NzdtmtcGb2WSYsdmwJpf10JAAd1jsASNyiU1E
+        MR+8LyY043/oeiT72Dz1/YO+rEbLK0X8kugNQa5ExFnJGaybJgi6wsZY8X9f
+        loXIJoM3r979eHUKY3OJzTHYSi8PZgsrwjaUqgi0QZr13lb7e/COoR4ouicg
+        YE2ysppMUOkVjs/IavNvEOVq72sg8KPItybeunw9Xy+15IbT2wS6HyObpby1
+        Dl/IyoeLWPT/9UJffnrz/ea647H9hLwTBAoJla+QeuSHlKG8EhBPBBjrJ6iD
+        kse61BElrS5R0x/LxWNS0okqYRpB5wn5jo1U5dLSYMZSUCsD715WMcvAproS
+        gpykyCg0QlnSCAVT2WaiVKJg8KrE3GMlViA06iUnc1W2wWyZWtN6bZQ7Ojme
+        khFqe8rUwGvGcsJLEoF6U7z39MnCNfcJOR9JkVYlQwHOzNwFn/JM77hD8g2U
+        AJj2KSkQ/FMi2e8VTcHfT5UGUgV9spzLM8gltFAyAWmX8wKzqL/HkAv5vOCT
+        RMmrKaAoOCKFHFAhmAq3hMvX89AYkrbkEuNPyBWcgKSaAis60RgokYJpVbhv
+        BcQNHys4yExU6UqR5YWYKhGykizTKoPzGlL1EzwhL9XeGFcItYYF8mWm9E4G
+        Ii6UfsGiq6nx0pzCo4jn8B865zX0ng7BCCKzJWH5GOvGM4SI3YZoeXaoK6Gh
+        H5RBnl2vWKgpYMAwRqFrnaBR6Sh13NGy93hjp5ryqiaDNJ4ClmFVpLcnjk8m
+        xTGVkpVyNa3s2K7fdfxu0HNyx8x/8ls+0XOuJjsw2ntYSeRmXWxtC5XZKPfm
+        baXaTWmVRu0/qi/rq0dKvjue71q20e/qDPHoUT+j0w0RTxSZL/X3qwwrgIRZ
+        SHptr48TGMxLNl36hWkblwsTlIDhhtnmrYWpIblYKxNo1CvsGdsltn/q9E6t
+        dWXSMDWj+51aV9SXa1eL2H0/3BH7T0LtFb0CdwbpOO2iDHBIahHmx4qZMANi
+        9U59aLBwTYB9SZiO3XN2hXmeZRBtEZsq8bM7WnXSa7Gk6nX3D9Y/xeI21eaX
+        BOv5YRjsWNMfQO8FiO4Ch57dsapd0SJWt1WoLwpu1hXC2j11vK+SvoET7tq6
+        L0VRgPMRMejvu9VJbnfYiKdN2L1WYS/S2dG71vNObaf9Ci92sKavflQV6qSd
+        zof1WX1Baob5FBVrO5RkLpOFEaiDlPOcnR2pc2rJp+xooI4yx7Z17AQfre6p
+        ZeHfP/RvvHBzsJ6So/+g51A1ZMKKo4HtWI5lLTcVBAzq0P98p9U7dnq33rk5
+        Vr9ylfrb3TdTOfaphWxyFu6vbxh9ZDIobQsB1abnu1hH1bvR/SNzrNLMPpwz
+        WmxGDeCQHZtW9WDT2Xn3/so7ByXWfR49repWicKYbUUzDH2rsWdho+n2tWDk
+        Jep+k30VNCh9w1tLQjKOboJqjx2Brmub2jXdLzMemIMi6nNdMA1ECvHOlgTr
+        TwWUFi1FUZfQRvXVywRVoFnTVOJNvDygtW6hB9VtshVGOqTa1zEvcCbX8T9n
+        UURVTi7vmGW6FfvA7XV7tt1cSn1QN7PQNJ7xrD67r+qYwVFdb4GuYZY7w5X8
+        WGijTQmjdQcUDLSE1w27SsHUPikNg5xpTqLRNiE3dcvgwIS3UjItIFbldw+I
+        LyhalhCM35zPqUz4k1ZoO74VhmonLDfOCu0dMA+ofkednF+IsON7jtKJNhCu
+        /fiTEQbJ7QHwa4bMa5PBYej1mtXM9KY0Sp95imPYLmT1sYbBeE90Xd+zAheu
+        qPw1Ht0LXXTMG4TRr5szKo0f3Y85UIr2AP2DQE7TtLpGX6wF9o4bBJ6/6OJr
+        yl4m9Do3rPLcbFVNs1+XQjwb3thW6KsErx271xr8xVhf0EKh3Q5prwuK7DW0
+        eCPLd+U3tDmdCPR2l4DX1eI+5OxZvt0NwsAFsrUjDxnYy2pEUfpb5K/neLYf
+        qnPYQsis8vQtzXYxx9crfR5S1nG9rkbXOPSQ0f3AimLeCl3Xd0Iv6IKRtsB7
+        kdLielfmooVW4CMzWKUiixWL75XCtu2jTeJZip9rvx4yym/ROGwFMg4TOLje
+        wQyf0Z1MdoD8FZMY4IKf3K4i39qlh4zvOwgq0VIiO5bvq0bZliz+utjKjfae
+        6fR1MpEnohQ6/zvjoW/9HgTHPea4IxqFvbEd9GLLYZ7btXrMc0ZuYHct/yTP
+        7qOe76ky9tPOVyUbj9FybpfgduCi1/gXwH/H0cSzHdsJPCdQqW2ceciZ/YFP
+        Ju2QdZ2u5/fc7dBeobMHBrpTtw2mXMpcvUsay73Y2fJcx3VCVQIXXj1kjP9V
+        JRUODC0UBvpsoe+69fdc1hXy4E0ldiE8V29JlU0rbP9/2GO/M8p5ii4db8fd
+        TmC7OOxuJY9XmaRKfd+d4vWbhgvLVstwB4u4oWd7NtSQYhHj1UPO8Df4LA/f
+        FWmV415oB4HbaMO1O5t8PfHhgsWcLsq0UtDGmT8X2/26cy/x9Z12DA3uCHrB
+        doJ+i/4m1ufu7E2myqKHddkrb9Xnir6rG3O1O38utvuRwxUtaEK+KQvGpBgX
+        6mNfzlo25yw7dINVa77ZzBi8jd7SZHcraf2de6Le6/qea3VDLaeNXw8Z9kt8
+        MZEWcSu6sLsoioG9PavRsQO970prfCMuT/AdCzD3XnkdWG4Xh3+l6hYe3Qth
+        9R1X/fXM5UcCaEP3O7e/mftfLW/VedQrAAA=
     http_version: 
-  recorded_at: Wed, 15 Oct 2014 03:53:50 GMT
-- request:
-    method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2508814&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 15 Oct 2014 06:35:05 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 192ZPTHY5B98WA54N6R7
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.085314'
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=03caccf620323c26ce85953481edef6a; path=/; expires=Wed, 15-Oct-2014
-        12:35:05 GMT; HttpOnly
-      - csid=BAhJIhgwNTUtMDQzOTA3Ny0xMjQ4MTE0BjoGRVQ%3D--7b17d8f0e0fcc098646bed2d6cb8706a14a1b1b4;
-        path=/; expires=Sun, 15-Oct-2034 06:35:05 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2VSy07DMBC89yuC763Tqg0NcowqEEiAOKAWJBCKTLxNLBI7
-        2Gsef0/s8ubk8Xo8M7tadvjatckzWKeMLsh0kpIEdGWk0nVBNuuT8ZIc8hE7
-        NUZaENJdgeuNdsBHScKu4MmDw4CHm/DYgEZVCRzEOFoPjP4pRubAfYQ3zvbu
-        jo5X69XdY/68OVOb20t/c3FrEa+b/BxW9/ec0cDbqXeAjZHfn2prfF+2ymEk
-        fjyHVPRHLBZpLqb1DmwEW2Udllp0wM/ci9DSMPqjFihKJvjWQ0GURqjBEj5b
-        pMvldM6oklGkFR8aiVZtQUK3ZMjxVf6yjEa/SSHJzj8o9bNSdaKG0tuWN4j9
-        AaVuUtuxcA7QTSrT0R2k2vSNQUODAPXlIn3NsrHMt5mYi8WDkFsp0m2Ww35a
-        Vflc5tlsOltMel0z+stlxKIEHwX/yniNPGV0B2Jzw1gTh8JiQeJGyHiiQTH0
-        mpLYHA2sYTfo54wH+H9P3gEepp7MYgIAAA==
-    http_version: 
-  recorded_at: Wed, 15 Oct 2014 06:35:05 GMT
-- request:
-    method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2508815&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 15 Oct 2014 06:35:06 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 00PRSK434JTVTFNDB743
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.162287'
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=125512d31d0a1ed76fc2f86d29d80b2b; path=/; expires=Wed, 15-Oct-2014
-        12:35:06 GMT; HttpOnly
-      - csid=BAhJIhg0NjItMjM0ODY5OC0xMDU4MjQ2BjoGRVQ%3D--070cd82cb8fc1b736948019767e4789d77e2bf86;
-        path=/; expires=Sun, 15-Oct-2034 06:35:06 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2VSTU/DMAy971eU3Lekmzo6lAZNIJAAcUAbSCBUhca0EWtS
-        EhfBv6dJ+eaUF/vl+dkOP3xtd8kLOK+tKUg6YyQBU1mlTV2Q7eZkmpNDMeGn
-        1ioHUvkr8J01HsQkSfgVPPfgMeDhJntswKCuJA5iAl0PnP4JRubAfYI3wffu
-        jo7Xm/Xd0+ple6a3t5f9zcWtQ7xuVuewvr8XnAbeqN4CNlZ9P6qd7btypz1G
-        4kc6uKI/bPFI89Ft78FF8Kidx9LIFsSxlkZy+iMSCFol+NZBQbRBqMERMc9Y
-        nqcZp1p9aUWFxOhdQUKvZHARSozCQaabl7qVNZS924kGsTug1M9qN5XeA/pZ
-        ZVs6Qmps11i0UYA+lhl7XS6nwB7k4mHFqjRllVrup/OFWso8YyrPFvsLmHWm
-        5vRXlcnoQUxC/cr2BgXjdAQhFOaVeJQOCxJXreKJFuXQBiOxORpYw9Lp5/AG
-        +P8DvAOhR0g6OwIAAA==
-    http_version: 
-  recorded_at: Wed, 15 Oct 2014 06:35:06 GMT
-- request:
-    method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2508816&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 15 Oct 2014 06:35:06 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 1D3J550B4MQ9MRF0VNJD
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.201355'
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=39501dd75c6054700ea1e89d01975f6e; path=/; expires=Wed, 15-Oct-2014
-        12:35:06 GMT; HttpOnly
-      - csid=BAhJIhg4NjktODQ4MTY4My02OTE0NzczBjoGRVQ%3D--20a4db3363c4eea36cada339bd90269c33bbc45b;
-        path=/; expires=Sun, 15-Oct-2034 06:35:06 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2VSy07DMBC89yuC762dVg0pcowqEEiAOKAWJBCKTLwkFokd
-        7A2Cvyd2eXPyeD2emV0tP3zt2uQFnNfWFCSdMZKAqazSpi7IdnMyzcmhmPBT
-        a5UDqfwV+N4aD2KSJPwKngfwGPB4kwM2YFBXEkcxgW4ATv8UI3PkPsGb4Ht3
-        R8frzfruafWyPdPb28vh5uLWIV43q3NY398LTgNvp94BNlZ9f6qdHfqy1R4j
-        8eM5pKI/YvFI8zHt4MFF8Kidx9LIDsS1rtA6LTn9UQwcrRJ866Eg2iDU4IiY
-        L1mepxmnWkWVVn6IJEa3BQntkjHIV/nLMzr9JoUouwBBqZ+XupM1lINrRYPY
-        H1DqZ7WbSu8B/ayyHd1BamzfWLQ0CNDHcsles2wK7EEuHlasSlNWqWw/nS9U
-        JvMlU/lysb+AWW9qTn+5THiUEJPgX9nBoGCc7kBsbpxr4lE6LEhcCRVPtCjH
-        XhmJzdHAGpeDfg55hP8X5R0OMQufYwIAAA==
-    http_version: 
-  recorded_at: Wed, 15 Oct 2014 06:35:06 GMT
-- request:
-    method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2508817&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 15 Oct 2014 06:35:07 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 00Z2XHYMCM91YR532BEX
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.172064'
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=61f5176fde0b039f8f60c898a86e5f57; path=/; expires=Wed, 15-Oct-2014
-        12:35:07 GMT; HttpOnly
-      - csid=BAhJIhgxMzQtNzA2MDI3OS00ODcyMzU3BjoGRVQ%3D--623f41d4585dd0bab4f07b12b3797ab8727ddbce;
-        path=/; expires=Sun, 15-Oct-2034 06:35:07 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2VRTW/CMAy98yu63iEtCChTCEKbNmlDO0xjk5imKmtMG0GT
-        LnEQ/Ps16b53yrPz/Pxs08Wx3kcHMFZqNY/TQRJHoAotpCrn8frhqp/FC9aj
-        11oLA1zYe7CNVhZYL4roPbw5sOhxG3GHFSiUBcdWjKFxQMmfZGC23B2cGD17
-        vrhcPiyfd7PD+kauN3fuabUxiI/V7BaWLy+MEs/r1GvASovvotJo1+R7aTEQ
-        P769K/LDFg00G9w6CyaArTQWc8VrYCvtpG1t/kh5hhQRnhqYx1IhlGBiNhwn
-        WZZOKZHiS6yTeILThhIv3sW+vhnmsuYl5M7sWYXYnBNiB6Xpc2sB7aDQNekg
-        UbqpNOogQLb5ODlOJn1IXvnodZYUaZoUYjJNhyMx4dk4Edl4NB3BoFElJb+6
-        9DoPrOf7F9opZAklHfApv6nIIjc4j8ORRXhRI997FKYintWem3yurYX/T/8O
-        1tlmqzUCAAA=
-    http_version: 
-  recorded_at: Wed, 15 Oct 2014 06:35:07 GMT
-- request:
-    method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2508818&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 15 Oct 2014 06:35:07 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 1Z3K7Q150ZMTA0739PND
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.138925'
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=57c49240dcff8e04ab266b9ddde23ade; path=/; expires=Wed, 15-Oct-2014
-        12:35:07 GMT; HttpOnly
-      - csid=BAhJIhgxNzMtNDI0MTE1MC01NzcyMTg2BjoGRVQ%3D--c057cb66d9f428b5faff16f51e48dd31713a8c3d;
-        path=/; expires=Sun, 15-Oct-2034 06:35:07 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2VSy07DMBC89yuC763TioYGOUYVCCRAHFALEghFJt4kFokd
-        7DWCvyd2eXPyeD2emV0tO3rtu+QFrFNGF2Q+S0kCujJS6aYg283pdEWO+ISd
-        GSMtCOmuwQ1GO+CTJGHX8OzBYcDjTXhsQaOqBI5iHK0HRv8UI3PkPsEbZ3v3
-        xyfrzfr+KX/Znqvt3ZW/vbyziDdtfgHrhwfOaODt1HvA1sjvT401fig75TAS
-        P55DKvojFos0F9N6BzaCWlmHpRY98JNaWMPoj0ogKJng2wAFURqhAUv4Ypmu
-        VvMVo0pGiU58KCRadQUJvZIxxVf5yzDa/CaFHDv3oDQsStWLBkpvO94iDoeU
-        ulljp8I5QDerTE93kGoztAYNDQLUl8v0NcumMq8zsS+Wj0LWUqR1lsNBWlX5
-        vsyzxXyxnA26YfSXy4RFCT4J/pXxGnnK6A7E5sahJg6FxYLEfZDxRINi7DUl
-        sTkaWONm0M8Jj/D/lrwDSi0CWmACAAA=
-    http_version: 
-  recorded_at: Wed, 15 Oct 2014 06:35:07 GMT
+  recorded_at: Mon, 20 Oct 2014 03:58:16 GMT
 recorded_with: VCR 2.9.3

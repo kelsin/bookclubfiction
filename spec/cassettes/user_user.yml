@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2811779&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
+    uri: https://www.goodreads.com/group/list?format=xml&id=2811779&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 15 Oct 2014 03:53:48 GMT
+      - Mon, 20 Oct 2014 03:58:14 GMT
       Server:
       - Server
       Content-Type:
@@ -27,20 +27,20 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 0539V9DBSX58NGSB04PQ
+      - 183QSZMYE8GDZTYK0TNZ
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.031408'
+      - '0.039592'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=ed9420e8eb180e9b838f3041ef856454; path=/; expires=Wed, 15-Oct-2014
-        09:53:48 GMT; HttpOnly
-      - csid=BAhJIhg3MDAtMDc1MTk1OS0yODkyOTk5BjoGRVQ%3D--e9926893aac85c2a8270f907d243b10c59902530;
-        path=/; expires=Sun, 15-Oct-2034 03:53:48 GMT
+      - _session_id2=49937d1385cca4f8e61c1e5890864682; path=/; expires=Mon, 20-Oct-2014
+        09:58:14 GMT; HttpOnly
+      - csid=BAhJIhgxNzQtMTIwMTA2NS01ODE5MjY0BjoGRVQ%3D--872aa6e61744ec30c1c0a7168c218e5be6ebf9ec;
+        path=/; expires=Fri, 20-Oct-2034 03:58:14 GMT
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -49,246 +49,14 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA2VR0U7CMBR95yvm3lnZAgFMKSEYSdT4QEATCFkadt0qW1vb
-        OyJ/79pBQH3q6bmn557bS6ffVRkcwVih5CSMo14YgNyrTMh8Eq5Xj91ROGUd
-        ulAqM8AzuwSrlbTAOkFAl/BVg0WHmxuvsQCJYs+xMWNoaqDkD+mVjfYAJ0bv
-        tvOH2Wq2PYyP6yex3rzW7y8bg/hWjJ9httsxSpyuda8AC5VdH+VG1TothUUv
-        PJddKnITi3qZ9WlrC8aDD2EsppJXwOaFaRyULsBQcsM7mcgCPGmYhEIi5GBC
-        lozieDgcUyIyb1Tyi89CGCUaiytz6dj2OUBphaTEZWgZV9dJKiqeQ1qbkhWI
-        +p6QLMpNl1sLaKO9qvwLS+Jk0B/1B+NkpBNyjhF96pySXx6dtgPrOPe9qiWy
-        HiUt8IGbYQOL3OAk9JvO/IkKeemQn4o4VbNzcvm7Bv7f/w/lrYC/OgIAAA==
+        H4sIAAAAAAAAA2VSwW7CMAy98xVd7zS0AgFTCEJMQ9qmHRBsEghVEfXajDbJ
+        EheNv1+TgmDbKS/28/NzHDr9rsrgCMYKJSdhHPXCAOReZULmk3C9euyOwinr
+        0IVSmQGe2SVYraQF1gkCuoSvGiw63Nx4jQVIFHuOjRhDUwMlf4Ke2XAPcGL0
+        bjt/mK1m28P4uH4S681r/f6yMYhvxfgZZrsdo8TxWvUKsFDZtSg3qtZpKSx6
+        4jntXJEbW9TTrHdbWzAefAhjMZW8AjYvTKOgdAGGkpu4o4kswJOGSSgkQg4m
+        ZMkojofDMSUi80Ilv+gshFGikbhGLh3bPgcorZCUOA9txOV1koqK55DWpmQF
+        orb3hGRRbrrcWkAb7VXlSyyJk0F/1B+Mk5FOyNlH9KlzSn6JdNoWrOPk96qW
+        yHqUtMA7bqYNLHKDk9CvOvMnKuSlQ34s4ljN0snl8Rr4/wP8AAAPO707AgAA
     http_version: 
-  recorded_at: Wed, 15 Oct 2014 03:53:48 GMT
-- request:
-    method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2811780&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 15 Oct 2014 06:35:03 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 1NNFNJQFGFB4QKG83ATT
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.136955'
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=d105333a9629d1c183d7ba3f309ed846; path=/; expires=Wed, 15-Oct-2014
-        12:35:03 GMT; HttpOnly
-      - csid=BAhJIhg0NjgtNTc5MjI1MS03OTE1MzgzBjoGRVQ%3D--10a1ca68ddcd446d08d310d1bc3304d7ef42ac02;
-        path=/; expires=Sun, 15-Oct-2034 06:35:03 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2WSX0/CMBTF3/kUc+9QQMVhSglKNFHjAwFNIGSp63WrbO1s
-        74h8e9cOBPVpZ/f+eu7pHzr+KvJgC8ZKrUZhr9MNA1CJFlKlo3Axv2tH4Zi1
-        6L3WwgAXdga21MoCawUBncFnBRadrv94hRkolAnH2oyhqYCSP0VP1uwGdoye
-        rW6nk/lktRluFw9ysXyuXp+WBvElGz7CZL1mlDiucS8AMy2Oi1KjqzLOpUUP
-        7tsuFTmJRT1mfdrKgvHiXRqLseIFsBvgipKTgutLEeCuhFEoFUIKJmT9qNe7
-        irqUSOEdcn4wmEJeZnIjKTnWDsOaEW/1iFj8YC5F03BY2Y9lwVOIK5OzDLG8
-        JkR0UtPm1gLaTqIL4lZY0utfXgzPB9FgUPbJPk/no0wp+eXRop5nLeee6Eoh
-        q2M3wievDyywyA2OQn/Xwn9RI8+d8tsjjqpvnRxOr5b/X8A3SgqJdDwCAAA=
-    http_version: 
-  recorded_at: Wed, 15 Oct 2014 06:35:03 GMT
-- request:
-    method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2811781&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 15 Oct 2014 06:35:04 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 09FFSG8W849RA07SPVHW
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.056353'
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=1635e5465692bb3674a78d9daf191058; path=/; expires=Wed, 15-Oct-2014
-        12:35:04 GMT; HttpOnly
-      - csid=BAhJIhgxMDItMjA1MjA1OS0yOTU0OTc3BjoGRVQ%3D--1f55c5e3890fb94b0b7ca0679a00e910c72fb6ea;
-        path=/; expires=Sun, 15-Oct-2034 06:35:04 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2VSy07DMBC89yuC762TVm1T5BhVIJAAcUAUJBCKTLwkFokd
-        7A2Cv8d2qHidPF6PZ2ZXy47euzZ5A+uU0QXJZilJQFdGKl0XZHdzOs3JEZ+w
-        M2OkBSHdNbjeaAd8kiTsGl4HcBiwv4kBG9CoKoFejKMdgNE/xcj03Bf44Ozg
-        4fhke7N9eNm87c7V7v5quLu8t4i3zeYCto+PnNHAG9U7wMbI70+1NUNftsph
-        JH49h1T0RywWaS6mHRzYCJ6VdVhq0QG/UEJLKxj9UQsUJRP86KEgSiPUYAmf
-        51m2zjNGlYwirdhrbLX08zOa0e/a3i+6JFq1BQnzID5piDGaB1I/L1UnaigH
-        2/IGsT+k1M1qOxXOAbpZZTo6QqpN3xg0UYA+l8v0fbWaQvokFk+btMqytJKr
-        dTZfyJXIl6nMl4v1Ama9rhn95TIZM/BJ8K/MoJGnjI4gduZnmjgUFgsS10HG
-        Ew0K30ZKYvs0sPxi0P2APfy/JJ/5XbwsXwIAAA==
-    http_version: 
-  recorded_at: Wed, 15 Oct 2014 06:35:04 GMT
-- request:
-    method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2811782&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 15 Oct 2014 06:35:05 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 1KK132F9RYM5ED55FJXJ
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.162346'
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=c4d3f9d986501aeef83aff486791fe66; path=/; expires=Wed, 15-Oct-2014
-        12:35:05 GMT; HttpOnly
-      - csid=BAhJIhgyNzEtMzk2NDA5OC00ODcwMjE5BjoGRVQ%3D--fea6c28b2ba6286153f487261473fafeccee72a2;
-        path=/; expires=Sun, 15-Oct-2034 06:35:05 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2VSXU/DIBR936+ovG+0W7Z1hmKmRhM1PixOE41psFxbYgsV
-        bo3+e4H57ROH29PzQS47eO3a5AWsU0YXJJukJAFdGal0XZDt1ck4Jwd8xE6N
-        kRaEdBtwvdEO+ChJ2AaeB3AYsL+JARvQqCqBXoyjHYDRP8PI9NwneONs7+7o
-        eH21vntavWzP1Pb2cri5uLWI183qHNb395zRwNupd4CNkd8/1dYMfdkqh5H4
-        8Tmkoj9isUhzMe3gwEbwqKzDUosO+KEvpbXP+WMWKEom+NZDQZRGqMESPs2z
-        bJlPGVUyirTiQyPRqi1IaEt8jq/xl2U0+k0KSXb+QamflqoTNZSDbXmD2O9T
-        6ia1HQvnAN2kMh3dQapN3xg0NAjQx3Kevi4WY0gfxOxhlVZZllZyscymM7kQ
-        +TyV+Xy2nMGk1zWjv1xGLErwUfCvzKCRp4zuQCznnzVxKCwWJG6EjCcaFL5r
-        SmI5Glh+N+jnG3v4f0/eAVsigWtiAgAA
-    http_version: 
-  recorded_at: Wed, 15 Oct 2014 06:35:05 GMT
-- request:
-    method: get
-    uri: http://www.goodreads.com/group/list?format=xml&id=2811783&key=k9vUJiUZNuWLZrttVh9KeA&sort=my_activity
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Date:
-      - Wed, 15 Oct 2014 06:35:08 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 404 Not Found
-      X-Request-Id:
-      - 1R4TFFE0T61GWGPJVGZB
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - no-cache
-      X-Runtime:
-      - '0.021842'
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=8c3ef9a8661ea7228937d32b58f44347; path=/; expires=Wed, 15-Oct-2014
-        12:35:08 GMT; HttpOnly
-      - csid=BAhJIhgwOTYtOTI3MjI3OS0wODk4NjIzBjoGRVQ%3D--49a5abbd93e8e5bf8c45ee95f580d704c1cc148c;
-        path=/; expires=Sun, 15-Oct-2034 06:35:08 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA7NJLSrKL7IrLU4tUsjLL1FIyy/NS7HRh4hyAQARk1bkHgAA
-        AA==
-    http_version: 
-  recorded_at: Wed, 15 Oct 2014 06:35:08 GMT
+  recorded_at: Mon, 20 Oct 2014 03:58:14 GMT
 recorded_with: VCR 2.9.3

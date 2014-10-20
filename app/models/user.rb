@@ -47,12 +47,14 @@ class User
     user = User.find_or_create_by_provider_and_uid(auth.provider, auth.uid.to_i)
 
     # Goodreads member info
-    user.name = auth.info.name
-    user.username = auth.info.user_name
-    user.image = auth.info.image
-    user.location = auth.info.location
-    user.website = auth.info.website
-    user.about = auth.info.about
+    if auth.info
+      user.name = auth.info.name if auth.info.name
+      user.username = auth.info.user_name if auth.info.user_name
+      user.image = auth.info.image.sub(/^http:/, 'https:') if auth.info.image
+      user.location = auth.info.location if auth.info.location
+      user.website = auth.info.website if auth.info.website
+      user.about = auth.info.about if auth.info.about
+    end
 
     # Access token
     user.access_token = auth.credentials.token
