@@ -71,7 +71,7 @@ class User
   def client
     consumer = OAuth::Consumer.new(Goodreads.configuration[:api_key],
                                    Goodreads.configuration[:api_secret],
-                                   :site => 'http://www.goodreads.com')
+                                   :site => 'https://www.goodreads.com')
     token = OAuth::AccessToken.new(consumer,
                                    access_token,
                                    access_token_secret)

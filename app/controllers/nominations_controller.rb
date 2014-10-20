@@ -69,7 +69,7 @@ class NominationsController < ApplicationController
     @nomination.reload
 
     EM.run {
-      client = Faye::Client.new(Rails.env.production? ? 'http://www.bookclubfiction.net/faye' : 'http://localhost:3000/faye')
+      client = Faye::Client.new(Rails.env.production? ? 'https://www.bookclubfiction.net/faye' : 'http://localhost:3000/faye')
       client.publish('/nominations',
                      { :id => @nomination.id,
                        :value => @nomination.value,
