@@ -16,5 +16,6 @@
 //= require config
 //= require_tree ./services
 //= require_tree ./controllers
+//= require_tree ./directives
 //= require angular-rails-templates
 //= require_tree ./templates
