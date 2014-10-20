@@ -10,7 +10,7 @@
                 <div id="searchWrapper" class="group" >
                     <form autocomplete="off">
                         <input name="search" id="search" ng-model="query" ng-change="onChange()" placeholder="Type in a book name...">
-                        <img src="/images/ajax-loader.gif" class="loader" ng-show="search.loading" />
+                        <img src="<%= asset_path 'ajax-loader.gif' %>" class="loader" ng-show="search.loading" />
                     </form>
                     <p class="no-results" ng-show="search.loaded && search.results.books.length === 0">No results. Try searching again!</p>
                 </div>
