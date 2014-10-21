@@ -22,8 +22,12 @@
 
         var chart = container.append("ul").attr("class", "chart");
 
-        scope.$watch('round.current.votes', function(votes) {
-          if(votes) {
+        scope.$watch('round.current.votes', function(allVotes) {
+          if(allVotes) {
+            var votes = allVotes.filter(function(v) {
+              return v.value > 0;
+            });
+
             x.domain([0, d3.max(votes, function(v) {
               return v.value;
             })]);
@@ -46,7 +50,13 @@
             div.append('span')
               .attr('class','votes');
 
-            vote.exit().remove();
+            vote.exit().transition().duration(500).remove().select('div.book-standing')
+              .styleTween('width', function(v, i, a) {
+                var total = parseInt(window.getComputedStyle(this.parentNode,null).getPropertyValue("width"));
+                var current = parseInt(a);
+                var percent = Math.round(100 * current / total);
+                return d3.interpolate(percent + '%', '0%');
+              }).remove();
 
             vote.sort(voteSort);
             vote.select('span.votes').text(function(v){return v.value + ' votes'; });
