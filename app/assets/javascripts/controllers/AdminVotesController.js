@@ -9,17 +9,17 @@
 
     $scope.vote = function(userId) {
       UsersService.vote(userId)
-        .then(function() {
+        .then(function(newUser) {
           var user = _.find($scope.users, { id: userId });
-          user.extra_votes++;
+          user.extra_votes = newUser.extra_votes;
         });
     };
 
     $scope.unvote = function(userId) {
       UsersService.unvote(userId)
-        .then(function() {
+        .then(function(newUser) {
           var user = _.find($scope.users, { id: userId });
-          user.extra_votes--;
+          user.extra_votes = newUser.extra_votes;
         });
     };
   }
