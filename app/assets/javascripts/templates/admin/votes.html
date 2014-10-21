@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>User</th>
+      <th>Admin</th>
+      <th>Votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users">
+      <td><img ng-src="{{ user.image }}" alt="{{ user.name }} Image"/></td>
+      <td>{{ user.name }}</td>
+      <td><i ng-show="user.admin" class="fa fa-check fa-lg fa-fw"></i></td>
+      <td>{{ user.extra_votes }}</td>
+      <td>
+        <a class="btn" ng-click="vote(user.id)"><i class="fa fa-thumbs-up fa-lg fa-fw"></i></a>
+        <a class="btn" ng-click="unvote(user.id)"><i class="fa fa-thumbs-down fa-lg fa-fw"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

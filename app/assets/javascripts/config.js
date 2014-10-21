@@ -15,10 +15,11 @@
 			})
 			.when('/admin', {
 				controller: 'AdminController',
-				templateUrl: 'admin.html'
+				templateUrl: 'admin/index.html'
 			})
 			.when('/admin/votes', {
-				templateUrl: 'admin-votes.html'
+				controller: 'AdminVotesController',
+				templateUrl: 'admin/votes.html'
 			})
 			.otherwise({
 				controller: 'IndexController',

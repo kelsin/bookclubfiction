@@ -32,7 +32,7 @@
 
             vote
               .text(function(v) { return v.book.title + ', ' + v.book.rating + ', ' + v.value + ' votes'; })
-              .transition()
+              .transition().duration(500)
               .style('width', function(v) {
                 return x(v.value) + 'px';
               });

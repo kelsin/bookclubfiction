@@ -2,8 +2,7 @@
   <p>You are not an admin</p>
 </div>
 <div ng-show="status.user.admin">
-  <p>Hello admin</p>
-  <pre>{{ round.current | json }}</pre>
+  <a href="/admin/votes">Extra Votes</a>
   <div class="round-start" ng-show="!round.current || round.current.state === 'closed'">
     <label for="genre">Genre</label>
     <input id="genre" type="text" ng-model="genre" placeholder="Enter Genre" />
@@ -18,4 +17,5 @@
   <div ng-show="round.current.state === 'reading'">
     <button ng-click="progressRound()" class="btn btn-primary">Close the round</button>
   </div>
+  <pre>{{ round.current | json }}</pre>
 </div>
