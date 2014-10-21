@@ -1,4 +1,13 @@
 (function(){
+  function voteSort(a, b){
+    var diff = b.value - a.value;
+    if(diff === 0){
+      return b.book.rating - a.book.rating;
+    } else {
+      return diff;
+    }
+  }
+
   function votes(RoundService) {
     return {
       restrict: 'E',
@@ -39,6 +48,8 @@
               .attr('class','votes');
 
             vote.exit().remove();
+
+            vote.sort(voteSort);
             vote.select('span.votes').text(function(v){return v.value + ' votes'; });
             vote.select('div.book-standing')
               .transition().duration(500)
