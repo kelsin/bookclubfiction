@@ -131,3 +131,22 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-
   }
   a { color: #121212; text-decoration: none; }
 }
+
+#user-votes {
+  th {
+    padding: 4px 10px;
+    font-size: 1.2em;
+  }
+
+  td {
+    padding: 10px;
+
+    &.image {
+      text-align: right;
+    }
+
+    &.admin, &.votes {
+      text-align: center;
+    }
+  }
+}
