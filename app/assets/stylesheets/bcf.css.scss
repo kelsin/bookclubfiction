@@ -43,8 +43,17 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-
 
 .intro { padding: 5em 0; }
 
-.chart { margin: 0; padding: 0; list-style: none outside;
-  li { background: $green; margin: 0 0 5px 0; height: 30px; }
+.chart { margin: 0; padding: 0; list-style: none outside; background: #fff; padding: 5px; position: relative; 
+  li { background: #8cb19a; margin: 0 0 5px 0; white-space: nowrap; color: #fff; font-size: 12px; border-radius: 0 3px 3px 0; }
+  .book-standing { background: $green; padding: 5px 7px; box-sizing: border-box; border-radius: 0 3px 3px 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);}
+  .title { font-size: 14px; }
+  .rating { font-size: 12px; margin-left: 15px; opacity: 0; transition: all 0.25s; }
+  .votes { position: absolute; right: 10px;  }
+  li:last-child { margin: 0; }
+  li:hover { cursor: pointer; background: #88c9a1;
+    .book-standing { background: #00bb4a;  }
+    .rating { opacity: 1; }
+  }
 }
 
 #searchWrapper {
