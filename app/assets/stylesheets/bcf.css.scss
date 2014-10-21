@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-
 
 .nominations {
   .plus { font-size: 11px; display: none; background: #a9a9a9; color: #fff; cursor: pointer; padding: 3px; position: absolute; bottom: 0; width: 100%; text-align: center; -webkit-transition: background-color ease-out 0.3s; -moz-transition: background-color ease-out 0.3s; -o-transition: background-color ease-out 0.3s; transition: background-color ease-out 0.3s;}
-  .plus:hover, .nominations .plus-one .plus { background: $green; }
+  .plus:hover, .plus-one .plus { background: $green; }
 }
 
 .help { font-size: 10px; background: #ccc; vertical-align: super; display: inline-block; padding: 0 7px; cursor: pointer;
