@@ -24,7 +24,6 @@
 
         scope.$watch('round.current.votes', function(votes) {
           if(votes) {
-            console.log(votes);
             x.domain([0, d3.max(votes, function(v) {
               return v.value;
             })]);
@@ -53,8 +52,11 @@
             vote.select('span.votes').text(function(v){return v.value + ' votes'; });
             vote.select('div.book-standing')
               .transition().duration(500)
-              .style('width', function(v) {
-                return x(v.value) + '%';
+              .styleTween('width', function(v, i, a) {
+                var total = parseInt(window.getComputedStyle(this.parentNode,null).getPropertyValue("width"));
+                var current = parseInt(a);
+                var percent = Math.round(100 * current / total);
+                return d3.interpolate(percent + '%', x(v.value) + '%');
               });
           }
         });
