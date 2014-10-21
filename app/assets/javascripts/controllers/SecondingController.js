@@ -1,8 +1,13 @@
 (function () {
-  function SecondingController($scope, StatusService, SecondingService, RoundService) {
+  function SecondingController($scope, $location, StatusService, SecondingService, RoundService) {
     $scope.seconding = SecondingService;
     $scope.round = RoundService;
     $scope.status = StatusService;
+    $scope.$watch('round.current', function(newRound){
+        if(newRound && newRound.state === 'nominating'){
+            $location.url('/nominations');
+        }
+    });
     $scope.vote = function(nomination){
         if(nomination.vote){
             SecondingService.unvote(nomination.id, RoundService.current.id);

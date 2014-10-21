@@ -17,12 +17,13 @@
   </p>
 </div>
 
-<ul class="nominations">
+<ul class="nominations voting">
   <li class="book" ng-repeat="nomination in round.current.nominations" ng-class="{seconded: nomination.vote, 'plus-one': nomination.extra }">
-    <a>
+    <a class="book-cover">
       <img ng-click="vote(nomination)" ng-src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" />
       <div ng-click="extra(nomination)" ng-show="status.user.extra_votes > 0" class="plus">+Extra Vote <span class="fa-check fa"></span></div>
     </a>
-    <a class="book-url" target="_blank" href="{{ nomination.book.url }}">{{ nomination.book.title }}</a>
+    {{ nomination.book.title }}
+    <a class="book-url btn btn-default" target="_blank" href="{{ nomination.book.url }}">View on GR</a>
   </li>
 </ul>
