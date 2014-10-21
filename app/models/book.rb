@@ -16,4 +16,12 @@ class Book
   validates :goodreads_id, :presence => true
   validates :goodreads_id, :numericality => { :only_integer => true }
   validates :rating, :numericality => true
+  
+  def image
+    read_key(:image).try(:sub, /^http:/, 'https:')
+  end
+  
+  def small_image
+    read_key(:small_image).try(:sub, /^http:/, 'https:')
+  end
 end
