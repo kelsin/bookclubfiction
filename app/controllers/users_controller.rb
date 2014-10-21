@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     authorize! :vote, User
     User.increment({ :id => params[:id] },
                    :extra_votes => 1)
-    @user = User.where(:user_id => params[:id]).first
+    @user = User.where(:id => params[:id]).first
   end
 
   def unvote
@@ -16,6 +16,6 @@ class UsersController < ApplicationController
     User.decrement({ :id => params[:id],
                      :extra_votes.gt => 0},
                    :extra_votes => 1)
-    @user = User.where(:user_id => params[:id]).first
+    @user = User.where(:id => params[:id]).first
   end
 end

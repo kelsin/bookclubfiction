@@ -1,5 +1,5 @@
 (function() {
-  function UsersService($http, $q) {
+  function UsersService($http, $q, StatusService) {
     var self = this;
 
     self.users = function() {
@@ -19,6 +19,9 @@
       var deferred = $q.defer();
       $http.post('/users/' + userId + '/vote')
         .success(function(data) {
+          if (StatusService.user.id === data.user.id) {
+            StatusService.user = data.user;
+          }
           deferred.resolve(data.user);
         })
         .error(function(error) {
@@ -32,6 +35,9 @@
       var deferred = $q.defer();
       $http.delete('/users/' + userId + '/vote')
         .success(function(data) {
+          if (StatusService.user.id === data.user.id) {
+            StatusService.user = data.user;
+          }
           deferred.resolve(data.user);
         })
         .error(function(error) {
