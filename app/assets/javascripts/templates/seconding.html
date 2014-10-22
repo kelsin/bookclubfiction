@@ -2,8 +2,11 @@
   <h1>Seconding <small>Genre: {{ round.current.genre }}</small></h1>
 </div>
 <div id="results">
-  <votes></votes>
-  <p>Voting will close Sunday.</p>
+  <p>The seconding phase will last until Sunday, at which point the two books with the most votes will be chosen as our reads for the current genre! Tie-breakers are decided by the average rating on GoodReads.</p>
+  <p><strong>Here are the current standings:</strong></p>
+  <votes>
+    <p>No one has voted yet! Second some books below, or come back later to check where we're at!</p>
+  </votes>
 </div>
 
 <h3>The Nominations</h3>
@@ -11,8 +14,8 @@
 
 <div class="alert alert-info">
   <p>
-    <span ng-show="status.user.extra_votes &gt; 0">You have <strong>{{ status.user.extra_votes }}</strong> left.</span>
-    <span ng-show="status.user.extra_votes == 0">You have no extra votes.</span> Get more by participating in discussions!
+    <span ng-show="status.user.extra_votes &gt; 0">You have <strong>{{ status.user.extra_votes }}</strong> extra votes left.</span>
+    <span ng-show="status.user.extra_votes === 0">You have no extra votes.</span> Get more by participating in discussions!
     <span class="help">?<span class="hint">You must participate in over 50% of discussions for a given book to earn an extra vote. Extra votes can allow you to give a book you want to read an additional +1.</span></span>
   </p>
 </div>
@@ -24,6 +27,52 @@
       <div ng-click="extra(nomination)" ng-show="status.user.extra_votes > 0" class="plus">+Extra Vote <span class="fa-check fa"></span></div>
     </a>
     {{ nomination.book.title }}
-    <a class="book-url btn btn-default" target="_blank" href="{{ nomination.book.url }}">View on GR</a>
+    <a class="book-url btn btn-default" target="_blank" href="{{ nomination.book.url }}">View on GoodReads &raquo;</a>
   </li>
 </ul>
+
+<ul class="nominations voting">
+  <li class="book seconded">
+    <div class="timer">
+      Vote Locks In
+      <svg width="50" height="50" viewbox="0 0 250 250">
+        <path id="border" transform="translate(125, 125)"/>
+        <path id="loader" transform="translate(125, 125) scale(.84,.84)"/>
+      </svg>
+      5:00
+    </div>
+    <a class="book-cover">
+      <img src="https://d.gr-assets.com/books/1314375864m/12043771.jpg" />
+      <div class="plus">+Extra Vote</div>
+    </a>
+    This is Not a Test
+    <a class="book-url btn btn-default" href="#">View on GoodReads &raquo;</a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+var loader = document.getElementById('loader'),
+    border = document.getElementById('border'),
+    α = 0,
+    π = Math.PI,
+    t = 300;
+
+(function draw() {
+  α += 1;
+  α %= 360;
+  var r = -( α * π / 180 ),
+      x = Math.sin( r ) * 125,
+      y = Math.cos( r ) * - 125,
+      mid = ( α > 180 ) ? 0 : 1,
+      anim = 'M 0 0 v -125 A 125 125 1 ' 
+             + mid + ' 1 ' 
+             +  x  + ' ' 
+             +  y  + ' z';
+  x = Math.round( x * 1000 ) / 1000;
+  y = Math.round( y * 1000 ) / 1000;
+  loader.setAttribute( 'd', anim );
+  border.setAttribute( 'd', anim );
+  
+  setTimeout(draw, t); // Redraw
+})();
+</script>
