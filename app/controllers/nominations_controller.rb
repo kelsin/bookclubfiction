@@ -5,6 +5,8 @@ class NominationsController < ApplicationController
   before_action :is_round_seconding?, :only => [:vote, :unvote, :extra, :unextra]
   after_action :update_faye, :only => [:vote, :unvote, :extra, :unextra]
 
+  LOCK_TIME = 5.minutes
+
   def create
     @nomination.user = current_user
     @nomination.round = @round
@@ -24,12 +26,18 @@ class NominationsController < ApplicationController
   end
 
   def vote
-    @nomination.add_to_set(:vote_user_ids => current_user.id, :safe => true)
+    Nomination.push({ :id => params[:id],
+                      'votes.id' => { :$ne => current_user.id } },
+                    :votes => { :id => current_user.id,
+                                :created_at => Time.now },
+                    :safe => true)
     @round.reload
   end
 
   def unvote
-    @nomination.pull(:vote_user_ids => current_user.id, :safe => true)
+    @nomination.pull(:votes => { :id => current_user.id,
+                                 :created_at => { :$gt => 5.minutes.ago.utc } },
+                     :safe => true)
     @round.reload
 
     # Removing a vote should remove the extra as well
@@ -42,7 +50,11 @@ class NominationsController < ApplicationController
 
     vote
 
-    result = @nomination.add_to_set(:extra_user_ids => current_user.id, :safe => true)
+    result = Nomination.push({ :id => params[:id],
+                               'extras.id' => { :$ne => current_user.id } },
+                             :extras => { :id => current_user.id,
+                                         :created_at => Time.now },
+                             :safe => true)
 
     if result['nModified'] > 0
       current_user.decrement(:extra_votes => result['nModified'])
@@ -53,7 +65,12 @@ class NominationsController < ApplicationController
   end
 
   def unextra
-    result = @nomination.pull(:extra_user_ids => current_user.id, :safe => true)
+    time = 5.minutes.ago.utc
+    result = Nomination.pull({ :id => params[:id],
+                               'extras.created_at' => { :$gt => time } },
+                             { :extras => { :id => current_user.id,
+                                            :created_at => { :$gt => time } } },
+                             :safe => true)
 
     if result['nModified'] > 0
       current_user.increment(:extra_votes => result['nModified'])

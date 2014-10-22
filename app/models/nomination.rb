@@ -6,11 +6,8 @@ class Nomination
   one :book
   key :admin, Boolean, :default => false
 
-  key :vote_user_ids, Array
-  key :extra_user_ids, Array
-
-  many :votes, :in => :vote_user_ids, :class => User
-  many :extras, :in => :extra_user_ids, :class => User
+  key :votes, Array
+  key :extras, Array
 
   timestamps!
 
@@ -24,9 +21,7 @@ class Nomination
   validates :round_id, :presence => true
   validates :book, :presence => true
   validate :round_must_be_nominating, :on => :create
-  validate :user_must_have_three_or_less_nominations
-  validates_associated :votes
-  validates_associated :extras
+  validate :user_must_have_three_or_less_nominations, :on => :create
 
   # Indexes
   Nomination.ensure_index [[:round_id, 1], ['book.goodreads_id', 1]], :unique => true
@@ -34,15 +29,39 @@ class Nomination
   Nomination.ensure_index [[:round_id, 1], [:user_id, 1], [:created_at, 1]]
 
   def value
-    self.vote_user_ids.size + self.extra_user_ids.size
+    self.votes.size + self.extras.size
+  end
+
+  def vote(user)
+    if user
+      self.votes.detect do |vote|
+        vote['id'] == user.id
+      end
+    end
   end
 
   def voted?(user)
-    user ? self.vote_user_ids.include?(user.id) : false
+    !!vote(user)
+  end
+
+  def vote_created_at(user)
+    vote(user).try(:[], 'created_at').try(:to_i)
+  end
+
+  def extra(user)
+    if user
+      self.extras.detect do |extra|
+        extra['id'] == user.id
+      end
+    end
   end
 
   def extra?(user)
-    user ? self.extra_user_ids.include?(user.id) : false
+    !!extra(user)
+  end
+
+  def extra_created_at(user)
+    extra(user).try(:[], 'created_at').try(:to_i)
   end
 
   def round_must_be_nominating

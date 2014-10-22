@@ -81,6 +81,9 @@ gem 'database_cleaner', group: :test
 gem 'rack-test', group: :test, require: "rack/test"
 gem 'json_spec', group: [:development, :test]
 
+# Time Testing
+gem 'timecop', :group => :test
+
 # Guard
 gem 'guard-rspec', require: false, group: [:development, :test]
 gem 'rb-readline', group: [:development, :test]
