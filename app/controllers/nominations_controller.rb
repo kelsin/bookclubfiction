@@ -36,7 +36,7 @@ class NominationsController < ApplicationController
 
   def unvote
     @nomination.pull(:votes => { :id => current_user.id,
-                                 :created_at => { :$gt => 5.minutes.ago.utc } },
+                                 :created_at => { :$gt => LOCK_TIME.ago.utc } },
                      :safe => true)
     @round.reload
 
@@ -65,7 +65,7 @@ class NominationsController < ApplicationController
   end
 
   def unextra
-    time = 5.minutes.ago.utc
+    time = LOCK_TIME.ago.utc
     result = Nomination.pull({ :id => params[:id],
                                'extras.created_at' => { :$gt => time } },
                              { :extras => { :id => current_user.id,
