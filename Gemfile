@@ -72,7 +72,7 @@ gem 'capistrano-rbenv', group: :development
 
 # Code Coverage
 gem 'simplecov', require: false, group: :test
-gem 'coveralls', require: false, group: :test
+gem 'coveralls', require: false, group: :test, :github => 'kelsin/coveralls-ruby', :branch => 'ssl-version-fix'
 
 # Database Cleaning
 gem 'database_cleaner', group: :test
