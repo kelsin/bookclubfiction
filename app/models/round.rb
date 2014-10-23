@@ -89,7 +89,9 @@ class Round
   end
 
   def total_votes
-    self.nominations.sum &:value
+    self.nominations.sum do |n|
+      [n.value - 1, 0].max
+    end
   end
 
   # Query helpers

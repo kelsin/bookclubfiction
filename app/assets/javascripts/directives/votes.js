@@ -25,7 +25,7 @@
         scope.$watch('round.current.votes', function(allVotes) {
           if(allVotes) {
             var votes = allVotes.filter(function(v) {
-              return v.value > 0;
+              return v.value > 1;
             });
 
             x.domain([0, d3.max(votes, function(v) {
