@@ -9,7 +9,7 @@
     <button ng-click="newRound()" class="btn btn-primary">Start round</button>
   </div>
   <div ng-show="round.current.state !== 'nominating'">
-    <button ng-click="backupRound()" class="btn btn-primary">Backup Round</button>
+    <button ng-click="backupRound()" class="btn">Backup Round</button>
   </div>
   <div ng-show="round.current.state === 'nominating'">
     <button ng-click="progressRound()" class="btn btn-primary">Start Seconding</button>
