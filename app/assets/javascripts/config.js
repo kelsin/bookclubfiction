@@ -2,7 +2,7 @@
 	function config($routeProvider, $locationProvider){
 		$locationProvider.html5Mode(true);
 		$routeProvider
-			.when('/nominations', {
+			.when('/nominating', {
 				controller: 'NominationsController',
 				templateUrl: 'nominations.html'
 			})
