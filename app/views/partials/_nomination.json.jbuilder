@@ -1,6 +1,7 @@
 json.id nomination.id
 json.value nomination.value
 json.admin nomination.admin
+json.winner nomination.winner
 
 json.vote nomination.voted?(current_user)
 json.vote_created_at nomination.vote_created_at(current_user)

@@ -83,6 +83,16 @@ class NominationsController < ApplicationController
     @round.reload
   end
 
+  def win
+    @nomination.winner = true
+    @nomination.save
+  end
+
+  def unwin
+    @nomination.winner = false
+    @nomination.save
+  end
+
   private
 
   def update_faye

@@ -30,6 +30,8 @@ Rails.application.routes.draw do
         delete 'vote', :on => :member, :action => :unvote
         post 'extra', :on => :member
         delete 'extra', :on => :member, :action => :unextra
+        post 'win', :on => :member
+        delete 'win', :on => :member, :action => :unwin
       end
     end
   end

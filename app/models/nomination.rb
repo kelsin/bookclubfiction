@@ -5,6 +5,7 @@ class Nomination
   belongs_to :round
   one :book
   key :admin, Boolean, :default => false
+  key :winner, Boolean, :default => false
 
   key :votes, Array
   key :extras, Array
@@ -15,6 +16,7 @@ class Nomination
   scope :by_round, lambda { |id| where(:round_id => id) }
   scope :by_user, lambda { |id| where(:user_id => id) }
   scope :not_by_user, lambda { |id| where(:user_id.ne => id) }
+  scope :winner, where(:winner => true)
 
   # Validations
   validates :user_id, :presence => true
