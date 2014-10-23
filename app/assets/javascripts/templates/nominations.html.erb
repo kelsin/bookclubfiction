@@ -4,7 +4,7 @@
     </div>
 
     <div id="nominate" >
-        <div id="searchContainer" class="group">
+        <div id="searchContainer" class="group" ng-show="status.member()">
             <label class="search-label" for="search">Search for a book</label>
             <div id="searchAndResults">
                 <div id="searchWrapper" class="group" >
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div id="myNominations" class="my-nominations">
+        <div id="myNominations" class="my-nominations" ng-show="status.member()">
             <div class="alert alert-info" ng-show="round.current.my_nominations.length &lt; 3"><p>You've chosen <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Search for books to add some!</p></div>
             <div class="alert alert-info" ng-show="round.current.my_nominations.length &gt;= 3"><p>You've used <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Come back on Friday to start seconding books!</p></div>
             <div class="nominations-wrap valid">
@@ -60,7 +60,7 @@
     <div style="clear:both;"></div>
 
     <h3>The Nominations</h3>
-    <p>These are the books that have already been nominated! Come back on Friday to vote for the books you want to read!</p>
+    <p>These are the books that have already been nominated! <span ng-show="status.member()">Come back on Friday to vote for the books you want to read!</span></p>
 
     <ul class="nominations">
         <li ng-repeat="nomination in round.current.nominations | orderBy: 'created_at'">

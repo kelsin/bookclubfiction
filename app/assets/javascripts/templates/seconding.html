@@ -10,9 +10,9 @@
 </div>
 
 <h3>The Nominations</h3>
-<p>Click on any book to second the current genre's selections. If you have extra votes, you can use them after you've voted on a book.</p>
+<p ng-show="status.member()">Click on any book to second the current genre's selections. If you have extra votes, you can use them after you've voted on a book.</p>
 
-<div class="alert alert-info">
+<div class="alert alert-info" ng-show="status.member()">
   <p>
     <span ng-show="status.user.extra_votes &gt; 0">You have <strong>{{ status.user.extra_votes }}</strong> extra votes left.</span>
     <span ng-show="status.user.extra_votes === 0">You have no extra votes.</span> Get more by participating in discussions!

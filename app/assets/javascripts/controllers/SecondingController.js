@@ -1,26 +1,30 @@
 (function () {
-  function SecondingController($scope, $location, StatusService, SecondingService, RoundService) {
+  function SecondingController($scope, $location, $window, StatusService, SecondingService, RoundService) {
     $scope.seconding = SecondingService;
     $scope.round = RoundService;
     $scope.status = StatusService;
-    $scope.$watch('round.current', function(newRound){
-        if(newRound && newRound.state === 'nominating'){
-            $location.url('/nominations');
-        }
-    });
+
     $scope.vote = function(nomination){
+      if(StatusService.member()) {
         if(nomination.vote){
             SecondingService.unvote(nomination.id, RoundService.current.id);
         } else {
             SecondingService.vote(nomination.id, RoundService.current.id);
         }
+      } else {
+        $window.open(nomination.book.url, "_blank");
+      }
     };
     $scope.extra = function(nomination){
+      if(StatusService.member()) {
         if(nomination.extra){
             SecondingService.unextra(nomination.id, RoundService.current.id);
         } else {
             SecondingService.extra(nomination.id, RoundService.current.id);
         }
+      } else {
+        $window.open(nomination.book.url, "_blank");
+      }
     };
   }
 

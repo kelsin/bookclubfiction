@@ -1,15 +1,11 @@
 (function () {
-  function NominationsController($scope, $interval, $location, $document, SearchService, NominationsService, RoundService) {
+  function NominationsController($scope, $interval, $location, $document, StatusService, SearchService, NominationsService, RoundService) {
+    $scope.status = StatusService;
     $scope.search = SearchService;
     $scope.query = '';
     $scope.nominations = NominationsService;
     $scope.round = RoundService;
-    $scope.$watch('round.current', function(newRound){
-        console.log(newRound);
-        if(newRound && newRound.state === 'seconding'){
-            $location.url('/seconding');
-        }
-    });
+
     var timer = null;
     $scope.onChange = function (){
         $interval.cancel(timer);

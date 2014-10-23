@@ -14,6 +14,10 @@
     self.logged_in = function() {
       return !!self.user;
     };
+
+    self.member = function() {
+      return !!(self.user && self.user.member);
+    };
   }
 
   angular
