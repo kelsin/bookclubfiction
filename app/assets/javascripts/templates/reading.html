@@ -6,7 +6,7 @@
     <h3>The Winners</h3>
     <p>These are the books that have been selected:</p>
 
-    <ul class="nomations">
+    <ul class="nominations">
         <li ng-repeat="nomination in round.current.nominations | filter: {winner: true} | orderBy: 'created_at'">
             <div class="book">
                 <a href="{{ nomination.book.url }}" tooltip="{{ nomination.book.title }}">
@@ -30,7 +30,7 @@
         <li ng-repeat="nomination in round.current.nominations | orderBy: 'created_at'">
             <div class="book">
                 <a href="{{ nomination.book.url }}" target="_blank" tooltip="{{ nomination.book.title }}">
-                    <img src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
+                    <img ng-src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
                 </a>
                 <span class="book-title">{{ nomination.book.title }}</span>
             </div>

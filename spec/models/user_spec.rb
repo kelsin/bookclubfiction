@@ -94,6 +94,18 @@ RSpec.describe User, :type => :model do
       allow(@user).to receive(:client).and_return(@client)
     end
 
+    describe 'when the goodreads api decides to return a group array' do
+      before(:each) do
+        @group = [:id, "88207"]
+        allow(@groups).to receive(:group).and_return([@group])
+      end
+
+      it 'should set member to true' do
+        @user.update_membership
+        expect(@user.member).to be(true)
+      end
+    end
+
     describe 'when user is a member' do
       before(:each) do
         allow(@groups).to receive(:group).and_return([@group])

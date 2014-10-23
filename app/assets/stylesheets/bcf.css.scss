@@ -5,6 +5,8 @@ $lightgreen: #e1faeb;
 $red: #b61313;
 $lightred: #f8cfcf;
 
+.alert { margin: 20px 0; }
+
 .group:after {
   content: "";
   display: table;
@@ -25,7 +27,7 @@ body { font-family: 'Open Sans'; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; margin-top: 0; }
 
 h1 { text-transform: capitalize; }
-* + h3 { margin-top: 30px; }
+h3 { margin-top: 30px; }
 
 .bcf-head { padding: 1em 0; background: #f1f1f1;
   h1 { font-size: 50px; font-family: 'Cutive Mono'; margin: 0;  float: left;
@@ -83,6 +85,8 @@ h1 { text-transform: capitalize; }
   }
 }
 
+.book.winner { border: 2px solid red; }
+
 .nominations { list-style: none outside; padding: 0; margin: 0; font-size: 13px; display: flex;
   &.valid { background: transparent; }
   .remove-nomination { cursor: pointer; font-size: 20px; color: #333; background: #fff; position: absolute; right: -4px; top: -4px; border-radius: 30px; z-index: 5; text-decoration: none; padding: 3px 5px 5px; height: 30px; width: 30px; text-align: center; border: 2px solid #d2d2d2; line-height: 1; }
@@ -133,7 +137,7 @@ h1 { text-transform: capitalize; }
 
 .hint { font-size: 12px;  display: none; position: absolute; left: 20px; width: 200px; padding: 1em; }
 
-#footer { clear: both; font-size: 12px; text-transform: uppercase; background: #f1f1f1; padding: 10px;
+#footer { clear: both; font-size: 12px; text-transform: uppercase; background: #f1f1f1; padding: 10px; margin: 20px 0 0 0;
   ul { list-style: none outside; margin: 0; padding: 0; }
   li { float: left;padding: 0 10px; border-left: 1px solid #ccc;
     &:first-child { border: none; }

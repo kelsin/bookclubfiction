@@ -19,10 +19,6 @@ class SelectionsController < ApplicationController
     # We can only delete a section while the round is nominating
     raise Exceptions::RoundStateError, 'This round is not currently nominating' unless @round.nominating?
 
-    begin
-      @selection.destroy
-    rescue Mongo::OperationFailure => e
-      raise Exceptions::DuplicateNomination, 'This book is already removed'
-    end
+    @selection.destroy
   end
 end

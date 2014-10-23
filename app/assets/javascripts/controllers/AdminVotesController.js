@@ -1,5 +1,6 @@
 (function () {
-  function AdminVotesController($scope, UsersService) {
+  function AdminVotesController($scope, StatusService, UsersService) {
+    $scope.status = StatusService;
     $scope.users = [];
 
     UsersService.users()

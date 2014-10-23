@@ -1,23 +1,29 @@
-<table id="user-votes">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>User</th>
-      <th>Admin</th>
-      <th>Votes</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="user in users">
-      <td class="image"><img height="32" ng-src="{{ user.image }}" alt="{{ user.name }} Image"/></td>
-      <td>{{ user.name }}</td>
-      <td class="admin"><i ng-show="user.admin" class="fa fa-check fa-lg fa-fw"></i></td>
-      <td class="votes">{{ user.extra_votes }}</td>
-      <td>
-        <a class="btn" ng-click="vote(user.id)"><i class="fa fa-thumbs-up fa-lg fa-fw"></i></a>
-        <a class="btn" ng-click="unvote(user.id)"><i class="fa fa-thumbs-down fa-lg fa-fw"></i></a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div ng-hide="status.user.admin" class="alert alert-danger">
+  <p>You are not an admin</p>
+</div>
+
+<div ng-show="status.user.admin">
+  <table id="user-votes">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>User</th>
+        <th>Admin</th>
+        <th>Votes</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users">
+        <td class="image"><img height="32" ng-src="{{ user.image }}" alt="{{ user.name }} Image"/></td>
+        <td>{{ user.name }}</td>
+        <td class="admin"><i ng-show="user.admin" class="fa fa-check fa-lg fa-fw"></i></td>
+        <td class="votes">{{ user.extra_votes }}</td>
+        <td>
+          <a class="btn" ng-click="vote(user.id)"><i class="fa fa-thumbs-up fa-lg fa-fw"></i></a>
+          <a class="btn" ng-click="unvote(user.id)"><i class="fa fa-thumbs-down fa-lg fa-fw"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

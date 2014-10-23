@@ -162,6 +162,7 @@ RSpec.describe "Rounds Api", :type => :api do
 
           @round.reload
           expect(@round).to be_seconding
+          expect(@round).to be_nominated
         end
       end
 
@@ -177,6 +178,8 @@ RSpec.describe "Rounds Api", :type => :api do
 
           @round.reload
           expect(@round).to be_reading
+          expect(@round).to be_nominated
+          expect(@round).to be_seconded
         end
       end
 
@@ -192,6 +195,9 @@ RSpec.describe "Rounds Api", :type => :api do
 
           @round.reload
           expect(@round).to be_closed
+          expect(@round).to be_nominated
+          expect(@round).to be_seconded
+          expect(@round).to be_read
         end
       end
 
@@ -207,6 +213,9 @@ RSpec.describe "Rounds Api", :type => :api do
 
           @round.reload
           expect(@round).to be_closed
+          expect(@round).to be_nominated
+          expect(@round).to be_seconded
+          expect(@round).to be_read
         end
       end
     end

@@ -1,24 +1,31 @@
-<div ng-hide="status.user.admin">
+<div ng-hide="status.user.admin" class="alert alert-danger">
   <p>You are not an admin</p>
 </div>
+
 <div ng-show="status.user.admin">
-  <a ng-href="/{{round.current.state}}">Current Round</a> | <a href="/admin/votes">Extra Votes</a>
-  <div class="round-start" ng-show="!round.current || round.current.state === 'closed'">
-    <label for="genre">Genre</label>
-    <input id="genre" type="text" ng-model="genre" placeholder="Enter Genre" />
-    <button ng-click="newRound()" class="btn btn-primary">Start round</button>
-  </div>
-  <div ng-show="round.current.state !== 'nominating'">
-    <button ng-click="backupRound()" class="btn">Backup Round</button>
-  </div>
-  <div ng-show="round.current.state === 'nominating'">
-    <button ng-click="progressRound()" class="btn btn-primary">Start Seconding</button>
-  </div>
-  <div ng-show="round.current.state === 'seconding'">
-    <button ng-click="progressRound()" class="btn btn-primary">Close seconding</button>
-  </div>
-  <div ng-show="round.current.state === 'reading'">
-    <button ng-click="progressRound()" class="btn btn-primary">Close the round</button>
-  </div>
-  <pre>{{ round.current | json }}</pre>
+  <h3>The Votes</h3>
+  <p>This is the result of the seconding round:</p>
+  <votes>
+    <p ng-hide="round.current.total_votes &gt; 0">No one has voted yet!</p>
+  </votes>
+
+  <h3>The Nominations</h3>
+  <ul class="nominations">
+    <li ng-repeat="nomination in round.current.nominations | orderBy: 'created_at'">
+      <div class="book" ng-class="{ winner: nomination.winner }">
+        <a ng-click="win(nomination)" tooltip="{{ nomination.book.title }}">
+          <img ng-src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
+        </a>
+        <span class="book-title">{{ nomination.book.title }}</span>
+      </div>
+    </li>
+  </ul>
+
+  <h3>Round Progression</h3>
+  <input ng-show="!round.current || round.current.state === 'closed'" id="genre" type="text" ng-model="genre" placeholder="Enter Genre" />
+  <button ng-show="!round.current || round.current.state === 'closed'" ng-click="newRound()" class="btn btn-primary">Start round</button>
+  <button ng-show="round.current.state === 'nominating'" ng-click="progressRound()" class="btn btn-primary">Start Seconding</button>
+  <button ng-show="round.current.state === 'seconding'" ng-click="progressRound()" class="btn btn-primary">Close seconding</button>
+  <button ng-show="round.current.state === 'reading'" ng-click="progressRound()" class="btn btn-primary">Close the round</button>
+  <button ng-show="round.current.state !== 'nominating'" ng-click="backupRound()" class="btn">Backup Round</button>
 </div>
