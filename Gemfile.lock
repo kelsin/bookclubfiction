@@ -153,7 +153,7 @@ GEM
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
-    mime-types (2.3)
+    mime-types (2.4.3)
     minitest (5.4.2)
     mm-devise (2.0)
       devise (>= 1.2)
@@ -170,7 +170,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    netrc (0.7.7)
+    netrc (0.7.9)
     newrelic_rpm (3.9.5.251)
     ngannotate-rails (0.10.1)
       execjs
