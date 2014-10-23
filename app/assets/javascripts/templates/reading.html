@@ -1,6 +1,6 @@
 <div id="reading">
     <div id="header" class="page-header">
-        <h1>Reading <small>Genre: {{ round.current.genre }}</small></h1>
+        <h1>{{ round.current.state }} <small>Genre: {{ round.current.genre }}</small></h1>
     </div>
 
     <h3>The Winners</h3>
@@ -29,7 +29,7 @@
     <ul class="nominations">
         <li ng-repeat="nomination in round.current.nominations | orderBy: 'created_at'">
             <div class="book">
-                <a href="{{ nomination.book.url }}" tooltip="{{ nomination.book.title }}">
+                <a href="{{ nomination.book.url }}" target="_blank" tooltip="{{ nomination.book.title }}">
                     <img src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
                 </a>
                 <span class="book-title">{{ nomination.book.title }}</span>

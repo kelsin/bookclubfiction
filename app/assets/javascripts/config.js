@@ -14,6 +14,10 @@
 				controller: 'ReadingController',
 				templateUrl: 'reading.html'
 			})
+			.when('/closed', {
+				controller: 'ReadingController',
+				templateUrl: 'reading.html'
+			})
 			.when('/admin', {
 				controller: 'AdminController',
 				templateUrl: 'admin/index.html'
