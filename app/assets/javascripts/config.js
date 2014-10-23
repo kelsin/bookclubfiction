@@ -11,6 +11,7 @@
 				templateUrl: 'seconding.html'
 			})
 			.when('/reading', {
+				controller: 'ReadingController',
 				templateUrl: 'reading.html'
 			})
 			.when('/admin', {

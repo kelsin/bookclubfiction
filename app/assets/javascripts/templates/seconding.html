@@ -5,7 +5,7 @@
   <p>The seconding phase will last until Sunday, at which point the two books with the most votes will be chosen as our reads for the current genre! Tie-breakers are decided by the average rating on GoodReads.</p>
   <p><strong>Here are the current standings:</strong></p>
   <votes>
-    <p ng-hide="round.current.total_votes &gt; 0">No one has voted yet! Second some books below, or come back later to check where we're at!</p>
+    <p ng-hide="round.current.total_votes &gt; 0">No one has voted yet! <span ng-show="status.member()">Second some books below, or come back later to check where we're at!</span></p>
   </votes>
 </div>
 

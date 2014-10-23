@@ -1,0 +1,39 @@
+<div id="reading">
+    <div id="header" class="page-header">
+        <h1>Reading <small>Genre: {{ round.current.genre }}</small></h1>
+    </div>
+
+    <h3>The Winners</h3>
+    <p>These are the books that have been selected:</p>
+
+    <ul class="nomations">
+        <li ng-repeat="nomination in round.current.nominations | filter: {winner: true} | orderBy: 'created_at'">
+            <div class="book">
+                <a href="{{ nomination.book.url }}" tooltip="{{ nomination.book.title }}">
+                    <img src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
+                </a>
+                <span class="book-title">{{ nomination.book.title }}</span>
+            </div>
+        </li>
+    </ul>
+
+    <h3>The Votes</h3>
+    <p>This is the result of the seconding round:</p>
+    <votes>
+      <p ng-hide="round.current.total_votes &gt; 0">No one has voted yet!</p>
+    </votes>
+
+    <h3>The Nominations</h3>
+    <p>These are the books that were nominated during this round:</p>
+
+    <ul class="nominations">
+        <li ng-repeat="nomination in round.current.nominations | orderBy: 'created_at'">
+            <div class="book">
+                <a href="{{ nomination.book.url }}" tooltip="{{ nomination.book.title }}">
+                    <img src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
+                </a>
+                <span class="book-title">{{ nomination.book.title }}</span>
+            </div>
+        </li>
+    </ul>
+</div>
