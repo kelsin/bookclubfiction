@@ -26,8 +26,8 @@
         </div>
 
         <div id="myNominations" class="my-nominations">
-            <div class="alert alert-info" ng-show="round.current.my_nominations.length < 3"><p>You've chosen <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Search for books to add some!</p></div>
-            <div class="alert alert-info" ng-show="round.current.my_nominations.length >= 3"><p>You've used <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Come back on Friday to start seconding books!</p></div>
+            <div class="alert alert-info" ng-show="round.current.my_nominations.length &lt; 3"><p>You've chosen <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Search for books to add some!</p></div>
+            <div class="alert alert-info" ng-show="round.current.my_nominations.length &gt;= 3"><p>You've used <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Come back on Friday to start seconding books!</p></div>
             <div class="nominations-wrap valid">
                 <h3>My Selections</h3>
                 <p>Choose up to three of your selections to nominate for the club to read. Nominations will close on Friday, and then everyone will be able to vote for books out of the pool of nominations!</p>
@@ -49,7 +49,7 @@
                                 <img src="{{ selection.book.image }}" alt="{{ selection.book.title }}" title="{{ selection.book.title }}" />
                             </a>
                             <span class="book-title">{{ selection.book.title }}</span>
-                            <button class="btn btn-default" ng-click="nominate(selection.book)">Nominate</button>
+                            <button ng-show="round.current.my_nominations.length &lt; 3" class="btn btn-default" ng-click="nominate(selection.book)">Nominate</button>
                         </div>
                     </li>
                 </ul>
