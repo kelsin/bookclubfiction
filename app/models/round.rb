@@ -88,6 +88,10 @@ class Round
     self.state == 'closed'
   end
 
+  def total_votes
+    self.nominations.sum &:value
+  end
+
   # Query helpers
   def self.current
     Round.first(:order => :created_at.desc)

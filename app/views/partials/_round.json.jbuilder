@@ -3,6 +3,7 @@ json.state round.state
 json.genre round.genre
 
 json.nominations round.nominations, :partial => 'partials/nomination', :as => :nomination
+json.total_votes round.total_votes
 json.votes round.nominations, :partial => 'partials/vote', :as => :vote
 
 if current_user
