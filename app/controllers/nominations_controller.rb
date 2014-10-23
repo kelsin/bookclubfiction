@@ -11,6 +11,9 @@ class NominationsController < ApplicationController
     @nomination.user = current_user
     @nomination.round = @round
 
+    @nomination.votes = [{ :id => current_user.id,
+                           :create_at => Time.now }] unless @nomination.admin?
+
     begin
       @nomination.save! :safe => true
 

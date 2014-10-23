@@ -54,7 +54,8 @@ RSpec.describe "Nominations Api", :type => :api do
           expect(last_response).to be_ok
           expect(last_response.body).to be_json_eql(false.to_json).at_path("round/nominations/0/admin")
           expect(last_response.body).to be_json_eql(@book.title.to_json).at_path("round/nominations/0/book/title")
-          expect(last_response.body).to be_json_eql(0.to_json).at_path("round/nominations/0/value")
+          expect(last_response.body).to be_json_eql(1.to_json).at_path("round/nominations/0/value")
+          expect(last_response.body).to be_json_eql(true.to_json).at_path("round/nominations/0/vote")
           expect(Nomination.first.round_id).to eq(@round.id)
         end
 
@@ -74,7 +75,8 @@ RSpec.describe "Nominations Api", :type => :api do
           expect(last_response).to be_ok
           expect(last_response.body).to be_json_eql(false.to_json).at_path("round/nominations/0/admin")
           expect(last_response.body).to be_json_eql(@book.title.to_json).at_path("round/nominations/0/book/title")
-          expect(last_response.body).to be_json_eql(0.to_json).at_path("round/nominations/0/value")
+          expect(last_response.body).to be_json_eql(1.to_json).at_path("round/nominations/0/value")
+          expect(last_response.body).to be_json_eql(true.to_json).at_path("round/nominations/0/vote")
           expect(Nomination.first.round_id).to eq(@round.id)
         end
 
@@ -139,6 +141,7 @@ RSpec.describe "Nominations Api", :type => :api do
           expect(last_response.body).to be_json_eql(true.to_json).at_path("round/nominations/0/admin")
           expect(last_response.body).to be_json_eql(@book.title.to_json).at_path("round/nominations/0/book/title")
           expect(last_response.body).to be_json_eql(0.to_json).at_path("round/nominations/0/value")
+          expect(last_response.body).to be_json_eql(false.to_json).at_path("round/nominations/0/vote")
           expect(Nomination.first.round_id).to eq(@round.id)
         end
 
@@ -164,6 +167,7 @@ RSpec.describe "Nominations Api", :type => :api do
           expect(last_response.body).to be_json_eql(true.to_json).at_path("round/nominations/3/admin")
           expect(last_response.body).to be_json_eql(@book.title.to_json).at_path("round/nominations/3/book/title")
           expect(last_response.body).to be_json_eql(0.to_json).at_path("round/nominations/3/value")
+          expect(last_response.body).to be_json_eql(false.to_json).at_path("round/nominations/0/vote")
           expect(Nomination.by_round(@round.id).by_user(@user.id).count).to eql(4)
         end
       end
