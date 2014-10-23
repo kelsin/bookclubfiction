@@ -10,6 +10,9 @@
         console.log(error);
       });
     };
+    $scope.backupRound = function(){
+      RoundService.backupRound($scope.round.current.id);
+    };
     $scope.progressRound = function(){
       RoundService.progressRound($scope.round.current.id);
     };

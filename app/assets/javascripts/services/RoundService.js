@@ -17,6 +17,20 @@
       return deferred.promise;
     };
 
+    self.backupRound = function(roundId){
+      var deferred = $q.defer();
+      $http.post('/rounds/' + roundId + '/backup')
+        .success(function(data){
+          self.current = data.round;
+          deferred.resolve(data.round);
+        })
+        .error(function(error){
+          console.log(error);
+          deferred.reject(error);
+        });
+      return deferred.promise;
+    };
+
     self.progressRound = function(roundId){
       var deferred = $q.defer();
       $http.post('/rounds/' + roundId + '/progress')
