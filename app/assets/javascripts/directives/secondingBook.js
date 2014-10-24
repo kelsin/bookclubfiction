@@ -26,6 +26,8 @@
           if(!scope.locked) {
             scope.label = scope.nomination.extra ? 'Extra ' : '';
           }
+
+          tick();
         };
 
         var tick = function() {
@@ -60,7 +62,6 @@
 
         // Initial setup
         update();
-        tick();
       }
     };
   }
