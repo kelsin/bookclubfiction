@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/kelsin/coveralls-ruby.git
-  revision: 5c2d7eee6f98c7f77cd89c43c74302a4b06a3746
+  revision: 622059d5db3e5acb6b8c32eb67fb5471a87e7897
   branch: ssl-version-fix
   specs:
     coveralls (0.7.1)
