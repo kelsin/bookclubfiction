@@ -109,13 +109,13 @@ h3 { margin-top: 30px; }
       button { position: absolute; bottom: 2%; left: 5%; width: 90%; }
     }
   }
-  .timer { padding-top: 10px; position: absolute; z-index: 2; background: rgba(0,0,0,0.5); width: 94px; height: 133px; color: #fff; font-size: 12px; text-transform: uppercase; left: 12px; top: 32px; text-align: center;
+  .timer { padding-top: 10px; position: absolute; z-index: 2; background: rgba(0,0,0,0.5); width: 94px; height: 133px; color: #fff; font-size: 12px; text-transform: uppercase; left: 12px; top: 32px; text-align: center; opacity: 1; transition: all linear 0.5s;
     svg { display: block; margin: 0 auto;
-      #loader { fill: rgba(255,255,255,0.5); }
-      #border { fill: #00517a; }
+      .timer-loader { fill: rgba(255,255,255,0.5); }
+      .timer-border { fill: #00517a; }
     }
+    &.ng-hide { opacity: 0; }
   }
-
 }
 
 .nominations-actions {

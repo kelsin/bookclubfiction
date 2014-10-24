@@ -3,6 +3,7 @@ json.value nomination.value
 json.admin nomination.admin
 json.winner nomination.winner
 
+json.current Time.now.to_i
 json.vote nomination.voted?(current_user)
 json.vote_created_at nomination.vote_created_at(current_user)
 json.extra nomination.extra?(current_user)

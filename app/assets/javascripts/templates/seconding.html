@@ -21,58 +21,7 @@
 </div>
 
 <ul class="nominations voting">
-  <li class="book" ng-repeat="nomination in round.current.nominations" ng-class="{seconded: nomination.vote, 'plus-one': nomination.extra }">
-    <a class="book-cover">
-      <img ng-click="vote(nomination)" ng-src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" />
-      <div ng-click="extra(nomination)" ng-show="status.user.extra_votes > 0" class="plus">+Extra Vote <span class="fa-check fa"></span></div>
-    </a>
-    {{ nomination.book.title }}
-    <a class="book-url btn btn-default" target="_blank" href="{{ nomination.book.url }}">View on GoodReads &raquo;</a>
-  </li>
+  <secondingbook ng-repeat="nomination in round.current.nominations"
+                 nomination="nomination" vote="vote" status="status" extra="extra">
+               </secondingbook>
 </ul>
-
-<ul class="nominations voting">
-  <li class="book seconded">
-    <div class="timer">
-      Vote Locks In
-      <svg width="50" height="50" viewbox="0 0 250 250">
-        <path id="border" transform="translate(125, 125)"/>
-        <path id="loader" transform="translate(125, 125) scale(.84,.84)"/>
-      </svg>
-      5:00
-    </div>
-    <a class="book-cover">
-      <img src="https://d.gr-assets.com/books/1314375864m/12043771.jpg" />
-      <div class="plus">+Extra Vote</div>
-    </a>
-    This is Not a Test
-    <a class="book-url btn btn-default" href="#">View on GoodReads &raquo;</a>
-  </li>
-</ul>
-
-<script type="text/javascript">
-var loader = document.getElementById('loader'),
-    border = document.getElementById('border'),
-    α = 0,
-    π = Math.PI,
-    t = 300;
-
-(function draw() {
-  α += 1;
-  α %= 360;
-  var r = -( α * π / 180 ),
-      x = Math.sin( r ) * 125,
-      y = Math.cos( r ) * - 125,
-      mid = ( α > 180 ) ? 0 : 1,
-      anim = 'M 0 0 v -125 A 125 125 1 ' 
-             + mid + ' 1 ' 
-             +  x  + ' ' 
-             +  y  + ' z';
-  x = Math.round( x * 1000 ) / 1000;
-  y = Math.round( y * 1000 ) / 1000;
-  loader.setAttribute( 'd', anim );
-  border.setAttribute( 'd', anim );
-  
-  setTimeout(draw, t); // Redraw
-})();
-</script>

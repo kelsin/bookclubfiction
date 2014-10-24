@@ -7,6 +7,7 @@
     $scope.round = RoundService;
 
     var timer = null;
+
     $scope.onChange = function (){
         $interval.cancel(timer);
         timer = $interval(function(){

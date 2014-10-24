@@ -1,0 +1,16 @@
+<li class="book" ng-class="{seconded: nomination.vote, 'plus-one': nomination.extra }">
+  <div class="timer" ng-show="nomination.vote && !locked" ng-click="vote(nomination)">
+    <span ng-show="nomination.extra">Extra </span>Vote Locks In
+    <svg width="50" height="50" viewbox="0 0 250 250">
+      <path class="timer-border" transform="translate(125, 125)"/>
+      <path class="timer-loader" transform="translate(125, 125) scale(.84,.84)"/>
+    </svg>
+    {{ untilLocked }}
+  </div>
+  <a class="book-cover">
+    <img ng-click="vote(nomination)" ng-src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" />
+    <div ng-click="extra(nomination)" ng-show="status.user.extra_votes > 0" class="plus">+Extra Vote <span class="fa-check fa"></span></div>
+  </a>
+  {{ nomination.book.title }}
+  <a class="book-url btn btn-default" target="_blank" href="{{ nomination.book.url }}">View on GoodReads &raquo;</a>
+</li>
