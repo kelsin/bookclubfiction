@@ -34,14 +34,14 @@ class NominationsController < ApplicationController
                     :votes => { :id => current_user.id,
                                 :created_at => Time.now },
                     :safe => true)
-    @round.reload
+    @nomination.reload
   end
 
   def unvote
     @nomination.pull(:votes => { :id => current_user.id,
                                  :created_at => { :$gt => LOCK_TIME.ago.utc } },
                      :safe => true)
-    @round.reload
+    @nomination.reload
 
     # Removing a vote should remove the extra as well
     unextra
@@ -64,7 +64,7 @@ class NominationsController < ApplicationController
       current_user.reload
     end
 
-    @round.reload
+    @nomination.reload
   end
 
   def unextra
@@ -80,7 +80,7 @@ class NominationsController < ApplicationController
       current_user.reload
     end
 
-    @round.reload
+    @nomination.reload
   end
 
   def win

@@ -1,6 +1,6 @@
 <li class="book" ng-class="{seconded: nomination.vote, 'plus-one': nomination.extra }">
   <div class="timer" ng-show="nomination.vote && !locked" ng-click="vote(nomination)">
-    <span ng-show="nomination.extra">Extra </span>Vote Locks In
+    {{ label }}Vote Locks In
     <svg width="50" height="50" viewbox="0 0 250 250">
       <path class="timer-border" transform="translate(125, 125)"/>
       <path class="timer-loader" transform="translate(125, 125) scale(.84,.84)"/>

@@ -6,12 +6,9 @@
       var deferred = $q.defer();
       $http.post('/rounds/' + roundId + '/nominations/' + nominationId + '/vote')
         .success(function(data){
-          RoundService.current = data.round;
-          StatusService.user = data.user;
-          deferred.resolve(data.round);
+          deferred.resolve(data);
         })
         .error(function(error){
-          console.log(error);
           deferred.reject(error);
         });
       return deferred.promise;
@@ -21,12 +18,9 @@
       var deferred = $q.defer();
       $http.delete('/rounds/' + roundId + '/nominations/' + nominationId + '/vote')
         .success(function(data){
-          RoundService.current = data.round;
-          StatusService.user = data.user;
-          deferred.resolve(data.round);
+          deferred.resolve(data);
         })
         .error(function(error){
-          console.log(error);
           deferred.reject(error);
         });
       return deferred.promise;
@@ -36,12 +30,9 @@
       var deferred = $q.defer();
       $http.post('/rounds/' + roundId + '/nominations/' + nominationId + '/extra')
         .success(function(data){
-          RoundService.current = data.round;
-          StatusService.user = data.user;
-          deferred.resolve(data.round);
+          deferred.resolve(data);
         })
         .error(function(error){
-          console.log(error);
           deferred.reject(error);
         });
       return deferred.promise;
@@ -51,12 +42,9 @@
       var deferred = $q.defer();
       $http.delete('/rounds/' + roundId + '/nominations/' + nominationId + '/extra')
         .success(function(data){
-          RoundService.current = data.round;
-          StatusService.user = data.user;
-          deferred.resolve(data.round);
+          deferred.resolve(data);
         })
         .error(function(error){
-          console.log(error);
           deferred.reject(error);
         });
       return deferred.promise;
