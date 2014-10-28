@@ -1,57 +1,25 @@
 (function() {
-  function SecondingService($http, $q, RoundService, StatusService) {
-    var self = this;
+	function SecondingService($http, $q) {
+		var self = this;
 
-    self.vote = function(nominationId, roundId) {
-      var deferred = $q.defer();
-      $http.post('/rounds/' + roundId + '/nominations/' + nominationId + '/vote')
-        .success(function(data){
-          deferred.resolve(data);
-        })
-        .error(function(error){
-          deferred.reject(error);
-        });
-      return deferred.promise;
-    };
+		self.vote = function(nominationId, roundId) {
+			return $http.post('/rounds/' + roundId + '/nominations/' + nominationId + '/vote');
+		};
 
-    self.unvote = function(nominationId, roundId) {
-      var deferred = $q.defer();
-      $http.delete('/rounds/' + roundId + '/nominations/' + nominationId + '/vote')
-        .success(function(data){
-          deferred.resolve(data);
-        })
-        .error(function(error){
-          deferred.reject(error);
-        });
-      return deferred.promise;
-    };
+		self.unvote = function(nominationId, roundId) {
+			return $http.delete('/rounds/' + roundId + '/nominations/' + nominationId + '/vote');
+		};
 
-    self.extra = function(nominationId, roundId) {
-      var deferred = $q.defer();
-      $http.post('/rounds/' + roundId + '/nominations/' + nominationId + '/extra')
-        .success(function(data){
-          deferred.resolve(data);
-        })
-        .error(function(error){
-          deferred.reject(error);
-        });
-      return deferred.promise;
-    };
+		self.extra = function(nominationId, roundId) {
+			return $http.post('/rounds/' + roundId + '/nominations/' + nominationId + '/extra');
+		};
 
-    self.unextra = function(nominationId, roundId) {
-      var deferred = $q.defer();
-      $http.delete('/rounds/' + roundId + '/nominations/' + nominationId + '/extra')
-        .success(function(data){
-          deferred.resolve(data);
-        })
-        .error(function(error){
-          deferred.reject(error);
-        });
-      return deferred.promise;
-    };
-  }
+		self.unextra = function(nominationId, roundId) {
+			return $http.delete('/rounds/' + roundId + '/nominations/' + nominationId + '/extra');
+		};
+	}
 
-  angular
-    .module('BookClubFiction')
-    .service('SecondingService', SecondingService);
+	angular
+		.module('BookClubFiction')
+		.service('SecondingService', SecondingService);
 })();
