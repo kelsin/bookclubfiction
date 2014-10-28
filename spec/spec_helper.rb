@@ -1,5 +1,5 @@
 require 'devise'
-require 'codeclimate-test-repoter'
+require 'codeclimate-test-reporter'
 require 'simplecov'
 require 'json_spec'
 require 'cancan/matchers'

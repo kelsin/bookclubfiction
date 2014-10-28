@@ -1,4 +1,6 @@
 (function() {
+	'use strict';
+
 	function SecondingService($http, $q) {
 		var self = this;
 
