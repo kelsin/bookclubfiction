@@ -1,15 +1,3 @@
-GIT
-  remote: git://github.com/kelsin/coveralls-ruby.git
-  revision: 622059d5db3e5acb6b8c32eb67fb5471a87e7897
-  branch: ssl-version-fix
-  specs:
-    coveralls (0.7.1)
-      multi_json (~> 1.3)
-      rest-client
-      simplecov (>= 0.7)
-      term-ansicolor
-      thor
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -68,6 +56,8 @@ GEM
       sshkit (~> 1.3)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    codeclimate-test-reporter (0.4.1)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     colorize (0.7.3)
     cookiejar (0.3.2)
@@ -277,8 +267,6 @@ GEM
       colorize
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    term-ansicolor (1.3.0)
-      tins (~> 1.0)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -292,7 +280,6 @@ GEM
     timecop (0.7.1)
     timers (4.0.1)
       hitimes
-    tins (1.3.3)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -317,7 +304,7 @@ DEPENDENCIES
   capistrano-passenger
   capistrano-rails
   capistrano-rbenv
-  coveralls!
+  codeclimate-test-reporter
   database_cleaner
   devise
   eventmachine

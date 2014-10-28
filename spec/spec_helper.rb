@@ -1,6 +1,6 @@
 require 'devise'
+require 'codeclimate-test-repoter'
 require 'simplecov'
-require 'coveralls'
 require 'json_spec'
 require 'cancan/matchers'
 require 'omniauth'
@@ -8,10 +8,10 @@ require 'factory_girl_rails'
 require 'api_helper'
 require 'vcr'
 
+CodeClimate::TestReporter.start
+
 SimpleCov.start 'rails' do
   merge_timeout 1800
-  formatter SimpleCov::Formatter::MultiFormatter[SimpleCov::Formatter::HTMLFormatter,
-                                                 Coveralls::SimpleCov::Formatter]
 end
 
 VCR.configure do |c|
