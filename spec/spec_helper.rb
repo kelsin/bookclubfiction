@@ -8,10 +8,10 @@ require 'factory_girl_rails'
 require 'api_helper'
 require 'vcr'
 
-CodeClimate::TestReporter.start
-
 SimpleCov.start 'rails' do
   merge_timeout 1800
+  formatter SimpleCov::Formatter::MultiFormatter[SimpleCov::Formatter::HTMLFormatter,
+                                                 CodeClimate::TestReporter::Formatter]
 end
 
 VCR.configure do |c|
