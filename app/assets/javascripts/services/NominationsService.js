@@ -1,5 +1,5 @@
 (function() {
-  function NominationsService($http, $q, RoundService) {
+  function NominationsService($rootScope, $http, $q, RoundService) {
     var self = this;
     self.books = [];
 
@@ -34,6 +34,7 @@
         })
         .error(function(error){
           console.log(error);
+          $rootScope.nominationError = error.error;
           deferred.reject(error);
         });
       return deferred.promise;

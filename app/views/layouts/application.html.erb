@@ -23,14 +23,13 @@
   <body ng-app="BookClubFiction">
     <div class="bcf-head group">
       <div class="container-fluid">
-        <h1><a href="/">Book Club Fiction</a></h1>
+        <h1><a ng-href="/{{ round.current.state }}">Book Club Fiction</a></h1>
 
         <div id="user" ng-controller="UserController">
           <nav>
             <ul ng-show="status.logged_in()">
               <li class="user"><img ng-src="{{ status.user.image }}" class="profile-img"> Hello, {{ status.user.name }}!</li>
               <li class="votes">Extra Votes: {{ status.user.extra_votes }}</li>
-              <li class="club-link"><a href="https://www.goodreads.com/group/show/88207-bookclubfiction">BCF on GoodReads</a></li>
               <li ng-show="status.user.admin && round.current"><a ng-href="/{{ round.current.state }}">Current Round</a></li>
               <li ng-show="status.user.admin"><a href="/admin">Admin</a></li>
               <li ng-show="status.user.admin"><a href="/admin/votes">Extra Votes</a></li>

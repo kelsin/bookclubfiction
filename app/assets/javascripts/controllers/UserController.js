@@ -4,7 +4,7 @@
     $scope.round = RoundService;
 
     $scope.$watch('round.current', function(newRound){
-      if($location.path().indexOf("/admin") !== 0) {
+      if(StatusService.logged_in() && $location.path().indexOf("/admin") !== 0) {
         if(newRound && newRound.state) {
           $location.url('/' + newRound.state);
         }

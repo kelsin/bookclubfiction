@@ -3,33 +3,42 @@
         <h1>Nominations <small>Genre: {{ round.current.genre }}</small></h1>
     </div>
 
-    <div id="nominate" >
-        <div id="searchContainer" class="group" ng-show="status.member()">
-            <label class="search-label" for="search">Search for a book</label>
-            <div id="searchAndResults">
-                <div id="searchWrapper" class="group" >
-                    <form autocomplete="off">
-                        <input name="search" id="search" ng-model="query" ng-change="onChange()" placeholder="Type in a book name...">
-                    </form>
-                    <p class="no-results" ng-show="search.loaded && search.results.books.length === 0">No results. Try searching again!</p>
-                </div>
-                <div class="search-results" id="searchResults" ng-show="search.results.books.length > 0">
-                    <ul ng-hide="search.loading">
-                        <li ng-click="select(book)" ng-repeat="book in search.results.books"><img src="{{book.image}}" alt="{{book.title}}" />
-                            <span class="book-title">{{book.title}}</span>
-                            <span class="book-author">by {{book.author}}</span>
-                        </li>
-                    </ul>
+    <div id="nominate" class="group">
+        <div class="group search-container">
+            <div class="step">1</div>
+            <div id="searchContainer" class="search-wrap group" ng-show="status.member()">
+                <h3>Search for books to nominate</h3>
+                <p>Search and select as many books as you like. You will be able to choose up to three of those books to nominate for the club to read.</p>
+                <div id="searchAndResults">
+                    <div id="searchWrapper" class="group" >
+                        <label class="search-label" for="search">Search for a book</label> 
+                        <div class="form-and-results-wrap">
+                            <form autocomplete="off">
+                                <input name="search" id="search" ng-model="query" ng-change="onChange()" placeholder="Type in a book name...">
+                            </form>
+                            <div class="search-results" id="searchResults" ng-show="search.results.books.length > 0">
+                                <ul ng-hide="search.loading">
+                                    <li ng-click="select(book)" ng-repeat="book in search.results.books"><img src="{{book.image}}" alt="{{book.title}}" />
+                                        <span class="book-title">{{book.title}}</span>
+                                        <span class="book-author">by {{book.author}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="missing" ng-hide="search.loaded && search.results.books.length === 0">Book covers missing? <span tooltip="The GoodReads API does not have permission to redistribute some images, so those books will use a placeholder image even if the image shows up on GoodReads." class="fa fa-question-circle help"></span></p>
+                        <p class="no-results" ng-show="search.loaded && search.results.books.length === 0">No results. Try searching again!</p>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div id="myNominations" class="my-nominations" ng-show="status.member()">
-            <div class="alert alert-info" ng-show="round.current.my_nominations.length &lt; 3"><p>You've chosen <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Search for books to add some!</p></div>
-            <div class="alert alert-info" ng-show="round.current.my_nominations.length &gt;= 3"><p>You've used <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Come back on Friday to start seconding books!</p></div>
+        <div id="myNominations" class="my-nominations" ng-show="round.current.selections.length || round.current.my_nominations.length">
+            <div class="step">2</div>
             <div class="nominations-wrap valid">
-                <h3>My Selections</h3>
+                <h3>Nominate up to 3 of your selections</h3>
                 <p>Choose up to three of your selections to nominate for the club to read. Nominations will close on Friday, and then everyone will be able to vote for books out of the pool of nominations!</p>
+                <div class="alert alert-info" ng-show="round.current.my_nominations.length &lt; 3 && !(round.current.my_nominations.length === 0)"><p>You've chosen <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations.</p></div>
+                <div class="alert alert-info" ng-show="round.current.my_nominations.length &gt;= 3"><p>You've used <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Come back on Friday to start seconding books!</p></div>
+                <div class="alert alert-danger" ng-show="nominationError"><p><strong>Error:</strong> {{ nominationError }}</p></div>
                 <ul class="nominations my-selections valid group">
                     <li ng-repeat="nomination in round.current.my_nominations | orderBy: 'created_at'">
                         <a class="remove-nomination fa fa-lock" title="This Nomination is Locked"></a>
@@ -57,19 +66,19 @@
         </div>
     </div>
 
-    <div style="clear:both;"></div>
+    <div class="all-nominations group" ng-show="round.current.nominations.length">
+        <h3>All Nominations</h3>
+        <p>These are the books that have already been nominated! <span ng-show="status.member()">Come back on Friday to second votes for the books you want to read!</span></p>
 
-    <h3>The Nominations</h3>
-    <p>These are the books that have already been nominated! <span ng-show="status.member()">Come back on Friday to vote for the books you want to read!</span></p>
-
-    <ul class="nominations">
-        <li ng-repeat="nomination in round.current.nominations | orderBy: 'created_at'">
-            <div class="book">
-                <a href="{{ nomination.book.url }}" tooltip="{{ nomination.book.title }}">
-                    <img ng-src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
-                </a>
-                <span class="book-title">{{ nomination.book.title }}</span>
-            </div>
-        </li>
-    </ul>
+        <ul class="nominations">
+            <li ng-repeat="nomination in round.current.nominations | orderBy: 'created_at'">
+                <div class="book">
+                    <a href="{{ nomination.book.url }}" tooltip="{{ nomination.book.title }}">
+                        <img ng-src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
+                    </a>
+                    <span class="book-title">{{ nomination.book.title }}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>

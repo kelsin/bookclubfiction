@@ -68,10 +68,13 @@ h3 { margin-top: 30px; }
   .no-results { float: left; margin-left: 2em; }
 }
 
-#searchContainer { margin: 0 0 1em 0; }
+#searchContainer { margin: 0 0 1em 65px; }
 
-#searchAndResults { position: relative; float: left; }
-.search-label { float: left; padding-right: 10px; }
+#searchAndResults { position: relative; margin: 2em 0; padding: 1em; background: #f1f1f1; border-radius: 2px;
+  form {  position: relative; float: left; }
+  p { margin-bottom: 0; line-height: 26px; }
+}
+.search-label { float: left; padding-right: 10px; line-height: 26px; margin:0;}
 #search { width: 300px; } /* input */
 .search-results { position: absolute; top: 30px; left: 0; background: #f1f1f1; border: 1px solid #f2f2f2; width: 100%; z-index: 10; box-shadow: 3px 3px 10px rgba(0,0,0,0.3); max-height: 400px; overflow-y: scroll;
   img { float: left; padding: 0 1em 0 0; max-width: 75px; }
@@ -85,7 +88,17 @@ h3 { margin-top: 30px; }
   }
 }
 
+.form-and-results-wrap { position: relative; float: left; }
+
+.all-nominations { background: #eee; padding: 1em; margin-top: 2em; border-top: 2px solid #ccc;
+  h3 { margin-top: 0; }
+}
+
 .book.winner { border: 2px solid red; }
+
+//.nominations-wrap, .search-wrap { margin-left: -65px; }
+
+.nominations-wrap { margin-left: 65px; }
 
 .nominations { list-style: none outside; padding: 0; margin: 0; font-size: 13px; display: flex;
   &.valid { background: transparent; }
@@ -117,6 +130,10 @@ h3 { margin-top: 30px; }
     &.ng-hide { opacity: 0; }
   }
 }
+.search-container { border-bottom: 1px solid #eee; }
+.step { background: $green; border-radius: 25px; width: 50px; height: 50px; line-height: 50px; text-align: center; color: #fff; font-size: 20px; float: left; margin: 0 15px 15px 0; }
+.missing { color: #666; display: inline-block; margin-left: 20px; }
+.help { cursor: pointer; }
 
 .nominations-actions {
   clear: both;
@@ -127,12 +144,6 @@ h3 { margin-top: 30px; }
 .nominations {
   .plus { font-size: 11px; display: none; background: #a9a9a9; color: #fff; cursor: pointer; padding: 3px; position: absolute; bottom: 0; width: 100%; text-align: center; -webkit-transition: background-color ease-out 0.3s; -moz-transition: background-color ease-out 0.3s; -o-transition: background-color ease-out 0.3s; transition: background-color ease-out 0.3s;}
   .plus:hover, .plus-one .plus { background: $green; }
-}
-
-.help { font-size: 10px; background: #ccc; vertical-align: super; display: inline-block; padding: 0 7px; cursor: pointer;
-  &:hover { position: relative;
-    .hint { display: block; background: #dadada; }
-  }
 }
 
 .hint { font-size: 12px;  display: none; position: absolute; left: 20px; width: 200px; padding: 1em; }

@@ -17,6 +17,7 @@
     $scope.select = function(book){
         NominationsService.select(book, RoundService.current.id);
         $scope.clear();
+        $('#search').focus();
     };
     $scope.nominate = function(book){
         NominationsService.nominate(book, RoundService.current.id);
