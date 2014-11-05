@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.7'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -56,7 +56,7 @@ gem 'multi_xml'
 
 # Goodreads API
 gem 'goodreads', '~> 0.3.0'
-gem 'rest_client'
+gem 'rest_client', '1.8.1'
 gem 'xml-simple'
 
 # Use rspec for testing
