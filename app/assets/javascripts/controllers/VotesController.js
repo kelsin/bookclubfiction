@@ -2,7 +2,8 @@
   function VotesController($scope, $window, StatusService, SecondingService, RoundService) {
     $scope.status = StatusService;
 
-    var update = function(data) {
+    var update = function(response) {
+      var data = response.data;
       if (data.extra_votes) {
         StatusService.user.extra_votes = data.extra_votes;
       }
