@@ -100,7 +100,7 @@ h3 { margin-top: 30px; }
 
 .nominations-wrap { margin-left: 65px; }
 
-.nominations { list-style: none outside; padding: 0; margin: 0; font-size: 13px; display: flex;
+.nominations { list-style: none outside; padding: 0; margin: 0; font-size: 13px; display: flex; flex-wrap: wrap;
   &.valid { background: transparent; }
   .remove-nomination { cursor: pointer; font-size: 20px; color: #333; background: #fff; position: absolute; right: -4px; top: -4px; border-radius: 30px; z-index: 5; text-decoration: none; padding: 3px 5px 5px; height: 30px; width: 30px; text-align: center; border: 2px solid #d2d2d2; line-height: 1; }
   .promote-nomination { cursor: pointer; font-size: 20px; color: #333; background: #fff; position: absolute; left: -4px; top: -4px; border-radius: 30px; z-index: 5; text-decoration: none; padding: 3px 5px 5px; height: 30px; width: 30px; text-align: center; border: 2px solid #d2d2d2; line-height: 1; }
