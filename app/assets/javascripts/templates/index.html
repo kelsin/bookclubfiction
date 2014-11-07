@@ -7,6 +7,9 @@
       <p>We cycle between different genres of fiction based on members' votes, which ends up helping us break out of our comfort zone genres while still staying in the comfort zone of fiction. We then vote for books within that genre and have weekly discussions.</p>
 
       <p><a href="https://www.goodreads.com/group/show/88207-bookclubfiction">We hold our discussions over on GoodReads</a> so if you're interested, check us out! This site helps us manage our book club voting scheme since we wanted to have a more robust option for book nominations and voting than GoodReads provides.</p>
+	  
+	  <a class="btn btn-primary" href="https://www.goodreads.com/group/show/88207-bookclubfiction">Join the club</a> or
+      <a class="btn btn-primary" ng-show="round.current" ng-href="/{{ round.current.state }}">Go to {{ round.current.state }}</a>
     </div>
   </div>
 </div>

@@ -30,7 +30,7 @@
             <ul ng-show="status.logged_in()">
               <li class="user"><img ng-src="{{ status.user.image }}" class="profile-img"> Hello, {{ status.user.name }}!</li>
               <li class="votes">Extra Votes: {{ status.user.extra_votes }}</li>
-              <li ng-show="status.user.admin && round.current"><a ng-href="/{{ round.current.state }}">Current Round</a></li>
+              <li ng-show="round.current"><a ng-href="/{{ round.current.state }}">View Current Round</a></li>
               <li ng-show="status.user.admin"><a href="/admin">Admin</a></li>
               <li ng-show="status.user.admin"><a href="/admin/votes">Extra Votes</a></li>
               <li class="logout"><a href="/logout" target="_self" class="btn btn-default">Logout</a></li>
