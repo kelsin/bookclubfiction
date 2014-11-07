@@ -9,6 +9,7 @@
   </votes>
 </div>
 
+<div class="all-nominations">
 <h3>The Nominations</h3>
 <p ng-show="status.member()">Click on any book to second the current genre's selections. If you have extra votes, you can use them after you've voted on a book.</p>
 
@@ -16,12 +17,13 @@
   <p>
     <span ng-show="status.user.extra_votes &gt; 0">You have <strong>{{ status.user.extra_votes }}</strong> extra votes left.</span>
     <span ng-show="status.user.extra_votes === 0">You have no extra votes.</span> Get more by participating in discussions!
-    <span class="help">?<span class="hint">You must participate in over 50% of discussions for a given book to earn an extra vote. Extra votes can allow you to give a book you want to read an additional +1.</span></span>
+    <span class="fa fa-question-circle help" tooltip="You must participate in over 50% of discussions for a given book to earn an extra vote. Extra votes can allow you to give a book you want to read an additional +1."></span>
   </p>
 </div>
 
 <ul class="nominations voting">
-  <secondingbook ng-repeat="nomination in round.current.nominations"
+  <secondingbook ng-repeat="nomination in round.current.nominations | orderBy:'book.title'"
                  nomination="nomination">
   </secondingbook>
 </ul>
+</div>
