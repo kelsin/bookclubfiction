@@ -18,7 +18,7 @@
                             </form>
                             <div class="search-results" id="searchResults" ng-show="search.results.books.length > 0">
                                 <ul ng-hide="search.loading">
-                                    <li ng-click="select(book)" ng-repeat="book in search.results.books"><img src="{{book.image}}" alt="{{book.title}}" />
+                                    <li ng-click="select(book)" ng-repeat="book in search.results.books"><img ng-src="{{book.image}}" alt="{{book.title}}" />
                                         <span class="book-title">{{book.title}}</span>
                                         <span class="book-author">by {{book.author}}</span>
                                     </li>
@@ -44,7 +44,7 @@
                         <a class="remove-nomination fa fa-lock" title="This Nomination is Locked"></a>
                         <div class="book">
                             <a href="{{ nomination.book.url }}" tooltip="{{ nomination.book.title }}">
-                                <img src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
+                                <img ng-src="{{ nomination.book.image }}" alt="{{ nomination.book.title }}" title="{{ nomination.book.title }}" />
                             </a>
                             <span class="book-title">{{ nomination.book.title }}</span>
                             <button class="btn btn-primary">Nominated</button>
