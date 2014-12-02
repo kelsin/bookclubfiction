@@ -6,6 +6,7 @@ $red: #b61313;
 $lightred: #f8cfcf;
 
 .alert { margin: 20px 0; }
+.alert-info { background: $green; color: #fff; border-color: $lightgreen; }
 
 .group:after {
   content: "";
@@ -90,7 +91,7 @@ h3 { margin-top: 30px; }
 
 .form-and-results-wrap { position: relative; float: left; }
 
-.all-nominations { background: #eee; padding: 1em; margin-top: 2em; border-top: 2px solid #ccc;
+.all-nominations { background: #eee; padding: 1em; border-top: 2px solid #ccc;
   h3 { margin-top: 0; }
 }
 

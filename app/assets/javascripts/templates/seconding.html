@@ -1,17 +1,18 @@
 <div id="header" class="page-header">
   <h1>Seconding <small>Genre: {{ round.current.genre }}</small></h1>
 </div>
-<div id="results">
+<div class="row">
+<div id="results" class="col-lg-6 col-lg-push-6">
   <p>The seconding phase will last until Sunday, at which point the two books with the most votes will be chosen as our reads for the current genre! Tie-breakers are decided by the average rating on GoodReads.</p>
   <p><strong>Here are the current standings:</strong></p>
   <votes>
-    <p ng-hide="round.current.total_votes &gt; 0">No one has voted yet! <span ng-show="status.member()">Second some books below, or come back later to check where we're at!</span></p>
+    <p ng-hide="round.current.total_votes &gt; 0">No one has voted yet! <span ng-show="status.member()">Second some books now, or come back later to check where we're at!</span></p>
   </votes>
 </div>
 
-<div class="all-nominations">
+<div class="all-nominations col-lg-6 col-lg-pull-6">
 <h3>The Nominations</h3>
-<p ng-show="status.member()">Click on any book to second the current genre's selections. If you have extra votes, you can use them after you've voted on a book.</p>
+<p ng-show="status.member()">Click on any book to second the current genre's selections. If you have extra votes, you can use them after you've voted on a book. Select +Extra Vote to use one of your extras!</p>
 
 <div class="alert alert-info" ng-show="status.member()">
   <p>
@@ -26,4 +27,5 @@
                  nomination="nomination">
   </secondingbook>
 </ul>
+</div>
 </div>
