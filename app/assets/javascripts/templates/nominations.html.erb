@@ -11,7 +11,7 @@
                 <p>Search and select as many books as you like. You will be able to choose up to three of those books to nominate for the club to read.</p>
                 <div id="searchAndResults">
                     <div id="searchWrapper" class="group" >
-                        <label class="search-label" for="search">Search for a book</label> 
+                        <label class="search-label" for="search">Search for a book</label>
                         <div class="form-and-results-wrap">
                             <form autocomplete="off">
                                 <input name="search" id="search" ng-model="query" ng-change="onChange()" placeholder="Type in a book name...">
@@ -35,9 +35,9 @@
             <div class="step">2</div>
             <div class="nominations-wrap valid">
                 <h3>Nominate up to 3 of your selections</h3>
-                <p>Choose up to three of your selections to nominate for the club to read. Nominations will close on Friday, and then everyone will be able to vote for books out of the pool of nominations!</p>
+                <p>Choose up to three of your selections to nominate for the club to read. Nominations will close one week after they open (usually on a Tuesday), and then everyone will be able to vote for books out of the pool of nominations!</p>
                 <div class="alert alert-info" ng-show="round.current.my_nominations.length &lt; 3 && !(round.current.my_nominations.length === 0)"><p>You've chosen <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations.</p></div>
-                <div class="alert alert-info" ng-show="round.current.my_nominations.length &gt;= 3"><p>You've used <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Come back on Friday to start seconding books!</p></div>
+                <div class="alert alert-info" ng-show="round.current.my_nominations.length &gt;= 3"><p>You've used <strong>{{ round.current.my_nominations.length }}/3</strong> of your available nominations. Come back on Tuesday to start seconding books!</p></div>
                 <div class="alert alert-danger" ng-show="nominationError"><p><strong>Error:</strong> {{ nominationError }}</p></div>
                 <ul class="nominations my-selections valid group">
                     <li ng-repeat="nomination in round.current.my_nominations | orderBy: 'created_at'">
@@ -68,7 +68,7 @@
 
     <div class="all-nominations group" ng-show="round.current.nominations.length">
         <h3>All Nominations</h3>
-        <p>These are the books that have already been nominated! <span ng-show="status.member()">Come back on Friday to second votes for the books you want to read!</span></p>
+        <p>These are the books that have already been nominated! <span ng-show="status.member()">Come back on Tuesday to second votes for the books you want to read!</span></p>
 
         <ul class="nominations">
             <li ng-repeat="nomination in round.current.nominations | orderBy: 'created_at'">
